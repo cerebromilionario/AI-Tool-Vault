@@ -1,0 +1,37 @@
+[
+  {
+    "slug": "writing-ai",
+    "name": "Writing Ai",
+    "description": "Discover top writing AI tools."
+  },
+  {
+    "slug": "image-ai",
+    "name": "Image Ai",
+    "description": "Discover top image AI tools."
+  },
+  {
+    "slug": "video-ai",
+    "name": "Video Ai",
+    "description": "Discover top video AI tools."
+  },
+  {
+    "slug": "audio-ai",
+    "name": "Audio Ai",
+    "description": "Discover top audio AI tools."
+  },
+  {
+    "slug": "coding-ai",
+    "name": "Coding Ai",
+    "description": "Discover top coding AI tools."
+  },
+  {
+    "slug": "productivity-ai",
+    "name": "Productivity Ai",
+    "description": "Discover top productivity AI tools."
+  },
+  {
+    "slug": "marketing-ai",
+    "name": "Marketing Ai",
+    "description": "Discover top marketing AI tools."
+  }
+]

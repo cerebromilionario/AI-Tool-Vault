@@ -1,0 +1,28 @@
+[build]
+  command = "node scripts/generate-pages.js && node scripts/generate-sitemap.js"
+  publish = "."
+
+[[redirects]]
+  from = "/tools/*"
+  to = "/pages/tools/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/categories/*"
+  to = "/pages/categories/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/compare/*"
+  to = "/pages/compare/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/alternatives/*"
+  to = "/pages/alternatives/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/best/*"
+  to = "/pages/best/:splat"
+  status = 200

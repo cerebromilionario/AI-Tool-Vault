@@ -1,0 +1,11 @@
+@import url('https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css');
+body{font-family:ui-sans-serif,system-ui;background:#f8fafc;color:#0f172a}
+.container{max-width:1100px;margin:0 auto;padding:1rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.card{background:white;border-radius:.75rem;padding:1rem;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hero{padding:1rem;background:white;border-radius:1rem;margin:1rem 0}
+.btn{display:inline-block;background:#2563eb;color:#fff;padding:.6rem 1rem;border-radius:.5rem}
+.ad{margin:1rem 0;padding:1rem;text-align:center;background:#e2e8f0;border-radius:.5rem;font-size:.9rem}
+table{width:100%;background:#fff}th,td{border:1px solid #e2e8f0;padding:.6rem;text-align:left}
+header,footer{background:#0f172a;color:#e2e8f0}.nav a{margin-right:1rem}
+img[loading="lazy"]{content-visibility:auto}
