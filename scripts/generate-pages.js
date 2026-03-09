@@ -17,7 +17,7 @@ const templates = {
   best: read('templates/best.html')
 };
 
-const header = `<header><div class="container nav"><a href="/index.html">AI Tool Vault</a><a href="/categories/writing-ai.html">Categories</a><a href="/best/best-free-ai-tools.html">Best Of</a></div></header>`;
+const header = `<header><div class="container nav"><a class="brand" href="/index.html">AI Tool Vault</a><nav class="menu" aria-label="Main navigation"><a href="/categories/writing-ai.html">Categories</a><a href="/best/best-free-ai-tools.html">Best Of</a><a href="/contact.html">Contact</a></nav></div></header>`;
 const footer = `<footer><div class="container">© ${new Date().getFullYear()} AI Tool Vault</div></footer>`;
 
 const pageUrls = ['/index.html','/about.html','/contact.html'];
@@ -40,7 +40,9 @@ for (const tool of tools) {
     slug: tool.slug,
     category: tool.category,
     categoryLabel: tool.category.replace('-', ' '),
-    relatedTools: related.map(r => `<article class="card"><h3><a href="/tools/${r.slug}.html">${r.name}</a></h3><p>${r.pricing}</p></article>`).join('')
+    compareSlug: `${tool.slug}-vs-${related[0]?.slug || tool.slug}` ,
+    compareName: related[0]?.name || 'another tool',
+    relatedTools: related.map(r => `<article class="card" data-name="${r.name.toLowerCase()}" data-description="${r.description.toLowerCase()}" data-category="${r.category}"><img loading="lazy" src="${r.logo}" alt="${r.name} logo" width="64" height="64"><h3><a href="/tools/${r.slug}.html">${r.name}</a></h3><p>${r.pricing}</p><p><a href="${r.official_url}" target="_blank" rel="noopener sponsored nofollow">Visit Tool</a></p></article>`).join('')
   });
   write(`pages/tools/${tool.slug}.html`, html);
   pageUrls.push(`/tools/${tool.slug}.html`);
@@ -74,7 +76,7 @@ for (const cat of categories) {
     heading: `${cat.name} Tools`,
     description: cat.description,
     filterOptions: categories.map(c => `<option value="${c.slug}">${c.name}</option>`).join(''),
-    tools: catTools.map(t => `<article class="card" data-name="${t.name.toLowerCase()}" data-category="${t.category}"><img loading="lazy" src="${t.logo}" alt="${t.name} logo" width="64" height="64"><h3><a href="/tools/${t.slug}.html">${t.name}</a></h3><p>${t.description}</p><p><a href="/alternatives/${t.slug}.html">Alternatives</a></p></article>`).join('')
+    tools: catTools.map(t => `<article class="card" data-name="${t.name.toLowerCase()}" data-description="${t.description.toLowerCase()}" data-category="${t.category}"><img loading="lazy" src="${t.logo}" alt="${t.name} logo" width="64" height="64"><h3><a href="/tools/${t.slug}.html">${t.name}</a></h3><p>${t.description}</p><p><a href="/alternatives/${t.slug}.html">Alternatives</a></p></article>`).join('')
   }));
   pageUrls.push(`/categories/${cat.slug}.html`);
 }

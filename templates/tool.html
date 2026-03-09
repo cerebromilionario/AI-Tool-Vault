@@ -19,22 +19,38 @@
   {{header}}
   <main class="container">
     <section class="hero">
+      <p class="eyebrow">Tool Profile</p>
       <h1>{{toolName}}</h1>
       <p>{{description}}</p>
-      <a class="btn" href="{{officialUrl}}" target="_blank" rel="noopener sponsored nofollow">Visit Official Website</a>
+      <div class="tool-actions">
+        <a class="btn" href="{{officialUrl}}" target="_blank" rel="noopener sponsored nofollow">Visit Official Website</a>
+        <a class="btn btn-secondary" href="/alternatives/{{slug}}.html">View Alternatives</a>
+      </div>
     </section>
+
     <div class="ad ad-hero">AdSense Slot (below hero)</div>
-    <section>
-      <h2>Key Features</h2>
-      <ul>{{features}}</ul>
-      <p><strong>Pricing:</strong> {{pricing}}</p>
-      <p><a href="/alternatives/{{slug}}.html">Top alternatives to {{toolName}}</a></p>
-      <p><a href="/categories/{{category}}.html">More {{categoryLabel}} tools</a></p>
+
+    <section class="tool-layout">
+      <article>
+        <h2>Key Features</h2>
+        <ul>{{features}}</ul>
+        <p><strong>Pricing:</strong> {{pricing}}</p>
+      </article>
+      <aside class="tool-meta">
+        <h2>Quick Links</h2>
+        <p><a href="/categories/{{category}}.html">More {{categoryLabel}} tools</a></p>
+        <p><a href="/alternatives/{{slug}}.html">Top alternatives to {{toolName}}</a></p>
+        <p><a href="/compare/{{compareSlug}}.html">Compare {{toolName}} with {{compareName}}</a></p>
+      </aside>
     </section>
+
     <section>
-      <h2>Related Tools</h2>
+      <div class="section-heading">
+        <h2>Related Tools</h2>
+      </div>
       <div class="grid">{{relatedTools}}</div>
     </section>
+
     <div class="ad ad-inline">AdSense Slot (inside article)</div>
   </main>
   {{footer}}

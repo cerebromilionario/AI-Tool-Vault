@@ -16,12 +16,21 @@
 <body>
 {{header}}
 <main class="container">
-<h1>{{heading}}</h1>
-<p>{{description}}</p>
-<div class="ad">AdSense Slot (below hero)</div>
-<div class="toolbar"><input id="search" type="search" placeholder="Search tools"><select id="categoryFilter"><option value="">All</option>{{filterOptions}}</select></div>
-<div class="grid" id="toolGrid">{{tools}}</div>
-<div class="ad">AdSense Slot (between cards)</div>
+  <section class="hero">
+    <p class="eyebrow">Category Directory</p>
+    <h1>{{heading}}</h1>
+    <p>{{description}}</p>
+    <div class="toolbar">
+      <input id="search" type="search" placeholder="Search tools by name or description">
+      <select id="categoryFilter" aria-label="Filter by category">
+        <option value="">All</option>{{filterOptions}}
+      </select>
+    </div>
+  </section>
+
+  <div class="ad">AdSense Slot (below hero)</div>
+  <div class="grid" id="toolGrid">{{tools}}</div>
+  <div class="ad">AdSense Slot (between cards)</div>
 </main>
 {{footer}}
 <script src="/public/js/search.js" defer></script>
