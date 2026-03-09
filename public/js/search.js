@@ -1,7 +1,19 @@
 (() => {
   const search = document.getElementById('search');
   const filter = document.getElementById('categoryFilter');
+  const results = document.getElementById('resultCount');
   const cards = Array.from(document.querySelectorAll('[data-name]'));
+
+  const normalize = (value = '') => value.toLowerCase().trim();
+  const params = new URLSearchParams(window.location.search);
+
+  if (search && params.get('q')) {
+    search.value = params.get('q');
+  }
+
+  if (filter && params.get('category')) {
+    filter.value = params.get('category');
+  }
 
   cards.forEach(card => {
     const category = (card.dataset.category || '').replace(/-/g, ' ').trim();
@@ -30,15 +42,35 @@
   });
 
   const apply = () => {
-    const q = (search?.value || '').toLowerCase();
+    const q = normalize(search?.value || '');
     const c = filter?.value || '';
+    let visible = 0;
+
     cards.forEach(card => {
-      const okName = card.dataset.name.includes(q);
+      const searchable = [
+        normalize(card.dataset.name),
+        normalize(card.dataset.category),
+        normalize(card.dataset.description),
+        normalize(card.querySelector('h3')?.textContent || ''),
+        normalize(card.textContent || '')
+      ].join(' ');
+
+      const okName = !q || searchable.includes(q);
       const okCategory = !c || card.dataset.category === c;
-      card.style.display = okName && okCategory ? '' : 'none';
+      const shouldShow = okName && okCategory;
+      card.style.display = shouldShow ? '' : 'none';
+
+      if (shouldShow) {
+        visible += 1;
+      }
     });
+
+    if (results) {
+      results.textContent = `${visible} tool${visible === 1 ? '' : 's'} found`;
+    }
   };
 
   search?.addEventListener('input', apply);
   filter?.addEventListener('change', apply);
+  apply();
 })();
