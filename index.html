@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Tools Hub | Discover the Best AI Tools</title>
+    <meta name="description" content="Discover the best AI tools for productivity, business, design, writing, coding, marketing, video, and audio in one curated directory." />
+    <meta property="og:title" content="AI Tools Hub | Discover the Best AI Tools" />
+    <meta property="og:description" content="Explore top artificial intelligence tools, categories, and expert picks in one place." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://aitoolshub.example/" />
+    <meta property="og:image" content="https://aitoolshub.example/assets/og-cover.jpg" />
+    <link rel="canonical" href="https://aitoolshub.example/" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { darkMode: 'class' };
+    </script>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <script defer src="/assets/js/data.js"></script>
+    <script defer src="/assets/js/app.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "AI Tools Hub",
+        "url": "https://aitoolshub.example/",
+        "description": "Directory of the best AI tools for productivity, business, design, and development.",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://aitoolshub.example/tools.html?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+  </head>
+  <body class="antialiased">
+    <header class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-950/90 backdrop-blur border-b border-neutral-200 dark:border-neutral-800">
+      <div class="container-main mx-auto px-4 py-4 flex justify-between items-center">
+        <a href="/" class="text-xl font-bold text-neutral-800 dark:text-neutral-100">AI Tools Hub</a>
+        <nav class="flex gap-5 items-center text-sm">
+          <a href="/tools.html">Tools</a><a href="/categories.html">Categories</a><a href="/about.html">About</a><a href="/contact.html">Contact</a>
+          <button data-theme-toggle class="border rounded-lg px-3 py-1">🌙</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container-main mx-auto px-4 py-10 space-y-14">
+      <section class="text-center py-12">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-[#2c2c2e] dark:text-white mb-5">Discover the Best AI Tools in One Place</h1>
+        <p class="max-w-3xl mx-auto text-lg text-neutral-600 dark:text-neutral-300 mb-8">Explore the most powerful artificial intelligence tools for productivity, business, design, coding and more.</p>
+        <a href="/tools.html" class="inline-flex bg-amber-400 text-[#2c2c2e] font-semibold px-8 py-3 rounded-2xl hover:bg-amber-300 transition">Explore All Tools</a>
+      </section>
+
+      <section class="max-w-3xl mx-auto">
+        <input id="toolSearch" type="text" placeholder="Search AI tools by name..." class="w-full rounded-2xl border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 px-5 py-4 text-lg" />
+      </section>
+
+      <section class="ad-slot">AdSense Slot (Below Hero)</section>
+
+      <section>
+        <div class="flex justify-between items-center mb-5"><h2 class="text-2xl font-bold">Featured AI Tools</h2><a href="/tools.html" class="text-amber-500">View all</a></div>
+        <div id="featuredTools" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold mb-4">Browse by Category</h2>
+        <div id="categoryList" class="flex flex-wrap"></div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold mb-4">Latest AI Tools</h2>
+        <div id="latestTools" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+      </section>
+
+      <section class="rounded-3xl bg-[#2c2c2e] text-white p-8 md:p-10 text-center">
+        <h2 class="text-3xl font-bold mb-2">Get Weekly AI Tool Updates</h2>
+        <p class="text-neutral-300 mb-5">New AI tools, practical use cases, and curated recommendations.</p>
+        <form id="newsletterForm" class="max-w-xl mx-auto flex flex-col sm:flex-row gap-3">
+          <input type="email" required placeholder="Enter your email" class="flex-1 rounded-xl px-4 py-3 text-neutral-900" />
+          <button class="rounded-xl bg-amber-400 text-neutral-900 font-semibold px-6 py-3">Subscribe</button>
+        </form>
+        <p id="newsletterNotice" class="mt-4 text-sm text-amber-200"></p>
+      </section>
+    </main>
+
+    <footer class="border-t border-neutral-200 dark:border-neutral-800 py-8">
+      <div class="container-main mx-auto px-4 text-sm text-neutral-500 flex flex-col md:flex-row justify-between gap-3">
+        <p>© <span data-year></span> AI Tools Hub. All rights reserved.</p>
+        <p>Built for SEO, speed, and discovery.</p>
+      </div>
+    </footer>
+  </body>
+</html>
