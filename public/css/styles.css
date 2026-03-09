@@ -40,6 +40,10 @@ main { padding-top: 1.25rem; padding-bottom: 2rem; }
 }
 .hero h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); line-height: 1.1; margin-bottom: 0.75rem; font-weight: 800; }
 .hero p { color: #cbd5e1; max-width: 70ch; }
+.tool-hero-header { display: flex; gap: 1rem; align-items: flex-start; flex-wrap: wrap; }
+.tool-logo { width: 5.5rem; height: 5.5rem; border-radius: 1rem; border: 1px solid rgba(148, 163, 184, 0.5); background: #fff; }
+.tool-meta { font-size: 0.95rem; margin-top: 0.5rem; }
+.tool-meta a { color: #93c5fd; }
 .eyebrow { text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; color: #93c5fd !important; font-size: 0.8rem; margin-bottom: 0.6rem; }
 
 .hero-search, .toolbar { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.1rem; }
@@ -107,6 +111,8 @@ section p a[href*="categories"]:hover { background: var(--brand-dark); }
 .card-actions a:first-child { background: #0f172a; color: #fff; }
 .card-actions a:last-child { background: #e2e8f0; color: #0f172a; }
 
+.result-count { margin: 0.8rem 0 0.2rem; color: #1e293b; font-weight: 600; }
+
 .category-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 1rem; }
 .category-card {
   display: block;
@@ -129,6 +135,7 @@ ul { padding-left: 1.2rem; }
 li { margin: 0.3rem 0; }
 main > section { background: #fff; border: 1px solid #e2e8f0; border-radius: 1rem; padding: 1.2rem; margin-bottom: 1rem; }
 .ad { margin: 1rem 0; padding: 1rem; text-align: center; background: #e2e8f0; border-radius: .75rem; font-size: .9rem; color: #334155; }
+.ad-placeholder { border: 1px dashed #94a3b8; }
 
 table { width: 100%; background: #fff; border-radius: 0.75rem; overflow: hidden; }
 th, td { border: 1px solid #e2e8f0; padding: .6rem; text-align: left; }

@@ -6,6 +6,8 @@ const root = path.resolve(__dirname, '..');
 const read = (p) => fs.readFileSync(path.join(root, p), 'utf8');
 const write = (p, c) => { fs.mkdirSync(path.dirname(path.join(root, p)), { recursive: true }); fs.writeFileSync(path.join(root, p), c); };
 const render = (tpl, data) => tpl.replace(/\{\{(\w+)\}\}/g, (_, k) => data[k] ?? '');
+const titleCaseCategory = (slug) => slug.replace(/-/g, ' ').replace(/\b\w/g, (m) => m.toUpperCase());
+const logoFor = (tool) => tool.logo || '/images/logos/default-tool.webp';
 
 const tools = JSON.parse(read('data/tools.json'));
 const categories = JSON.parse(read('data/categories.json'));
@@ -35,12 +37,13 @@ for (const tool of tools) {
     toolName: tool.name,
     description: tool.description,
     officialUrl: tool.official_url,
+    logo: logoFor(tool),
     features: tool.features.map(f => `<li>${f}</li>`).join(''),
     pricing: tool.pricing,
     slug: tool.slug,
     category: tool.category,
-    categoryLabel: tool.category.replace('-', ' '),
-    relatedTools: related.map(r => `<article class="card"><h3><a href="/tools/${r.slug}.html">${r.name}</a></h3><p>${r.pricing}</p></article>`).join('')
+    categoryLabel: titleCaseCategory(tool.category),
+    relatedTools: related.map(r => `<article class="card" data-name="${r.name.toLowerCase()}" data-category="${r.category}" data-description="${r.description.toLowerCase()}"><img loading="lazy" src="${logoFor(r)}" alt="${r.name} logo" width="64" height="64"><h3><a href="/tools/${r.slug}.html">${r.name}</a></h3><p>${r.description}</p><p><a href="/compare/${tool.slug}-vs-${r.slug}.html">Compare ${tool.name} vs ${r.name}</a></p></article>`).join('')
   });
   write(`pages/tools/${tool.slug}.html`, html);
   pageUrls.push(`/tools/${tool.slug}.html`);
@@ -62,7 +65,6 @@ for (const tool of tools) {
 }
 
 for (const cat of categories) {
-  const catTools = tools.filter(t => t.category === cat.slug);
   const schema = JSON.stringify({ '@context': 'https://schema.org', '@type': 'CollectionPage', name: `${cat.name} tools`, url: `${siteUrl}/categories/${cat.slug}.html` });
   write(`pages/categories/${cat.slug}.html`, render(templates.category, {
     title: `${cat.name} Tools Directory (2026) | AI Tool Vault`,
@@ -73,8 +75,8 @@ for (const cat of categories) {
     footer,
     heading: `${cat.name} Tools`,
     description: cat.description,
-    filterOptions: categories.map(c => `<option value="${c.slug}">${c.name}</option>`).join(''),
-    tools: catTools.map(t => `<article class="card" data-name="${t.name.toLowerCase()}" data-category="${t.category}"><img loading="lazy" src="${t.logo}" alt="${t.name} logo" width="64" height="64"><h3><a href="/tools/${t.slug}.html">${t.name}</a></h3><p>${t.description}</p><p><a href="/alternatives/${t.slug}.html">Alternatives</a></p></article>`).join('')
+    filterOptions: categories.map(c => `<option value="${c.slug}"${c.slug === cat.slug ? ' selected' : ''}>${c.name}</option>`).join(''),
+    tools: tools.map(t => `<article class="card" data-name="${t.name.toLowerCase()}" data-category="${t.category}" data-description="${t.description.toLowerCase()}"><img loading="lazy" src="${logoFor(t)}" alt="${t.name} logo" width="64" height="64"><h3><a href="/tools/${t.slug}.html">${t.name}</a></h3><p>${t.description}</p><p><a href="/alternatives/${t.slug}.html">Alternatives</a></p></article>`).join('')
   }));
   pageUrls.push(`/categories/${cat.slug}.html`);
 }
