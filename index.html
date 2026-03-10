@@ -12,14 +12,14 @@
   <link rel="canonical" href="https://aitoolvault.example.com/">
   <link rel="stylesheet" href="/public/css/styles.css">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"AI Tool Vault","url":"https://aitoolvault.example.com/","potentialAction":{"@type":"SearchAction","target":"https://aitoolvault.example.com/category/writing-ai?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"AI Tool Vault","url":"https://aitoolvault.example.com/","potentialAction":{"@type":"SearchAction","target":"https://aitoolvault.example.com/category/writing-ai.html?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
 </head>
 <body>
   <header>
     <div class="container nav">
       <a class="brand" href="/">AI Tool Vault</a>
       <nav class="menu" aria-label="Main navigation">
-        <a href="/category/writing-ai">Categories</a>
+        <a href="/category/writing-ai.html">Categories</a>
         <a href="/best/best-free-ai-tools">Best Of</a>
         <a href="/about.html">About</a>
         <a href="/contact.html">Contact</a>
@@ -32,7 +32,7 @@
       <p class="eyebrow">Modern AI directory for teams</p>
       <h1>Discover, compare, and evaluate AI tools faster</h1>
       <p>Find the right AI software for your workflow with live search, category filters, related tools, and alternatives.</p>
-      <form class="hero-search" action="/category/writing-ai" method="get">
+      <form class="hero-search" action="#" method="get" onsubmit="return false;">
         <input id="search" type="search" name="q" placeholder="Search tools, use-cases, or categories">
         <select id="categoryFilter" name="category">
           <option value="">All categories</option>

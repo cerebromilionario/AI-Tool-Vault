@@ -1,4 +1,6 @@
 (() => {
+  if (document.getElementById('trendingTools') && document.getElementById('newTools')) return;
+
   const search = document.getElementById('search');
   const filter = document.getElementById('categoryFilter');
   const results = document.getElementById('resultCount');

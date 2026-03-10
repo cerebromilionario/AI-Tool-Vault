@@ -1,6 +1,9 @@
 const categoryToSlug = (category = '') => category.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
-let categorySlugMap = {};
+const toolLink = (slug) => `/pages/alternatives/${slug}/index.html`;
+const categoryLink = (slug) => `/category/${slug}.html`;
+
+let allToolsData = [];
 
 const createToolCard = (tool) => {
   const safeName = tool.name || 'AI Tool';
@@ -21,17 +24,40 @@ const createToolCard = (tool) => {
       </div>
       <h3 class="mb-2 text-lg font-semibold text-slate-900">${safeName}</h3>
       <p class="mb-4 text-sm leading-6 text-slate-600">${safeDescription}</p>
-      <a class="inline-flex items-center text-sm font-semibold text-indigo-600 hover:text-indigo-800" href="/tools/${tool.slug}">View tool page →</a>
+      <a class="inline-flex items-center text-sm font-semibold text-indigo-600 hover:text-indigo-800" href="${toolLink(tool.slug)}">View alternatives page →</a>
     </article>
   `;
 };
 
-const createCategoryCard = ([category, count]) => `
-  <a class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition hover:shadow-md" href="/category/${categorySlugMap[category] || categoryToSlug(category)}">
-    <h3 class="mb-2 text-base font-semibold text-slate-900">${category}</h3>
-    <p class="text-sm text-slate-600">${count} tools</p>
+const createCategoryCard = (category) => `
+  <a class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition hover:shadow-md" href="${categoryLink(category.slug)}">
+    <h3 class="mb-2 text-base font-semibold text-slate-900">${category.name}</h3>
+    <p class="text-sm text-slate-600">${category.description}</p>
   </a>
 `;
+
+const renderFilteredTools = () => {
+  const allTarget = document.getElementById('allTools');
+  const resultCount = document.getElementById('resultCount');
+  const search = document.getElementById('search');
+  const filter = document.getElementById('categoryFilter');
+
+  if (!allTarget || !resultCount) return;
+
+  const query = (search?.value || '').toLowerCase().trim();
+  const category = filter?.value || '';
+
+  const filtered = allToolsData.filter((tool) => {
+    const normalizedCategory = categoryToSlug(tool.category || '');
+    const haystack = `${(tool.name || '').toLowerCase()} ${(tool.description || '').toLowerCase()} ${normalizedCategory}`;
+    const matchesQuery = !query || haystack.includes(query);
+    const matchesCategory = !category || normalizedCategory === category;
+    return matchesQuery && matchesCategory;
+  });
+
+  allTarget.innerHTML = filtered.slice(0, 24).map(createToolCard).join('');
+  resultCount.textContent = `Showing ${Math.min(filtered.length, 24)} of ${filtered.length} matching tools (${allToolsData.length} total).`;
+};
 
 const renderTools = async () => {
   const trendingTarget = document.getElementById('trendingTools');
@@ -49,30 +75,19 @@ const renderTools = async () => {
     ]);
     const tools = await toolsResponse.json();
     const categories = await categoriesResponse.json();
-
-    categorySlugMap = categories.reduce((acc, category) => {
-      acc[category.name] = category.slug;
-      return acc;
-    }, {});
+    allToolsData = tools;
 
     const trendingTools = tools.slice(0, 6);
     const newTools = [...tools].reverse().slice(0, 6);
-    const allTools = tools.slice(0, 12);
-
-    const popularCategories = Object.entries(
-      tools.reduce((acc, tool) => {
-        acc[tool.category] = (acc[tool.category] || 0) + 1;
-        return acc;
-      }, {})
-    )
-      .sort((a, b) => b[1] - a[1])
-      .slice(0, 8);
 
     trendingTarget.innerHTML = trendingTools.map(createToolCard).join('');
     newTarget.innerHTML = newTools.map(createToolCard).join('');
-    allTarget.innerHTML = allTools.map(createToolCard).join('');
-    categoriesTarget.innerHTML = popularCategories.map(createCategoryCard).join('');
-    resultCount.textContent = `Showing ${allTools.length} of ${tools.length} tools from tools.json.`;
+    categoriesTarget.innerHTML = categories.map(createCategoryCard).join('');
+
+    renderFilteredTools();
+
+    document.getElementById('search')?.addEventListener('input', renderFilteredTools);
+    document.getElementById('categoryFilter')?.addEventListener('change', renderFilteredTools);
   } catch (error) {
     resultCount.textContent = 'Unable to load tools at the moment.';
   }

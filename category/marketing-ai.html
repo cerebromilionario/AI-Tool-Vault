@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marketing | AI Tool Vault</title>
+  <meta name="description" content="Browse AI marketing tools for SEO, campaigns, and conversion optimization.">
+  <link rel="stylesheet" href="/public/css/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body data-category-slug="marketing-ai" data-category-name="Marketing" data-category-description="Browse AI marketing tools for SEO, campaigns, and conversion optimization.">
+  <header>
+    <div class="container nav">
+      <a class="brand" href="/">AI Tool Vault</a>
+      <nav class="menu" aria-label="Main navigation">
+        <a href="/category/writing-ai.html">Categories</a>
+        <a href="/about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">Category</p>
+      <h1 id="categoryTitle"></h1>
+      <p id="categoryDescription"></p>
+      <p id="toolCount" class="result-count" aria-live="polite"></p>
+    </section>
+    <section class="content-section">
+      <div id="categoryTools" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
+    </section>
+  </main>
+
+  <script src="/public/js/category-tools.js" defer></script>
+</body>
+</html>
