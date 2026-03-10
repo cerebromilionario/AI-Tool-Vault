@@ -76,7 +76,7 @@ const categorySlugFor = (tool) => categoryMap.get(tool.category) || categoryMap.
 const categoryLabelFor = (tool) => categories.find((c) => c.slug === categorySlugFor(tool))?.name || titleCaseCategory(tool.category);
 const websiteFor = (tool) => tool.website || tool.official_url || '#';
 
-const header = `<header><div class="container nav"><a class="brand" href="/">AI Tool Vault</a><nav class="menu" aria-label="Main navigation"><a href="/categories/writing-ai">Categories</a><a href="/best/best-free-ai-tools">Best Of</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>`;
+const header = `<header><div class="container nav"><a class="brand" href="/">AI Tool Vault</a><nav class="menu" aria-label="Main navigation"><a href="/category/writing-ai">Categories</a><a href="/best/best-free-ai-tools">Best Of</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>`;
 const footer = `<footer><div class="container">© ${new Date().getFullYear()} AI Tool Vault</div></footer>`;
 
 const selectedTools = tools.slice(offset, offset + limit);
@@ -141,7 +141,7 @@ for (const tool of selectedTools) {
 
 if (includeCategories) {
   for (const cat of categories) {
-    const catRoute = `/categories/${cat.slug}`;
+    const catRoute = `/category/${cat.slug}`;
     const categoryTools = tools.filter((t) => categorySlugFor(t) === cat.slug);
     const schema = JSON.stringify({ '@context': 'https://schema.org', '@type': 'CollectionPage', name: `${cat.name} tools`, url: `${siteUrl}${catRoute}` });
     write(routeToFile(catRoute), render(templates.category, {

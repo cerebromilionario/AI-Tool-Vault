@@ -10,25 +10,26 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{canonicalUrl}}">
   <link rel="canonical" href="{{canonicalUrl}}">
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="/public/css/styles.css">
   <script type="application/ld+json">{{schema}}</script>
 </head>
 <body>
 {{header}}
-<main class="container">
+<main class="container px-4 sm:px-6 lg:px-8">
   <section class="hero">
     <p class="eyebrow">Category Directory</p>
     <h1>{{heading}}</h1>
-    <p>{{description}}</p>
-    <div class="toolbar">
-      <input id="search" type="search" placeholder="Live search tools" aria-label="Search tools">
-      <select id="categoryFilter" aria-label="Filter by category"><option value="">All categories</option>{{filterOptions}}</select>
+    <p class="max-w-3xl">{{description}}</p>
+    <div class="toolbar flex flex-col gap-3 sm:flex-row">
+      <input id="search" class="w-full sm:flex-1" type="search" placeholder="Live search tools" aria-label="Search tools">
+      <select id="categoryFilter" class="w-full sm:w-64" aria-label="Filter by category"><option value="">All categories</option>{{filterOptions}}</select>
     </div>
     <p id="resultCount" class="result-count" aria-live="polite"></p>
   </section>
 
   <section class="content-section">
-    <div class="grid" id="toolGrid">{{tools}}</div>
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3" id="toolGrid">{{tools}}</div>
   </section>
 </main>
 {{footer}}

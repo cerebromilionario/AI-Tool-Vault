@@ -22,7 +22,7 @@ Routes are generated in extensionless format:
 - `/tools/{tool}`
 - `/alternatives/{tool}`
 - `/compare/{tool}-vs-{tool}`
-- `/categories/{category}`
+- `/category/{category}`
 
 Generated files are written to `pages/` as `index.html` files and tracked in `data/generated-pages.json`.
 
