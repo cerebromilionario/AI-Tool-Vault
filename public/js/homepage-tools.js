@@ -15,6 +15,9 @@ const toolLink = (slug = '') => withBasePath(`/tools/${slug}.html`);
 const categoryLink = (slug) => withBasePath(`/category/${slug}.html`);
 
 let allToolsData = [];
+let categorySlugLookup = {};
+
+const getToolCategorySlug = (category = '') => categorySlugLookup[category] || categoryToSlug(category);
 
 const createToolCard = (tool) => {
   const safeName = tool.name || 'AI Tool';
@@ -28,7 +31,7 @@ const createToolCard = (tool) => {
     .join('');
 
   return `
-    <a class="block rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition hover:shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-400" href="${toolLink(tool.slug)}" aria-label="View details for ${safeName}" data-name="${safeName.toLowerCase()}" data-category="${categoryToSlug(safeCategory)}" data-description="${safeDescription.toLowerCase()}">
+    <a class="block rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition hover:shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-400" href="${toolLink(tool.slug)}" aria-label="View details for ${safeName}" data-name="${safeName.toLowerCase()}" data-category="${getToolCategorySlug(safeCategory)}" data-description="${safeDescription.toLowerCase()}">
       <div class="mb-4 flex items-center gap-3">
         <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-slate-100 text-sm font-semibold text-slate-700" aria-hidden="true">${initials}</div>
         <span class="inline-flex rounded-full bg-indigo-100 px-3 py-1 text-xs font-medium text-indigo-700">${safeCategory}</span>
@@ -59,7 +62,7 @@ const renderFilteredTools = () => {
   const category = filter?.value || '';
 
   const filtered = allToolsData.filter((tool) => {
-    const normalizedCategory = categoryToSlug(tool.category || '');
+    const normalizedCategory = getToolCategorySlug(tool.category || '');
     const haystack = `${(tool.name || '').toLowerCase()} ${(tool.description || '').toLowerCase()} ${normalizedCategory}`;
     const matchesQuery = !query || haystack.includes(query);
     const matchesCategory = !category || normalizedCategory === category;
@@ -82,6 +85,35 @@ const setFallbackMessage = (message) => {
   if (resultCount) resultCount.textContent = message;
 };
 
+const renderCategoryFilterOptions = (categories = []) => {
+  const filter = document.getElementById('categoryFilter');
+  if (!filter || !Array.isArray(categories)) return;
+
+  const selected = filter.value || '';
+  const options = ['<option value="">All categories</option>']
+    .concat(categories.map((category) => `<option value="${category.slug}">${category.name}</option>`));
+
+  filter.innerHTML = options.join('');
+  filter.value = categories.some((category) => category.slug === selected) ? selected : '';
+};
+
+
+const fetchJsonWithFallback = async (paths = []) => {
+  let lastError = null;
+
+  for (const path of paths) {
+    try {
+      const response = await fetch(path);
+      if (!response.ok) throw new Error(`Failed to fetch ${path} (${response.status}).`);
+      return await response.json();
+    } catch (error) {
+      lastError = error;
+    }
+  }
+
+  throw lastError || new Error('Unable to fetch JSON data.');
+};
+
 const renderTools = async () => {
   const trendingTarget = document.getElementById('trending-tools');
   const newTarget = document.getElementById('new-tools');
@@ -91,20 +123,31 @@ const renderTools = async () => {
   if (!trendingTarget || !newTarget || !allTarget || !categoriesTarget) return;
 
   try {
-    const [toolsResponse, categoriesResponse] = await Promise.all([
-      fetch(withBasePath('/data/tools.json')),
-      fetch(withBasePath('/data/categories.json'))
+    const [tools, categories] = await Promise.all([
+      fetchJsonWithFallback([
+        withBasePath('/data/tools.json'),
+        '/data/tools.json',
+        './data/tools.json',
+        '../data/tools.json'
+      ]),
+      fetchJsonWithFallback([
+        withBasePath('/data/categories.json'),
+        '/data/categories.json',
+        './data/categories.json',
+        '../data/categories.json'
+      ])
     ]);
-    if (!toolsResponse.ok || !categoriesResponse.ok) {
-      throw new Error('Failed to fetch homepage data.');
-    }
-
-    const tools = await toolsResponse.json();
-    const categories = await categoriesResponse.json();
 
     if (!Array.isArray(tools) || !Array.isArray(categories)) {
       throw new Error('Invalid homepage data format.');
     }
+
+    categorySlugLookup = categories.reduce((lookup, category) => {
+      if (category?.name && category?.slug) lookup[category.name] = category.slug;
+      return lookup;
+    }, {});
+
+    renderCategoryFilterOptions(categories);
     allToolsData = tools;
 
     const trendingTools = tools.slice(0, 6);
@@ -115,19 +158,22 @@ const renderTools = async () => {
     categoriesTarget.innerHTML = categories.map(createCategoryCard).join('');
 
     renderFilteredTools();
-
-    document.getElementById('search')?.addEventListener('input', renderFilteredTools);
-    document.getElementById('categoryFilter')?.addEventListener('change', renderFilteredTools);
-    document.getElementById('toolSearchForm')?.addEventListener('submit', (event) => {
-      event.preventDefault();
-      renderFilteredTools();
-    });
   } catch (error) {
     console.error(error);
     setFallbackMessage('Unable to load homepage data right now. Please try again soon.');
   }
 };
 
+const setupFilteringListeners = () => {
+  document.getElementById('search')?.addEventListener('input', renderFilteredTools);
+  document.getElementById('categoryFilter')?.addEventListener('change', renderFilteredTools);
+  document.getElementById('toolSearchForm')?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    renderFilteredTools();
+  });
+};
+
 document.addEventListener("DOMContentLoaded", function() {
+  setupFilteringListeners();
   renderTools();
 });
