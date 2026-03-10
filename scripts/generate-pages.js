@@ -11,7 +11,21 @@ const write = (p, c) => {
 const render = (tpl, data) => tpl.replace(/\{\{(\w+)\}\}/g, (_, k) => data[k] ?? '');
 const titleCaseCategory = (slug) => slug.replace(/-/g, ' ').replace(/\b\w/g, (m) => m.toUpperCase());
 const slugifyCategoryName = (name) => name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-const logoFor = (tool) => tool.logo || '/images/logos/default-tool.webp';
+const logoFor = (tool) => tool.logo || "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96'%3E%3Crect width='100%25' height='100%25' rx='14' fill='%23e2e8f0'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%230f172a' font-family='Arial,sans-serif' font-size='28' font-weight='700'%3EAI%3C/text%3E%3C/svg%3E";
+const fullDescriptionFor = (tool) => tool.fullDescription || tool.full_description || tool.long_description || tool.description;
+const logoMarkupFor = (tool) => {
+  const logo = tool.logo;
+  if (logo) {
+    return `<img loading="lazy" src="${logo}" alt="${tool.name} logo" width="96" height="96" class="tool-logo">`;
+  }
+  const initials = tool.name
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0].toUpperCase())
+    .join('');
+  return `<div class="tool-logo-placeholder" aria-label="${tool.name} logo placeholder">${initials || 'AI'}</div>`;
+};
 const routeToFile = (route) => (route === '/' ? 'index.html' : `pages${route}/index.html`);
 const normalizeRoute = (url) => {
   if (url === '/index.html') return '/';
@@ -70,7 +84,7 @@ const freshPageUrls = ['/', '/about', '/contact'];
 
 for (const tool of selectedTools) {
   const currentCategorySlug = categorySlugFor(tool);
-  const related = tools.filter((t) => categorySlugFor(t) === currentCategorySlug && t.slug !== tool.slug).slice(0, 4);
+  const related = tools.filter((t) => categorySlugFor(t) === currentCategorySlug && t.slug !== tool.slug).slice(0, 3);
   const alternatives = tools.filter((t) => categorySlugFor(t) !== currentCategorySlug && t.slug !== tool.slug).slice(0, 4);
   const schema = JSON.stringify({
     '@context': 'https://schema.org',
@@ -83,16 +97,16 @@ for (const tool of selectedTools) {
 
   const toolRoute = `/tools/${tool.slug}`;
   write(routeToFile(toolRoute), render(templates.tool, {
-    title: `${tool.name} Review, Features & Pricing (2026) | AI Tool Vault`,
-    metaDescription: `Explore ${tool.name}, pricing, key features, and alternatives for ${tool.category}.`,
+    title: `${tool.name} AI Tool`,
+    metaDescription: fullDescriptionFor(tool),
     canonicalUrl: `${siteUrl}${toolRoute}`,
     schema,
     header,
     footer,
     toolName: tool.name,
-    description: tool.description,
+    description: fullDescriptionFor(tool),
     officialUrl: websiteFor(tool),
-    logo: logoFor(tool),
+    logo: logoMarkupFor(tool),
     features: tool.features.map((f) => `<li>${f}</li>`).join(''),
     pricing: tool.pricing,
     slug: tool.slug,
