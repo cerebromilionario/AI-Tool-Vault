@@ -115,6 +115,7 @@ section.content-section {
 
 .tool-hero-header { display: flex; gap: 1rem; align-items: flex-start; flex-wrap: wrap; }
 .tool-logo { width: 88px; height: 88px; object-fit: contain; border-radius: 1rem; border: 1px solid rgba(148, 163, 184, .5); background: #fff; }
+.tool-logo-placeholder { width: 88px; height: 88px; border-radius: 1rem; border: 1px solid rgba(148, 163, 184, .5); background: #e2e8f0; color: #0f172a; display: inline-flex; align-items: center; justify-content: center; font-weight: 800; letter-spacing: .04em; }
 .tool-meta { margin-top: .4rem; }
 .tool-meta a { color: #93c5fd; }
 .result-count { margin: .75rem 0 .2rem; font-weight: 600; }

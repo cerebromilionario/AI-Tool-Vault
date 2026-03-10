@@ -18,7 +18,7 @@
   <main class="container">
     <section class="hero">
       <div class="tool-hero-header">
-        <img loading="lazy" src="{{logo}}" alt="{{toolName}} logo" width="96" height="96" class="tool-logo">
+        {{logo}}
         <div>
           <p class="eyebrow">AI Tool Profile</p>
           <h1>{{toolName}}</h1>
@@ -30,6 +30,12 @@
         <a class="btn" href="{{officialUrl}}" target="_blank" rel="noopener sponsored nofollow">Visit Official Website</a>
         <a class="btn btn-secondary" href="/alternatives/{{slug}}">View Alternatives</a>
       </div>
+    </section>
+
+
+    <section class="content-section">
+      <h2>Full Description</h2>
+      <p>{{description}}</p>
     </section>
 
     <section class="content-section">
