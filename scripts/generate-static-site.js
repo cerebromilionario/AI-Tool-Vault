@@ -193,6 +193,7 @@ const homeHtml = pageShell({
       <h1>Find the Best AI Tools for Every Workflow</h1>
       <p>Explore a modern AI tools directory with curated categories, rich tool cards, and SEO-friendly static pages.</p>
       <div class="hero-search">
+        <input type="text" id="searchInput" placeholder="Search AI tools..." aria-label="Search AI tools">
         <a class="btn" href="/categories/index.html">Browse categories</a>
       </div>
     </section>
@@ -209,10 +210,14 @@ const homeHtml = pageShell({
 
     <section class="content-section">
       <div class="section-heading"><h2>All Tools</h2></div>
+      <p id="searchStatus" class="text-gray-600 mb-4">Showing all tools</p>
       <div id="tools-grid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         ${homeCards}
       </div>
+      <p id="noResultsMessage" class="text-gray-600 mt-4" hidden>No tools found for your search.</p>
     </section>
+
+    <script src="/public/js/search.js" defer></script>
   `
 });
 
