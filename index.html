@@ -11,6 +11,7 @@
   <meta property="og:url" content="https://aitoolvault.example.com/">
   <link rel="canonical" href="https://aitoolvault.example.com/">
   <link rel="stylesheet" href="/public/css/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"AI Tool Vault","url":"https://aitoolvault.example.com/","potentialAction":{"@type":"SearchAction","target":"https://aitoolvault.example.com/category/writing-ai?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
 </head>
 <body>
@@ -48,65 +49,29 @@
     </section>
 
     <section class="content-section">
-      <div class="section-heading">
-        <h2>Featured Tools</h2>
-        <a href="/category/writing-ai">View all tools →</a>
-      </div>
-      <div class="grid">
-        <article class="card" data-name="chatgpt" data-category="writing-ai" data-description="Conversational AI for writing and productivity">
-          <img loading="lazy" class="card-logo" src="/images/logos/chatgpt.webp" alt="ChatGPT logo" width="64" height="64">
-          <span class="category-badge">Writing AI</span>
-          <h3><a href="/tools/chatgpt">ChatGPT</a></h3>
-          <p>Powerful conversational AI assistant for writing, ideation, coding, and team productivity.</p>
-          <div class="card-actions"><a class="btn" href="https://chatgpt.com" target="_blank" rel="noopener sponsored nofollow">Visit</a></div>
-        </article>
-        <article class="card" data-name="midjourney" data-category="image-ai" data-description="AI image generation">
-          <img loading="lazy" class="card-logo" src="/images/logos/midjourney.webp" alt="Midjourney logo" width="64" height="64">
-          <span class="category-badge">Image AI</span>
-          <h3><a href="/tools/midjourney">Midjourney</a></h3>
-          <p>Generate production-ready visual concepts, illustrations, and campaign assets in minutes.</p>
-          <div class="card-actions"><a class="btn" href="https://midjourney.com" target="_blank" rel="noopener sponsored nofollow">Visit</a></div>
-        </article>
-        <article class="card" data-name="github copilot" data-category="coding-ai" data-description="AI coding assistant">
-          <img loading="lazy" class="card-logo" src="/images/logos/github-copilot.webp" alt="GitHub Copilot logo" width="64" height="64">
-          <span class="category-badge">Coding AI</span>
-          <h3><a href="/tools/github-copilot">GitHub Copilot</a></h3>
-          <p>Speed up engineering workflows with AI-assisted code completion and context-aware suggestions.</p>
-          <div class="card-actions"><a class="btn" href="https://github.com/features/copilot" target="_blank" rel="noopener sponsored nofollow">Visit</a></div>
-        </article>
-        <article class="card" data-name="synthesia" data-category="video-ai" data-description="AI video creation platform">
-          <img loading="lazy" class="card-logo" src="/images/logos/synthesia.webp" alt="Synthesia logo" width="64" height="64">
-          <span class="category-badge">Video AI</span>
-          <h3><a href="/tools/synthesia">Synthesia</a></h3>
-          <p>Create branded AI avatar videos for onboarding, sales, and support without studio production.</p>
-          <div class="card-actions"><a class="btn" href="https://www.synthesia.io" target="_blank" rel="noopener sponsored nofollow">Visit</a></div>
-        </article>
-      </div>
+      <div class="section-heading"><h2>Trending AI Tools</h2></div>
+      <div id="trendingTools" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
     </section>
 
     <section class="content-section">
-      <div class="section-heading"><h2>Categories</h2></div>
-      <div class="category-grid">
-        <a class="category-card" href="/category/writing-ai"><h3>Writing AI</h3><p>Content generation, editing, summarization, and SEO writing.</p></a>
-        <a class="category-card" href="/category/coding-ai"><h3>Coding AI</h3><p>Code assistants, debugging, test generation, and development copilots.</p></a>
-        <a class="category-card" href="/category/image-ai"><h3>Image AI</h3><p>Image generation, visual design, and creative enhancement tools.</p></a>
-        <a class="category-card" href="/category/video-ai"><h3>Video AI</h3><p>Video editing, avatar generation, and content repurposing workflows.</p></a>
-      </div>
+      <div class="section-heading"><h2>New AI Tools</h2></div>
+      <div id="newTools" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
     </section>
 
     <section class="content-section">
-      <div class="section-heading"><h2>Latest AI Tools</h2><a href="/category/productivity-ai">See latest additions →</a></div>
-      <div class="grid">
-        <article class="card"><img loading="lazy" class="card-logo" src="/images/logos/perplexity-ai.webp" alt="Perplexity AI logo" width="64" height="64"><span class="category-badge">Productivity AI</span><h3><a href="/tools/perplexity-ai">Perplexity AI</a></h3><p>Research assistant with answer-focused discovery and citation-based browsing.</p><div class="card-actions"><a class="btn" href="https://perplexity-ai.com" target="_blank" rel="noopener sponsored nofollow">Visit</a></div></article>
-        <article class="card"><img loading="lazy" class="card-logo" src="/images/logos/leonardo-ai.webp" alt="Leonardo AI logo" width="64" height="64"><span class="category-badge">Image AI</span><h3><a href="/tools/leonardo-ai">Leonardo AI</a></h3><p>Design-focused image generation platform for game assets, branding, and ideation.</p><div class="card-actions"><a class="btn" href="https://leonardo-ai.com" target="_blank" rel="noopener sponsored nofollow">Visit</a></div></article>
-        <article class="card"><img loading="lazy" class="card-logo" src="/images/logos/jasper-ai.webp" alt="Jasper AI logo" width="64" height="64"><span class="category-badge">Marketing AI</span><h3><a href="/tools/jasper-ai">Jasper AI</a></h3><p>Marketing copy platform for campaigns, landing pages, and brand-consistent assets.</p><div class="card-actions"><a class="btn" href="https://jasper-ai.com" target="_blank" rel="noopener sponsored nofollow">Visit</a></div></article>
-        <article class="card"><img loading="lazy" class="card-logo" src="/images/logos/elevenlabs.webp" alt="ElevenLabs logo" width="64" height="64"><span class="category-badge">Audio AI</span><h3><a href="/tools/elevenlabs">ElevenLabs</a></h3><p>High-quality AI voice synthesis for narrations, localization, and creator workflows.</p><div class="card-actions"><a class="btn" href="https://elevenlabs.com" target="_blank" rel="noopener sponsored nofollow">Visit</a></div></article>
-      </div>
+      <div class="section-heading"><h2>Popular Categories</h2></div>
+      <div id="popularCategories" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4"></div>
+    </section>
+
+    <section class="content-section">
+      <div class="section-heading"><h2>All AI Tools</h2></div>
+      <div id="allTools" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
       <p id="resultCount" class="result-count" aria-live="polite"></p>
     </section>
   </main>
 
   <footer><div class="container">© AI Tool Vault</div></footer>
   <script src="/public/js/search.js" defer></script>
+  <script src="/public/js/homepage-tools.js" defer></script>
 </body>
 </html>
