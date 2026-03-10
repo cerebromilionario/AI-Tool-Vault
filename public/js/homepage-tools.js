@@ -16,6 +16,7 @@ const categoryLink = (slug) => withBasePath(`/category/${slug}.html`);
 
 let allToolsData = [];
 let categorySlugLookup = {};
+let controlsBound = false;
 
 const getToolCategorySlug = (category = '') => categorySlugLookup[category] || categoryToSlug(category);
 
@@ -105,6 +106,8 @@ const renderTools = async () => {
 
   if (!trendingTarget || !newTarget || !allTarget || !categoriesTarget) return;
 
+  bindSearchControls();
+
   try {
     const [toolsResponse, categoriesResponse] = await Promise.all([
       fetch(withBasePath('/data/tools.json')),
@@ -137,17 +140,31 @@ const renderTools = async () => {
     categoriesTarget.innerHTML = categories.map(createCategoryCard).join('');
 
     renderFilteredTools();
-
-    document.getElementById('search')?.addEventListener('input', renderFilteredTools);
-    document.getElementById('categoryFilter')?.addEventListener('change', renderFilteredTools);
-    document.getElementById('toolSearchForm')?.addEventListener('submit', (event) => {
-      event.preventDefault();
-      renderFilteredTools();
-    });
   } catch (error) {
     console.error(error);
     setFallbackMessage('Unable to load homepage data right now. Please try again soon.');
   }
+};
+
+const bindSearchControls = () => {
+  if (controlsBound) return;
+
+  const search = document.getElementById('search');
+  const filter = document.getElementById('categoryFilter');
+  const form = document.getElementById('toolSearchForm');
+  const params = new URLSearchParams(window.location.search);
+
+  if (search && params.get('q')) search.value = params.get('q');
+  if (filter && params.get('category')) filter.value = params.get('category');
+
+  search?.addEventListener('input', () => renderFilteredTools());
+  filter?.addEventListener('change', () => renderFilteredTools());
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    renderFilteredTools();
+  });
+
+  controlsBound = true;
 };
 
 document.addEventListener("DOMContentLoaded", function() {
