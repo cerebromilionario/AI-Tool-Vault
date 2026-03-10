@@ -1,6 +1,6 @@
 const categoryToSlug = (category = '') => category.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
-const toolLink = (slug = '') => `/pages/alternatives/${slug}/index.html`;
+const toolLink = (slug = '') => `/pages/alternatives/${slug}.html`;
 const categoryLink = (slug) => `/category/${slug}.html`;
 
 let allToolsData = [];
@@ -17,15 +17,15 @@ const createToolCard = (tool) => {
     .join('');
 
   return `
-    <article class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition hover:shadow-md" data-name="${safeName.toLowerCase()}" data-category="${categoryToSlug(safeCategory)}" data-description="${safeDescription.toLowerCase()}">
+    <a class="block rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition hover:shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-400" href="${toolLink(tool.slug)}" aria-label="View alternatives for ${safeName}" data-name="${safeName.toLowerCase()}" data-category="${categoryToSlug(safeCategory)}" data-description="${safeDescription.toLowerCase()}">
       <div class="mb-4 flex items-center gap-3">
         <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-slate-100 text-sm font-semibold text-slate-700" aria-hidden="true">${initials}</div>
         <span class="inline-flex rounded-full bg-indigo-100 px-3 py-1 text-xs font-medium text-indigo-700">${safeCategory}</span>
       </div>
       <h3 class="mb-2 text-lg font-semibold text-slate-900">${safeName}</h3>
       <p class="mb-4 text-sm leading-6 text-slate-600">${safeDescription}</p>
-      <a class="inline-flex items-center text-sm font-semibold text-indigo-600 hover:text-indigo-800" href="${toolLink(tool.slug)}">View alternatives page →</a>
-    </article>
+      <span class="inline-flex items-center text-sm font-semibold text-indigo-600 hover:text-indigo-800">View alternatives page →</span>
+    </a>
   `;
 };
 
