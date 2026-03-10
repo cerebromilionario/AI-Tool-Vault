@@ -1,37 +1,11 @@
 [
-  {
-    "slug": "writing-ai",
-    "name": "Writing Ai",
-    "description": "Discover top writing AI tools."
-  },
-  {
-    "slug": "image-ai",
-    "name": "Image Ai",
-    "description": "Discover top image AI tools."
-  },
-  {
-    "slug": "video-ai",
-    "name": "Video Ai",
-    "description": "Discover top video AI tools."
-  },
-  {
-    "slug": "audio-ai",
-    "name": "Audio Ai",
-    "description": "Discover top audio AI tools."
-  },
-  {
-    "slug": "coding-ai",
-    "name": "Coding Ai",
-    "description": "Discover top coding AI tools."
-  },
-  {
-    "slug": "productivity-ai",
-    "name": "Productivity Ai",
-    "description": "Discover top productivity AI tools."
-  },
-  {
-    "slug": "marketing-ai",
-    "name": "Marketing Ai",
-    "description": "Discover top marketing AI tools."
-  }
+  { "slug": "writing-ai", "name": "AI Writing", "description": "Discover AI writing tools for drafting, editing, and content optimization." },
+  { "slug": "image-ai", "name": "Image Generation", "description": "Explore AI image generators for art, design assets, and concept visuals." },
+  { "slug": "video-ai", "name": "Video Creation", "description": "Find AI video tools for avatars, editing, clips, and production workflows." },
+  { "slug": "marketing-ai", "name": "Marketing", "description": "Browse AI marketing tools for SEO, campaigns, and conversion optimization." },
+  { "slug": "productivity-ai", "name": "Productivity", "description": "Discover AI productivity tools for notes, scheduling, and team collaboration." },
+  { "slug": "automation-ai", "name": "Automation", "description": "Compare AI automation tools for no-code workflows and process orchestration." },
+  { "slug": "coding-ai", "name": "Coding", "description": "Evaluate AI coding assistants for generation, review, and debugging." },
+  { "slug": "voice-ai", "name": "Voice AI", "description": "Explore AI voice platforms for text-to-speech, transcription, and cloning." },
+  { "slug": "research-ai", "name": "Research", "description": "Find AI research tools for literature discovery, synthesis, and citations." }
 ]

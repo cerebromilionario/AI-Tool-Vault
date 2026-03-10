@@ -10,6 +10,7 @@ const write = (p, c) => {
 };
 const render = (tpl, data) => tpl.replace(/\{\{(\w+)\}\}/g, (_, k) => data[k] ?? '');
 const titleCaseCategory = (slug) => slug.replace(/-/g, ' ').replace(/\b\w/g, (m) => m.toUpperCase());
+const slugifyCategoryName = (name) => name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 const logoFor = (tool) => tool.logo || '/images/logos/default-tool.webp';
 const routeToFile = (route) => (route === '/' ? 'index.html' : `pages${route}/index.html`);
 const normalizeRoute = (url) => {
@@ -25,7 +26,7 @@ const cardFor = (tool, secondaryLink) => `
   <h3><a href="/tools/${tool.slug}">${tool.name}</a></h3>
   <p>${tool.description}</p>
   <div class="card-actions">
-    <a class="btn" href="${tool.official_url}" target="_blank" rel="noopener sponsored nofollow">Visit</a>
+    <a class="btn" href="${websiteFor(tool)}" target="_blank" rel="noopener sponsored nofollow">Visit</a>
     ${secondaryLink}
   </div>
 </article>`;
@@ -51,6 +52,16 @@ const templates = {
   best: read('templates/best.html')
 };
 
+const categoryMap = new Map();
+for (const cat of categories) {
+  categoryMap.set(cat.slug, cat.slug);
+  categoryMap.set(cat.name, cat.slug);
+  categoryMap.set(slugifyCategoryName(cat.name), cat.slug);
+}
+const categorySlugFor = (tool) => categoryMap.get(tool.category) || categoryMap.get(slugifyCategoryName(tool.category)) || tool.category;
+const categoryLabelFor = (tool) => categories.find((c) => c.slug === categorySlugFor(tool))?.name || titleCaseCategory(tool.category);
+const websiteFor = (tool) => tool.website || tool.official_url || '#';
+
 const header = `<header><div class="container nav"><a class="brand" href="/">AI Tool Vault</a><nav class="menu" aria-label="Main navigation"><a href="/categories/writing-ai">Categories</a><a href="/best/best-free-ai-tools">Best Of</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>`;
 const footer = `<footer><div class="container">© ${new Date().getFullYear()} AI Tool Vault</div></footer>`;
 
@@ -58,13 +69,14 @@ const selectedTools = tools.slice(offset, offset + limit);
 const freshPageUrls = ['/', '/about', '/contact'];
 
 for (const tool of selectedTools) {
-  const related = tools.filter((t) => t.category === tool.category && t.slug !== tool.slug).slice(0, 4);
-  const alternatives = tools.filter((t) => t.category !== tool.category && t.slug !== tool.slug).slice(0, 4);
+  const currentCategorySlug = categorySlugFor(tool);
+  const related = tools.filter((t) => categorySlugFor(t) === currentCategorySlug && t.slug !== tool.slug).slice(0, 4);
+  const alternatives = tools.filter((t) => categorySlugFor(t) !== currentCategorySlug && t.slug !== tool.slug).slice(0, 4);
   const schema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
     name: tool.name,
-    applicationCategory: tool.category,
+    applicationCategory: categoryLabelFor(tool),
     offers: { '@type': 'Offer', price: tool.pricing },
     url: `${siteUrl}/tools/${tool.slug}`
   });
@@ -79,13 +91,13 @@ for (const tool of selectedTools) {
     footer,
     toolName: tool.name,
     description: tool.description,
-    officialUrl: tool.official_url,
+    officialUrl: websiteFor(tool),
     logo: logoFor(tool),
     features: tool.features.map((f) => `<li>${f}</li>`).join(''),
     pricing: tool.pricing,
     slug: tool.slug,
-    category: tool.category,
-    categoryLabel: titleCaseCategory(tool.category),
+    category: categorySlugFor(tool),
+    categoryLabel: categoryLabelFor(tool),
     relatedTools: related.map((r) => cardFor(r, `<a class="btn btn-secondary" href="/compare/${tool.slug}-vs-${r.slug}">Compare</a>`)).join(''),
     alternatives: alternatives.map((a) => cardFor(a, `<a class="btn btn-secondary" href="/alternatives/${tool.slug}">All alternatives</a>`)).join('')
   }));
@@ -116,7 +128,7 @@ for (const tool of selectedTools) {
 if (includeCategories) {
   for (const cat of categories) {
     const catRoute = `/categories/${cat.slug}`;
-    const categoryTools = tools.filter((t) => t.category === cat.slug);
+    const categoryTools = tools.filter((t) => categorySlugFor(t) === cat.slug);
     const schema = JSON.stringify({ '@context': 'https://schema.org', '@type': 'CollectionPage', name: `${cat.name} tools`, url: `${siteUrl}${catRoute}` });
     write(routeToFile(catRoute), render(templates.category, {
       title: `${cat.name} Tools Directory (2026) | AI Tool Vault`,
@@ -150,7 +162,7 @@ for (let localIndex = 0; localIndex < selectedTools.length; localIndex += 1) {
       header,
       footer,
       heading: `${a.name} vs ${b.name}`,
-      summary: `${a.name} and ${b.name} are popular choices for ${a.category.replace('-ai', '')} workflows.`,
+      summary: `${a.name} and ${b.name} are popular choices for ${categoryLabelFor(a).toLowerCase()} workflows.`,
       toolA: a.name,
       toolB: b.name,
       slugA: a.slug,
@@ -177,7 +189,7 @@ if (includeBest) {
 
   for (const [slug, heading, cat] of bestPages) {
     const bestRoute = `/best/${slug}`;
-    const picks = tools.filter((t) => t.category === cat).slice(0, 18);
+    const picks = tools.filter((t) => categorySlugFor(t) === cat).slice(0, 18);
     const schema = JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'ItemList',
