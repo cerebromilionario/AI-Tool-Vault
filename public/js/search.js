@@ -1,5 +1,5 @@
 (() => {
-  if (document.getElementById('trendingTools') && document.getElementById('newTools')) return;
+  if ((document.getElementById('trendingTools') && document.getElementById('newTools')) || (document.getElementById('trending-tools') && document.getElementById('new-tools'))) return;
 
   const search = document.getElementById('search');
   const filter = document.getElementById('categoryFilter');
