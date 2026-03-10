@@ -1,7 +1,18 @@
 const categoryToSlug = (category = '') => category.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
-const toolLink = (slug = '') => `/tools/${slug}.html`;
-const categoryLink = (slug) => `/category/${slug}.html`;
+const getBasePath = () => {
+  const { pathname } = window.location;
+  if (!pathname || pathname === '/') return '';
+  if (pathname.endsWith('/')) return pathname.replace(/\/$/, '');
+  const segments = pathname.split('/').filter(Boolean);
+  segments.pop();
+  return segments.length ? `/${segments.join('/')}` : '';
+};
+
+const withBasePath = (path) => `${getBasePath()}${path}`;
+
+const toolLink = (slug = '') => withBasePath(`/tools/${slug}.html`);
+const categoryLink = (slug) => withBasePath(`/category/${slug}.html`);
 
 let allToolsData = [];
 
@@ -81,8 +92,8 @@ const renderTools = async () => {
 
   try {
     const [toolsResponse, categoriesResponse] = await Promise.all([
-      fetch('./data/tools.json'),
-      fetch('./data/categories.json')
+      fetch(withBasePath('/data/tools.json')),
+      fetch(withBasePath('/data/categories.json'))
     ]);
     if (!toolsResponse.ok || !categoriesResponse.ok) {
       throw new Error('Failed to fetch homepage data.');
