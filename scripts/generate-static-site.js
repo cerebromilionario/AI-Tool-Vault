@@ -40,6 +40,11 @@ const byCategory = toolsWithCategory.reduce((acc, tool) => {
 
 const baseStyles = '<link rel="stylesheet" href="/public/css/styles.css">';
 
+const buildCategoryIntro = (categoryName, toolsInCategory) => {
+  const featured = toolsInCategory.slice(0, 4).map((tool) => tool.name).join(', ');
+  return `${categoryName} tools help teams move faster by automating repetitive work, improving quality, and unlocking more creative output. In this curated category page, you can discover platforms that match different budgets, skill levels, and workflow needs. Whether you are a solo creator, startup team, or enterprise department, the right ${categoryName.toLowerCase()} solution can reduce manual effort and make results more consistent. We update this section to highlight trusted options with clear use cases, practical feature sets, and reliable product momentum. You can compare popular tools like ${featured} and explore each profile to evaluate pricing, integrations, learning curve, and best-fit scenarios. Every link below points to a dedicated tool page so you can move from discovery to detailed evaluation without leaving the site architecture. Use this hub as your starting point to shortlist tools, validate options with internal comparisons, and quickly navigate to detailed pages for deeper research before choosing the platform that best supports your goals in 2026.`;
+};
+
 const pageShell = ({ title, description, body }) => `<!doctype html>
 <html lang="en">
 <head>
@@ -135,20 +140,21 @@ fs.writeFileSync(path.join(root, 'categories', 'index.html'), categoriesIndexHtm
 
 for (const [slug, catTools] of Object.entries(byCategory)) {
   const categoryName = catTools[0].categoryName;
+  const intro = buildCategoryIntro(categoryName, catTools);
   const list = catTools
-    .map((tool) => `<a href="/tools/${escapeHtml(tool.slug)}.html" class="tool-card"><h3>${escapeHtml(tool.name)}</h3><p>${escapeHtml(tool.description || '')}</p></a>`)
+    .map((tool) => `<a href="/tools/${escapeHtml(tool.slug)}.html">${escapeHtml(tool.name)}</a>`)
     .join('');
 
   const html = pageShell({
-    title: `${categoryName} AI Tools - ${siteName}`,
-    description: `Explore ${categoryName} tools, features and pricing.`,
+    title: `Best ${categoryName} Tools (2026) | ${siteName}`,
+    description: `Browse the best ${categoryName.toLowerCase()} tools in 2026 with direct links to each tool page.`,
     body: {
       canonicalPath: `/categories/${slug}.html`,
       html: `
         <section class="content-section">
-          <h1>${escapeHtml(categoryName)}</h1>
-          <p>Browse all ${escapeHtml(categoryName)} tools.</p>
-          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">${list}</div>
+          <h1>Best ${escapeHtml(categoryName)} Tools (2026)</h1>
+          <p>${escapeHtml(intro)}</p>
+          <div class="tool-grid">${list}</div>
         </section>
       `
     }
@@ -171,6 +177,16 @@ const homeHtml = pageShell({
         <h1>AI Tool Vault</h1>
         <p>Explore AI tools with fully static pages optimized for SEO.</p>
         <p><a href="/categories/index.html">Browse categories</a></p>
+      </section>
+
+      <section class="content-section">
+        <h2>Browse by Category</h2>
+        <div class="tool-grid">
+          ${Object.entries(byCategory)
+            .sort((a, b) => a[1][0].categoryName.localeCompare(b[1][0].categoryName))
+            .map(([slug, catTools]) => `<a href="/categories/${escapeHtml(slug)}.html">${escapeHtml(catTools[0].categoryName)}</a>`)
+            .join('')}
+        </div>
       </section>
 
       <section class="content-section">
