@@ -9,9 +9,7 @@
   <meta property="og:description" content="{{metaDescription}}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{canonicalUrl}}">
-  <meta name="google-adsense-account" content="ca-pub-4613426749830025">
   <link rel="canonical" href="{{canonicalUrl}}">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4613426749830025" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="/public/css/styles.css">
   <script type="application/ld+json">{{schema}}</script>
 </head>
@@ -22,28 +20,32 @@
       <div class="tool-hero-header">
         <img loading="lazy" src="{{logo}}" alt="{{toolName}} logo" width="96" height="96" class="tool-logo">
         <div>
+          <p class="eyebrow">AI Tool Profile</p>
           <h1>{{toolName}}</h1>
           <p>{{description}}</p>
-          <p class="tool-meta">Category: <a href="/categories/{{category}}">{{categoryLabel}}</a> · Pricing: {{pricing}}</p>
+          <p class="tool-meta">Category: <a href="/categories/{{category}}">{{categoryLabel}}</a> · Pricing model: {{pricing}}</p>
         </div>
       </div>
       <div class="hero-search">
         <a class="btn" href="{{officialUrl}}" target="_blank" rel="noopener sponsored nofollow">Visit Official Website</a>
-        <a class="btn" href="/alternatives/{{slug}}">View Alternatives</a>
+        <a class="btn btn-secondary" href="/alternatives/{{slug}}">View Alternatives</a>
       </div>
     </section>
-    <div class="ad ad-placeholder ad-hero">Google AdSense Placeholder (below hero)</div>
-    <section class="tool-content">
-      <h2>Key Features</h2>
+
+    <section class="content-section">
+      <h2>Features</h2>
       <ul>{{features}}</ul>
-      <p><a href="/categories/{{category}}">Browse more {{categoryLabel}} tools</a></p>
-      <p><a href="/alternatives/{{slug}}">Top alternatives to {{toolName}}</a></p>
     </section>
-    <section>
-      <h2>Related Tools</h2>
+
+    <section class="content-section">
+      <div class="section-heading"><h2>Related Tools</h2></div>
       <div class="grid">{{relatedTools}}</div>
     </section>
-    <div class="ad ad-placeholder ad-inline">Google AdSense Placeholder (inside article)</div>
+
+    <section class="content-section">
+      <div class="section-heading"><h2>Alternatives</h2></div>
+      <div class="grid">{{alternatives}}</div>
+    </section>
   </main>
   {{footer}}
 </body>
