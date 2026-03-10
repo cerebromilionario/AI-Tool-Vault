@@ -1,6 +1,6 @@
 const categoryToSlug = (category = '') => category.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
-const toolLink = (slug) => `/pages/alternatives/${slug}/index.html`;
+const toolLink = (slug = '') => `./pages/alternatives/${slug}/index.html`;
 const categoryLink = (slug) => `/category/${slug}.html`;
 
 let allToolsData = [];
@@ -59,22 +59,41 @@ const renderFilteredTools = () => {
   resultCount.textContent = `Showing ${Math.min(filtered.length, 24)} of ${filtered.length} matching tools (${allToolsData.length} total).`;
 };
 
+const setFallbackMessage = (message) => {
+  const targets = ['trendingTools', 'newTools', 'allTools', 'popularCategories'];
+  targets.forEach((id) => {
+    const section = document.getElementById(id);
+    if (!section) return;
+    section.innerHTML = `<p class="text-sm text-slate-500">${message}</p>`;
+  });
+
+  const resultCount = document.getElementById('resultCount');
+  if (resultCount) resultCount.textContent = message;
+};
+
 const renderTools = async () => {
   const trendingTarget = document.getElementById('trendingTools');
   const newTarget = document.getElementById('newTools');
   const allTarget = document.getElementById('allTools');
   const categoriesTarget = document.getElementById('popularCategories');
-  const resultCount = document.getElementById('resultCount');
 
   if (!trendingTarget || !newTarget || !allTarget || !categoriesTarget) return;
 
   try {
     const [toolsResponse, categoriesResponse] = await Promise.all([
-      fetch('/data/tools.json'),
-      fetch('/data/categories.json')
+      fetch('./data/tools.json'),
+      fetch('./data/categories.json')
     ]);
+    if (!toolsResponse.ok || !categoriesResponse.ok) {
+      throw new Error('Failed to fetch homepage data.');
+    }
+
     const tools = await toolsResponse.json();
     const categories = await categoriesResponse.json();
+
+    if (!Array.isArray(tools) || !Array.isArray(categories)) {
+      throw new Error('Invalid homepage data format.');
+    }
     allToolsData = tools;
 
     const trendingTools = tools.slice(0, 6);
@@ -88,8 +107,13 @@ const renderTools = async () => {
 
     document.getElementById('search')?.addEventListener('input', renderFilteredTools);
     document.getElementById('categoryFilter')?.addEventListener('change', renderFilteredTools);
+    document.getElementById('toolSearchForm')?.addEventListener('submit', (event) => {
+      event.preventDefault();
+      renderFilteredTools();
+    });
   } catch (error) {
-    resultCount.textContent = 'Unable to load tools at the moment.';
+    console.error(error);
+    setFallbackMessage('Unable to load homepage data right now. Please try again soon.');
   }
 };
 
