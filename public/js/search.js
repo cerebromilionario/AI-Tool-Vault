@@ -1,37 +1,49 @@
-(() => {
-  if ((document.getElementById('trendingTools') && document.getElementById('newTools')) || (document.getElementById('trending-tools') && document.getElementById('new-tools'))) return;
+document.addEventListener("DOMContentLoaded", async () => {
+  const response = await fetch("./data/tools.json");
+  const tools = await response.json();
 
-  const search = document.getElementById('search');
-  const filter = document.getElementById('categoryFilter');
-  const results = document.getElementById('resultCount');
-  const cards = Array.from(document.querySelectorAll('[data-name]'));
+  const searchInput = document.getElementById("search-input");
+  const categoryFilter = document.getElementById("category-filter");
+  const resultsContainer = document.getElementById("tools-grid");
 
-  if (!cards.length || (!search && !filter)) return;
+  function renderTools(list) {
+    resultsContainer.innerHTML = "";
 
-  const normalize = (value = '') => value.toLowerCase().trim();
-  const params = new URLSearchParams(window.location.search);
+    list.forEach((tool) => {
+      const card = document.createElement("div");
 
-  if (search && params.get('q')) search.value = params.get('q');
-  if (filter && params.get('category')) filter.value = params.get('category');
+      card.innerHTML = `
+<div class="border rounded p-4 bg-white">
+<h3 class="font-bold">${tool.name}</h3>
+<p>${tool.description}</p>
+<a href="/pages/alternatives/${tool.slug}/index.html" class="text-blue-500">View Tool</a>
+</div>
+`;
 
-  const apply = () => {
-    const q = normalize(search?.value || '');
-    const c = filter?.value || '';
-    let visible = 0;
+      resultsContainer.appendChild(card);
+    });
+  }
 
-    cards.forEach((card) => {
-      const searchable = `${normalize(card.dataset.name)} ${normalize(card.dataset.category)} ${normalize(card.dataset.description)} ${normalize(card.textContent)}`;
-      const okQuery = !q || searchable.includes(q);
-      const okCategory = !c || card.dataset.category === c;
-      const show = okQuery && okCategory;
-      card.style.display = show ? '' : 'none';
-      if (show) visible += 1;
+  renderTools(tools);
+
+  function filterTools() {
+    const search = searchInput.value.toLowerCase();
+    const category = categoryFilter.value;
+
+    const filtered = tools.filter((tool) => {
+      const matchesSearch =
+        tool.name.toLowerCase().includes(search) ||
+        tool.description.toLowerCase().includes(search);
+
+      const matchesCategory =
+        category === "all" || tool.category === category;
+
+      return matchesSearch && matchesCategory;
     });
 
-    if (results) results.textContent = `${visible} tool${visible === 1 ? '' : 's'} found`;
-  };
+    renderTools(filtered);
+  }
 
-  search?.addEventListener('input', apply);
-  filter?.addEventListener('change', apply);
-  apply();
-})();
+  searchInput.addEventListener("input", filterTools);
+  categoryFilter.addEventListener("change", filterTools);
+});
