@@ -113,6 +113,17 @@ section.content-section {
 .category-card h3 { margin: 0 0 .3rem; }
 .category-card p { margin: 0; color: var(--muted); }
 
+.tool-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: .65rem;
+}
+
+.tool-grid a {
+  display: block;
+  text-decoration: none;
+}
+
 .tool-hero-header { display: flex; gap: 1rem; align-items: flex-start; flex-wrap: wrap; }
 .tool-logo { width: 88px; height: 88px; object-fit: contain; border-radius: 1rem; border: 1px solid rgba(148, 163, 184, .5); background: #fff; }
 .tool-logo-placeholder { width: 88px; height: 88px; border-radius: 1rem; border: 1px solid rgba(148, 163, 184, .5); background: #e2e8f0; color: #0f172a; display: inline-flex; align-items: center; justify-content: center; font-weight: 800; letter-spacing: .04em; }
