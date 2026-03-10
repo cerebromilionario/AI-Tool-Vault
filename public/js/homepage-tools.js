@@ -15,6 +15,9 @@ const toolLink = (slug = '') => withBasePath(`/tools/${slug}.html`);
 const categoryLink = (slug) => withBasePath(`/category/${slug}.html`);
 
 let allToolsData = [];
+let categorySlugLookup = {};
+
+const getToolCategorySlug = (category = '') => categorySlugLookup[category] || categoryToSlug(category);
 
 const createToolCard = (tool) => {
   const safeName = tool.name || 'AI Tool';
@@ -28,7 +31,7 @@ const createToolCard = (tool) => {
     .join('');
 
   return `
-    <a class="block rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition hover:shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-400" href="${toolLink(tool.slug)}" aria-label="View details for ${safeName}" data-name="${safeName.toLowerCase()}" data-category="${categoryToSlug(safeCategory)}" data-description="${safeDescription.toLowerCase()}">
+    <a class="block rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition hover:shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-400" href="${toolLink(tool.slug)}" aria-label="View details for ${safeName}" data-name="${safeName.toLowerCase()}" data-category="${getToolCategorySlug(safeCategory)}" data-description="${safeDescription.toLowerCase()}">
       <div class="mb-4 flex items-center gap-3">
         <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-slate-100 text-sm font-semibold text-slate-700" aria-hidden="true">${initials}</div>
         <span class="inline-flex rounded-full bg-indigo-100 px-3 py-1 text-xs font-medium text-indigo-700">${safeCategory}</span>
@@ -59,7 +62,7 @@ const renderFilteredTools = () => {
   const category = filter?.value || '';
 
   const filtered = allToolsData.filter((tool) => {
-    const normalizedCategory = categoryToSlug(tool.category || '');
+    const normalizedCategory = getToolCategorySlug(tool.category || '');
     const haystack = `${(tool.name || '').toLowerCase()} ${(tool.description || '').toLowerCase()} ${normalizedCategory}`;
     const matchesQuery = !query || haystack.includes(query);
     const matchesCategory = !category || normalizedCategory === category;
@@ -80,6 +83,18 @@ const setFallbackMessage = (message) => {
 
   const resultCount = document.getElementById('resultCount');
   if (resultCount) resultCount.textContent = message;
+};
+
+const renderCategoryFilterOptions = (categories = []) => {
+  const filter = document.getElementById('categoryFilter');
+  if (!filter || !Array.isArray(categories)) return;
+
+  const selected = filter.value || '';
+  const options = ['<option value="">All categories</option>']
+    .concat(categories.map((category) => `<option value="${category.slug}">${category.name}</option>`));
+
+  filter.innerHTML = options.join('');
+  filter.value = categories.some((category) => category.slug === selected) ? selected : '';
 };
 
 const renderTools = async () => {
@@ -105,6 +120,13 @@ const renderTools = async () => {
     if (!Array.isArray(tools) || !Array.isArray(categories)) {
       throw new Error('Invalid homepage data format.');
     }
+
+    categorySlugLookup = categories.reduce((lookup, category) => {
+      if (category?.name && category?.slug) lookup[category.name] = category.slug;
+      return lookup;
+    }, {});
+
+    renderCategoryFilterOptions(categories);
     allToolsData = tools;
 
     const trendingTools = tools.slice(0, 6);
