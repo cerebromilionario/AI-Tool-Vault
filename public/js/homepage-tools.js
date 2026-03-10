@@ -1,6 +1,6 @@
 const categoryToSlug = (category = '') => category.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
-const toolLink = (slug = '') => `./pages/alternatives/${slug}/index.html`;
+const toolLink = (slug = '') => `/pages/alternatives/${slug}/index.html`;
 const categoryLink = (slug) => `/category/${slug}.html`;
 
 let allToolsData = [];
@@ -37,7 +37,7 @@ const createCategoryCard = (category) => `
 `;
 
 const renderFilteredTools = () => {
-  const allTarget = document.getElementById('allTools');
+  const allTarget = document.getElementById('tools-grid');
   const resultCount = document.getElementById('resultCount');
   const search = document.getElementById('search');
   const filter = document.getElementById('categoryFilter');
@@ -60,7 +60,7 @@ const renderFilteredTools = () => {
 };
 
 const setFallbackMessage = (message) => {
-  const targets = ['trendingTools', 'newTools', 'allTools', 'popularCategories'];
+  const targets = ['trending-tools', 'new-tools', 'tools-grid', 'categories'];
   targets.forEach((id) => {
     const section = document.getElementById(id);
     if (!section) return;
@@ -72,10 +72,10 @@ const setFallbackMessage = (message) => {
 };
 
 const renderTools = async () => {
-  const trendingTarget = document.getElementById('trendingTools');
-  const newTarget = document.getElementById('newTools');
-  const allTarget = document.getElementById('allTools');
-  const categoriesTarget = document.getElementById('popularCategories');
+  const trendingTarget = document.getElementById('trending-tools');
+  const newTarget = document.getElementById('new-tools');
+  const allTarget = document.getElementById('tools-grid');
+  const categoriesTarget = document.getElementById('categories');
 
   if (!trendingTarget || !newTarget || !allTarget || !categoriesTarget) return;
 
@@ -97,7 +97,7 @@ const renderTools = async () => {
     allToolsData = tools;
 
     const trendingTools = tools.slice(0, 6);
-    const newTools = [...tools].reverse().slice(0, 6);
+    const newTools = tools.slice(6, 12);
 
     trendingTarget.innerHTML = trendingTools.map(createToolCard).join('');
     newTarget.innerHTML = newTools.map(createToolCard).join('');
@@ -117,4 +117,6 @@ const renderTools = async () => {
   }
 };
 
-renderTools();
+document.addEventListener("DOMContentLoaded", function() {
+  renderTools();
+});
