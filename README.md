@@ -55,3 +55,20 @@ Publish directory remains:
 ```bash
 .
 ```
+
+## Programmatic SEO generator (10,000+ pages)
+
+To generate tool, comparison, alternatives, and category pages with sitemap updates:
+
+```bash
+node scripts/generate-seo-pages.js
+```
+
+This script creates/updates:
+
+- `tools/*.html`
+- `compare/*.html`
+- `alternatives/alternatives-to-*.html`
+- `category/*.html`
+- `category/index.html`
+- `sitemap.xml` (and split sitemap files when URL count exceeds 5000)
