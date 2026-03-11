@@ -1,0 +1,26 @@
+<section class="content-section">
+  <div class="section-heading"><h1>{{tool_name}}</h1></div>
+  <p class="text-gray-700 mb-4">{{description}}</p>
+  <p class="mb-6">
+    <span class="font-semibold">Category:</span>
+    <a class="text-blue-600" href="/categories/{{category_slug}}.html">{{category_name}}</a>
+  </p>
+  <a href="{{official_url}}" target="_blank" rel="nofollow noopener sponsored" class="btn inline-block mb-8">Visit official website</a>
+</section>
+
+<section class="content-section">
+  <div class="section-heading"><h2>Related tools</h2></div>
+  <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {{related_tools}}
+  </div>
+  {{related_fallback}}
+</section>
+
+<section class="content-section">
+  <div class="section-heading"><h2>Internal links</h2></div>
+  <ul class="list-disc pl-6 space-y-2 text-gray-700">
+    {{alternative_links}}
+    <li><a class="text-blue-600" href="{{alternatives_page}}">View full alternatives page</a></li>
+    <li><a class="text-blue-600" href="/categories/index.html">Browse all categories</a></li>
+  </ul>
+</section>

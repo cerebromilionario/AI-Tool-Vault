@@ -1,34 +1,57 @@
 # AI Tool Vault
 
-Programmatic SEO architecture for generating 1,000+ static pages from AI tool data.
+Static AI directory with a programmatic SEO generator for tools, categories, alternatives, and best-of pages.
 
-## Run locally
+## What this generates
 
-Generate pages in batches (recommended to keep commits small):
+From `data/tools.json`, the generator creates static HTML pages in:
+
+- `tools/*.html`
+- `categories/*.html` (+ `categories/index.html`)
+- `alternatives/*-alternatives.html`
+- `best/*.html`
+- `sitemap.xml`
+- `data/generated-pages.json`
+
+## Run page generation
 
 ```bash
-# Batch 1
-node scripts/generate-pages.js --offset=0 --limit=50
-
-# Batch 2
-node scripts/generate-pages.js --offset=50 --limit=50
-
-# Generate sitemap after all batches
-node scripts/generate-sitemap.js
+node scripts/generate-pages.js
 ```
 
-Routes are generated in extensionless format:
+This command is Netlify-safe (pure static output, no server runtime required).
 
-- `/tools/{tool}`
-- `/alternatives/{tool}`
-- `/compare/{tool}-vs-{tool}`
-- `/category/{category}`
+## Data format
 
-Generated files are written to `pages/` as `index.html` files and tracked in `data/generated-pages.json`.
+`data/tools.json` expects an array of tools. Supported fields:
 
-## Deploy (GitHub + Netlify)
+- `name` (required)
+- `slug` (optional, auto-generated if missing)
+- `category` (optional, defaults to `AI Tools`)
+- `description` (optional)
+- `url` or `website` (optional)
 
-- Push this repository to GitHub.
-- In Netlify, set build command:
-  - `node scripts/generate-pages.js && node scripts/generate-sitemap.js`
-- Publish directory: `.`
+## Templates
+
+The generator uses reusable templates in `templates/`:
+
+- `tool-template.html`
+- `category-template.html`
+- `alternatives-template.html`
+- `best-template.html`
+
+All rendered pages include Tailwind + existing site CSS (`/public/css/styles.css`) to preserve UI consistency.
+
+## Deploy with Netlify
+
+Use this build command:
+
+```bash
+node scripts/generate-pages.js
+```
+
+Publish directory remains:
+
+```bash
+.
+```
