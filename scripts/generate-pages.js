@@ -1,235 +1,315 @@
 const fs = require('fs');
 const path = require('path');
 
-const siteUrl = 'https://aitoolvault.example.com';
 const root = path.resolve(__dirname, '..');
-const read = (p) => fs.readFileSync(path.join(root, p), 'utf8');
-const write = (p, c) => {
-  fs.mkdirSync(path.dirname(path.join(root, p)), { recursive: true });
-  fs.writeFileSync(path.join(root, p), c);
-};
-const render = (tpl, data) => tpl.replace(/\{\{(\w+)\}\}/g, (_, k) => data[k] ?? '');
-const titleCaseCategory = (slug) => slug.replace(/-/g, ' ').replace(/\b\w/g, (m) => m.toUpperCase());
-const slugifyCategoryName = (name) => name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-const logoFor = (tool) => tool.logo || "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96'%3E%3Crect width='100%25' height='100%25' rx='14' fill='%23e2e8f0'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%230f172a' font-family='Arial,sans-serif' font-size='28' font-weight='700'%3EAI%3C/text%3E%3C/svg%3E";
-const fullDescriptionFor = (tool) => tool.fullDescription || tool.full_description || tool.long_description || tool.description;
-const logoMarkupFor = (tool) => {
-  const logo = tool.logo;
-  if (logo) {
-    return `<img loading="lazy" src="${logo}" alt="${tool.name} logo" width="96" height="96" class="tool-logo">`;
-  }
-  const initials = tool.name
-    .split(/\s+/)
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((part) => part[0].toUpperCase())
-    .join('');
-  return `<div class="tool-logo-placeholder" aria-label="${tool.name} logo placeholder">${initials || 'AI'}</div>`;
-};
-const routeToFile = (route) => (route === '/' ? 'index.html' : `pages${route}/index.html`);
-const normalizeRoute = (url) => {
-  if (url === '/index.html') return '/';
-  if (url.endsWith('.html')) return url.slice(0, -5);
-  return url;
+const siteUrl = 'https://aitoolvault.netlify.app';
+
+const BEST_KEYWORDS = [
+  'best-ai-tools-for-marketing',
+  'best-ai-tools-for-students',
+  'best-ai-tools-for-productivity',
+  'best-ai-tools-for-startups',
+  'best-ai-tools-for-seo',
+  'best-ai-tools-for-programming',
+  'best-ai-tools-for-video-editing',
+  'best-ai-tools-for-design'
+];
+
+const readJson = (relativePath) => JSON.parse(fs.readFileSync(path.join(root, relativePath), 'utf8'));
+const ensureDir = (relativeDir) => fs.mkdirSync(path.join(root, relativeDir), { recursive: true });
+const writeFile = (relativePath, content) => {
+  const absolute = path.join(root, relativePath);
+  fs.mkdirSync(path.dirname(absolute), { recursive: true });
+  fs.writeFileSync(absolute, content);
 };
 
-const cardFor = (tool, secondaryLink) => `
-<article class="card" data-name="${tool.name.toLowerCase()}" data-category="${tool.category}" data-description="${tool.description.toLowerCase()}">
-  <img loading="lazy" class="card-logo" src="${logoFor(tool)}" alt="${tool.name} logo" width="64" height="64">
-  <span class="category-badge">${titleCaseCategory(tool.category)}</span>
-  <h3><a href="/tools/${tool.slug}">${tool.name}</a></h3>
-  <p>${tool.description}</p>
-  <div class="card-actions">
-    <a class="btn" href="${websiteFor(tool)}" target="_blank" rel="noopener sponsored nofollow">Visit</a>
-    ${secondaryLink}
-  </div>
-</article>`;
+const escapeHtml = (value = '') =>
+  String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
 
-const args = process.argv.slice(2);
-const getArg = (name, fallback) => {
-  const match = args.find((a) => a.startsWith(`--${name}=`));
-  return match ? match.split('=')[1] : fallback;
-};
-const offset = Number.parseInt(getArg('offset', '0'), 10);
-const limit = Number.parseInt(getArg('limit', '50'), 10);
-const compareWindow = Number.parseInt(getArg('compare-window', '5'), 10);
-const includeCategories = getArg('include-categories', offset === 0 ? 'true' : 'false') === 'true';
-const includeBest = getArg('include-best', offset === 0 ? 'true' : 'false') === 'true';
+const slugify = (text = '') =>
+  String(text)
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
 
-const tools = JSON.parse(read('data/tools.json'));
-const categories = JSON.parse(read('data/categories.json'));
-const templates = {
-  tool: read('templates/tool.html'),
-  category: read('templates/category.html'),
-  comparison: read('templates/comparison.html'),
-  alternatives: read('templates/alternatives.html'),
-  best: read('templates/best.html')
-};
+const titleCase = (value = '') =>
+  String(value)
+    .split('-')
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(' ');
+
+const htmlDoc = ({ title, description, canonicalPath, body }) => `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>${escapeHtml(title)}</title>
+  <meta name="description" content="${escapeHtml(description)}" />
+  <link rel="canonical" href="${siteUrl}${canonicalPath}" />
+</head>
+<body>
+  <header>
+    <p><a href="/">AI Tool Vault</a> | <a href="/categories/index.html">Categories</a> | <a href="/best/best-ai-tools-for-marketing.html">Best AI Tools</a></p>
+  </header>
+  <main>
+${body}
+  </main>
+</body>
+</html>
+`;
+
+const tools = readJson('data/tools.json');
+
+const normalizedTools = tools.map((tool) => ({
+  ...tool,
+  slug: tool.slug || slugify(tool.name),
+  category: tool.category || 'AI Tools',
+  url: tool.url || tool.website || '#',
+  description: tool.description || `${tool.name} is an AI tool for modern teams.`
+}));
 
 const categoryMap = new Map();
-for (const cat of categories) {
-  categoryMap.set(cat.slug, cat.slug);
-  categoryMap.set(cat.name, cat.slug);
-  categoryMap.set(slugifyCategoryName(cat.name), cat.slug);
+for (const tool of normalizedTools) {
+  const categorySlug = slugify(tool.category);
+  if (!categoryMap.has(categorySlug)) categoryMap.set(categorySlug, []);
+  categoryMap.get(categorySlug).push(tool);
 }
-const categorySlugFor = (tool) => categoryMap.get(tool.category) || categoryMap.get(slugifyCategoryName(tool.category)) || tool.category;
-const categoryLabelFor = (tool) => categories.find((c) => c.slug === categorySlugFor(tool))?.name || titleCaseCategory(tool.category);
-const websiteFor = (tool) => tool.website || tool.official_url || '#';
 
-const header = `<header><div class="container nav"><a class="brand" href="/">AI Tool Vault</a><nav class="menu" aria-label="Main navigation"><a href="/category/writing-ai">Categories</a><a href="/best/best-free-ai-tools">Best Of</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>`;
-const footer = `<footer><div class="container">© ${new Date().getFullYear()} AI Tool Vault</div></footer>`;
+const categorySlugs = Array.from(categoryMap.keys()).sort();
 
-const selectedTools = tools.slice(offset, offset + limit);
-const freshPageUrls = ['/', '/about', '/contact'];
+const pageUrls = ['/'];
 
-for (const tool of selectedTools) {
-  const currentCategorySlug = categorySlugFor(tool);
-  const related = tools.filter((t) => categorySlugFor(t) === currentCategorySlug && t.slug !== tool.slug).slice(0, 3);
-  const alternatives = tools.filter((t) => categorySlugFor(t) !== currentCategorySlug && t.slug !== tool.slug).slice(0, 4);
-  const schema = JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'SoftwareApplication',
-    name: tool.name,
-    applicationCategory: categoryLabelFor(tool),
-    offers: { '@type': 'Offer', price: tool.pricing },
-    url: `${siteUrl}/tools/${tool.slug}`
+// /tools/[tool-name].html
+ensureDir('tools');
+for (const tool of normalizedTools) {
+  const categorySlug = slugify(tool.category);
+  const relatedTools = (categoryMap.get(categorySlug) || []).filter((item) => item.slug !== tool.slug).slice(0, 10);
+  const alternativeTools = normalizedTools.filter((item) => item.slug !== tool.slug).slice(0, 10);
+  const body = `    <article>
+      <h1>${escapeHtml(tool.name)}</h1>
+      <p>${escapeHtml(tool.description)}</p>
+      <p><strong>Category:</strong> <a href="/categories/${categorySlug}.html">${escapeHtml(tool.category)}</a></p>
+      <p><a href="${escapeHtml(tool.url)}" target="_blank" rel="nofollow noopener sponsored">Visit ${escapeHtml(tool.name)}</a></p>
+
+      <section>
+        <h2>Related tools</h2>
+        <ul>
+          ${relatedTools.map((item) => `<li><a href="/tools/${item.slug}.html">${escapeHtml(item.name)}</a></li>`).join('')}
+        </ul>
+      </section>
+
+      <section>
+        <h2>Top alternatives</h2>
+        <ul>
+          ${alternativeTools.slice(0, 5).map((item) => `<li><a href="/tools/${item.slug}.html">${escapeHtml(item.name)}</a></li>`).join('')}
+        </ul>
+        <p><a href="/alternatives/${tool.slug}-alternatives.html">View all ${escapeHtml(tool.name)} alternatives</a></p>
+      </section>
+
+      <section>
+        <h2>Explore more</h2>
+        <ul>
+          <li><a href="/categories/index.html">All categories</a></li>
+          <li><a href="/best/best-ai-tools-for-productivity.html">Best AI tools for productivity</a></li>
+        </ul>
+      </section>
+    </article>`;
+
+  const filePath = `tools/${tool.slug}.html`;
+  writeFile(
+    filePath,
+    htmlDoc({
+      title: `${tool.name} – ${tool.category} Tool`,
+      description: tool.description,
+      canonicalPath: `/${filePath}`,
+      body
+    })
+  );
+  pageUrls.push(`/${filePath}`);
+}
+
+// /categories/[category].html
+ensureDir('categories');
+for (const [categorySlug, categoryTools] of categoryMap) {
+  const topTools = (categoryTools.length >= 20
+    ? categoryTools
+    : categoryTools.concat(normalizedTools.filter((tool) => slugify(tool.category) !== categorySlug))
+  ).slice(0, 25);
+  const body = `    <article>
+      <h1>${escapeHtml(titleCase(categorySlug))} AI Tools</h1>
+      <p>Browse top ${escapeHtml(titleCase(categorySlug))} tools and compare their strengths.</p>
+
+      <section>
+        <h2>Tools in this category</h2>
+        <ul>
+          ${topTools
+            .map(
+              (tool) =>
+                `<li><a href="/tools/${tool.slug}.html">${escapeHtml(tool.name)}</a> – ${escapeHtml(tool.description)}</li>`
+            )
+            .join('')}
+        </ul>
+      </section>
+
+      <section>
+        <h2>Internal links</h2>
+        <ul>
+          <li><a href="/best/best-ai-tools-for-marketing.html">Best AI tools for marketing</a></li>
+          <li><a href="/best/best-ai-tools-for-programming.html">Best AI tools for programming</a></li>
+          ${topTools
+            .slice(0, 5)
+            .map((tool) => `<li><a href="/alternatives/${tool.slug}-alternatives.html">${escapeHtml(tool.name)} alternatives</a></li>`)
+            .join('')}
+        </ul>
+      </section>
+    </article>`;
+
+  const filePath = `categories/${categorySlug}.html`;
+  writeFile(
+    filePath,
+    htmlDoc({
+      title: `${titleCase(categorySlug)} AI Tools (2026)`,
+      description: `Discover the best ${titleCase(categorySlug)} AI tools with quick comparisons and internal links.`,
+      canonicalPath: `/${filePath}`,
+      body
+    })
+  );
+  pageUrls.push(`/${filePath}`);
+}
+
+const categoriesIndexBody = `    <article>
+      <h1>AI Tool Categories</h1>
+      <p>Explore category hubs for focused AI tool discovery.</p>
+      <ul>
+        ${categorySlugs.map((slug) => `<li><a href="/categories/${slug}.html">${escapeHtml(titleCase(slug))}</a></li>`).join('')}
+      </ul>
+    </article>`;
+writeFile(
+  'categories/index.html',
+  htmlDoc({
+    title: 'AI Tool Categories Directory',
+    description: 'Browse all AI tool categories with curated internal links.',
+    canonicalPath: '/categories/index.html',
+    body: categoriesIndexBody
+  })
+);
+pageUrls.push('/categories/index.html');
+
+// /alternatives/[tool]-alternatives.html
+ensureDir('alternatives');
+for (const tool of normalizedTools) {
+  const alternatives = normalizedTools.filter((item) => item.slug !== tool.slug).slice(0, 10);
+  const rows = alternatives
+    .map(
+      (item, index) => `<tr>
+        <td>${index + 1}</td>
+        <td><a href="/tools/${item.slug}.html">${escapeHtml(item.name)}</a></td>
+        <td>${escapeHtml(item.category)}</td>
+        <td>${escapeHtml(item.description)}</td>
+      </tr>`
+    )
+    .join('');
+
+  const body = `    <article>
+      <h1>Top 10 ${escapeHtml(tool.name)} Alternatives</h1>
+      <p>Compare leading alternatives to ${escapeHtml(tool.name)} for similar use cases.</p>
+
+      <section>
+        <h2>Alternative tools list</h2>
+        <ol>
+          ${alternatives.map((item) => `<li><a href="/tools/${item.slug}.html">${escapeHtml(item.name)}</a></li>`).join('')}
+        </ol>
+      </section>
+
+      <section>
+        <h2>Comparison table</h2>
+        <table border="1" cellpadding="8" cellspacing="0">
+          <thead><tr><th>#</th><th>Tool</th><th>Category</th><th>Description</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Internal links</h2>
+        <ul>
+          <li><a href="/categories/${slugify(tool.category)}.html">${escapeHtml(tool.category)} category</a></li>
+          <li><a href="/best/best-ai-tools-for-seo.html">Best AI tools for SEO</a></li>
+          <li><a href="/best/best-ai-tools-for-students.html">Best AI tools for students</a></li>
+        </ul>
+      </section>
+    </article>`;
+
+  const filePath = `alternatives/${tool.slug}-alternatives.html`;
+  writeFile(
+    filePath,
+    htmlDoc({
+      title: `${tool.name} Alternatives: Top 10 Picks`,
+      description: `Find the best ${tool.name} alternatives and compare features quickly.`,
+      canonicalPath: `/${filePath}`,
+      body
+    })
+  );
+  pageUrls.push(`/${filePath}`);
+}
+
+// /best/[keyword].html
+ensureDir('best');
+for (const bestSlug of BEST_KEYWORDS) {
+  const keyword = bestSlug.replace(/^best-ai-tools-for-/, '').replace(/-/g, ' ');
+  const relevant = normalizedTools.filter((tool) => {
+    const haystack = `${tool.category} ${tool.description}`.toLowerCase();
+    return haystack.includes(keyword.split(' ')[0]);
   });
+  const picks = (relevant.length ? relevant : normalizedTools).slice(0, 20);
 
-  const toolRoute = `/tools/${tool.slug}`;
-  write(routeToFile(toolRoute), render(templates.tool, {
-    title: `${tool.name} AI Tool`,
-    metaDescription: fullDescriptionFor(tool),
-    canonicalUrl: `${siteUrl}${toolRoute}`,
-    schema,
-    header,
-    footer,
-    toolName: tool.name,
-    description: fullDescriptionFor(tool),
-    officialUrl: websiteFor(tool),
-    logo: logoMarkupFor(tool),
-    features: tool.features.map((f) => `<li>${f}</li>`).join(''),
-    pricing: tool.pricing,
-    slug: tool.slug,
-    category: categorySlugFor(tool),
-    categoryLabel: categoryLabelFor(tool),
-    relatedTools: related.map((r) => cardFor(r, `<a class="btn btn-secondary" href="/compare/${tool.slug}-vs-${r.slug}">Compare</a>`)).join(''),
-    alternatives: alternatives.map((a) => cardFor(a, `<a class="btn btn-secondary" href="/alternatives/${tool.slug}">All alternatives</a>`)).join('')
-  }));
-  freshPageUrls.push(toolRoute);
+  const body = `    <article>
+      <h1>${escapeHtml(titleCase(bestSlug))}</h1>
+      <p>Looking for the best AI tools for ${escapeHtml(keyword)}? This curated list highlights practical options for different budgets and workflows.</p>
 
-  const alts = tools.filter((t) => t.slug !== tool.slug).slice(0, 10);
-  const altRoute = `/alternatives/${tool.slug}`;
-  const altSchema = JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'ItemList',
-    name: `${tool.name} alternatives`,
-    itemListElement: alts.map((a, i) => ({ '@type': 'ListItem', position: i + 1, url: `${siteUrl}/tools/${a.slug}` }))
-  });
-  write(routeToFile(altRoute), render(templates.alternatives, {
-    title: `Top ${tool.name} Alternatives in 2026 | AI Tool Vault`,
-    metaDescription: `Find the 10 best ${tool.name} alternatives with features and pricing summary.`,
-    canonicalUrl: `${siteUrl}${altRoute}`,
-    schema: altSchema,
-    header,
-    footer,
-    heading: `Top 10 ${tool.name} Alternatives`,
-    intro: `Compare leading alternatives to ${tool.name} and choose the best fit for your workflow.`,
-    items: alts.map((a) => `<li><a href="/tools/${a.slug}">${a.name}</a> - <a href="/compare/${tool.slug}-vs-${a.slug}">${tool.name} vs ${a.name}</a></li>`).join('')
-  }));
-  freshPageUrls.push(altRoute);
+      <section>
+        <h2>Recommended tools</h2>
+        <ul>
+          ${picks.map((tool) => `<li><a href="/tools/${tool.slug}.html">${escapeHtml(tool.name)}</a> – ${escapeHtml(tool.description)}</li>`).join('')}
+        </ul>
+      </section>
+
+      <section>
+        <h2>Explore related pages</h2>
+        <ul>
+          ${picks.slice(0, 5).map((tool) => `<li><a href="/alternatives/${tool.slug}-alternatives.html">${escapeHtml(tool.name)} alternatives</a></li>`).join('')}
+          <li><a href="/categories/index.html">All categories</a></li>
+        </ul>
+      </section>
+    </article>`;
+
+  const filePath = `best/${bestSlug}.html`;
+  writeFile(
+    filePath,
+    htmlDoc({
+      title: `${titleCase(bestSlug)} (2026 Guide)`,
+      description: `Discover ${titleCase(bestSlug)} with curated picks and internal links.`,
+      canonicalPath: `/${filePath}`,
+      body
+    })
+  );
+  pageUrls.push(`/${filePath}`);
 }
 
-if (includeCategories) {
-  for (const cat of categories) {
-    const catRoute = `/category/${cat.slug}`;
-    const categoryTools = tools.filter((t) => categorySlugFor(t) === cat.slug);
-    const schema = JSON.stringify({ '@context': 'https://schema.org', '@type': 'CollectionPage', name: `${cat.name} tools`, url: `${siteUrl}${catRoute}` });
-    write(routeToFile(catRoute), render(templates.category, {
-      title: `${cat.name} Tools Directory (2026) | AI Tool Vault`,
-      metaDescription: `Browse the best ${cat.name.toLowerCase()} with filters, pricing, and feature highlights.`,
-      canonicalUrl: `${siteUrl}${catRoute}`,
-      schema,
-      header,
-      footer,
-      heading: `${cat.name} Tools`,
-      description: cat.description,
-      filterOptions: categories.map((c) => `<option value="${c.slug}"${c.slug === cat.slug ? ' selected' : ''}>${c.name}</option>`).join(''),
-      tools: categoryTools.map((t) => cardFor(t, `<a class="btn btn-secondary" href="/alternatives/${t.slug}">Alternatives</a>`)).join('')
-    }));
-    freshPageUrls.push(catRoute);
-  }
-}
+// sitemap.xml update
+const uniqueUrls = Array.from(new Set(pageUrls)).sort();
+const sitemapEntries = uniqueUrls
+  .map(
+    (url) => `  <url>\n    <loc>${siteUrl}${url}</loc>\n    <changefreq>weekly</changefreq>\n    <priority>${url === '/' ? '1.0' : '0.8'}</priority>\n  </url>`
+  )
+  .join('\n');
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapEntries}\n</urlset>\n`;
+writeFile('sitemap.xml', sitemap);
 
-for (let localIndex = 0; localIndex < selectedTools.length; localIndex += 1) {
-  const i = offset + localIndex;
-  for (let j = 1; j <= compareWindow; j += 1) {
-    const a = tools[i];
-    const b = tools[(i + j) % tools.length];
-    const slug = `${a.slug}-vs-${b.slug}`;
-    const compareRoute = `/compare/${slug}`;
-    const schema = JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: `${a.name} vs ${b.name}`, url: `${siteUrl}${compareRoute}` });
-    write(routeToFile(compareRoute), render(templates.comparison, {
-      title: `${a.name} vs ${b.name}: Features, Pricing & Verdict`,
-      metaDescription: `Compare ${a.name} and ${b.name} across features, pricing, and ideal use cases.`,
-      canonicalUrl: `${siteUrl}${compareRoute}`,
-      schema,
-      header,
-      footer,
-      heading: `${a.name} vs ${b.name}`,
-      summary: `${a.name} and ${b.name} are popular choices for ${categoryLabelFor(a).toLowerCase()} workflows.`,
-      toolA: a.name,
-      toolB: b.name,
-      slugA: a.slug,
-      slugB: b.slug,
-      rows: ['Pricing', 'Primary Category', 'Feature Depth', 'Ease of Use', 'Best For'].map((r) => `<tr><td>${r}</td><td>${a.pricing}</td><td>${b.pricing}</td></tr>`).join('')
-    }));
-    freshPageUrls.push(compareRoute);
-  }
-}
+writeFile('data/generated-pages.json', JSON.stringify(uniqueUrls, null, 2));
 
-if (includeBest) {
-  const bestPages = [
-    ['best-ai-tools-for-marketing', 'Best AI Tools for Marketing', 'marketing-ai'],
-    ['best-free-ai-tools', 'Best Free AI Tools', 'writing-ai'],
-    ['ai-tools-for-students', 'AI Tools for Students', 'productivity-ai'],
-    ['best-ai-image-generators', 'Best AI Image Generators', 'image-ai'],
-    ['best-ai-coding-tools', 'Best AI Coding Tools', 'coding-ai'],
-    ['best-ai-video-tools', 'Best AI Video Tools', 'video-ai'],
-    ['best-ai-audio-tools', 'Best AI Audio Tools', 'audio-ai'],
-    ['best-ai-writing-tools', 'Best AI Writing Tools', 'writing-ai'],
-    ['best-ai-productivity-tools', 'Best AI Productivity Tools', 'productivity-ai'],
-    ['best-ai-tools-for-startups', 'Best AI Tools for Startups', 'marketing-ai']
-  ];
-
-  for (const [slug, heading, cat] of bestPages) {
-    const bestRoute = `/best/${slug}`;
-    const picks = tools.filter((t) => categorySlugFor(t) === cat).slice(0, 18);
-    const schema = JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'ItemList',
-      name: heading,
-      itemListElement: picks.map((p, i) => ({ '@type': 'ListItem', position: i + 1, url: `${siteUrl}/tools/${p.slug}` }))
-    });
-    write(routeToFile(bestRoute), render(templates.best, {
-      title: `${heading} (2026 Guide) | AI Tool Vault`,
-      metaDescription: `${heading} curated by use case, pricing, and standout features.`,
-      canonicalUrl: `${siteUrl}${bestRoute}`,
-      schema,
-      header,
-      footer,
-      heading,
-      intro: 'Our editors picked these tools based on performance, value, and usability.',
-      cards: picks.map((p) => `<article class="card"><span class="category-badge">${titleCaseCategory(p.category)}</span><h3><a href="/tools/${p.slug}">${p.name}</a></h3><p>${p.description}</p></article>`).join('')
-    }));
-    freshPageUrls.push(bestRoute);
-  }
-}
-
-const generatedPagesPath = path.join(root, 'data/generated-pages.json');
-const existingPages = fs.existsSync(generatedPagesPath) ? JSON.parse(fs.readFileSync(generatedPagesPath, 'utf8')) : [];
-const mergedPages = [...new Set([...existingPages.map(normalizeRoute), ...freshPageUrls.map(normalizeRoute)])].sort();
-fs.writeFileSync(generatedPagesPath, JSON.stringify(mergedPages, null, 2));
-
-console.log(`Generated ${freshPageUrls.length} pages in this batch.`);
-console.log(`Total tracked pages: ${mergedPages.length}.`);
-console.log(`Batch controls -> offset=${offset}, limit=${limit}, compare-window=${compareWindow}`);
+console.log(`Generated ${uniqueUrls.length} SEO pages and updated sitemap.xml.`);
