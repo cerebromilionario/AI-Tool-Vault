@@ -721,9 +721,9 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aitoolvault.netlify.app/index.html</loc>
+    <loc>https://aitoolvault.netlify.app/</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://aitoolvault.netlify.app/tools/activepieces.html</loc>
