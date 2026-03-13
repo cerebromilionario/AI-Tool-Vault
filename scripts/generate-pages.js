@@ -10,7 +10,12 @@ const DEFAULT_BEST_PAGES = [
   'best-ai-tools-for-programming',
   'best-ai-tools-for-design',
   'best-ai-tools-for-video',
-  'best-ai-tools-for-startups'
+  'best-ai-tools-for-startups',
+  'best-ai-tools-for-productivity',
+  'best-ai-marketing-tools',
+  'best-ai-video-tools',
+  'best-ai-writing-tools',
+  'best-ai-image-generators'
 ];
 
 const toPosix = (value) => value.replace(/\\/g, '/');

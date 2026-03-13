@@ -210,9 +210,9 @@
     ]
   },
   {
-    "name": "DALL·E",
+    "name": "DALL\u00b7E",
     "slug": "dall-e",
-    "description": "DALL·E is an AI tool for image generation workflows, helping teams work faster with practical automation.",
+    "description": "DALL\u00b7E is an AI tool for image generation workflows, helping teams work faster with practical automation.",
     "category": "Image Generation",
     "pricing": "Paid",
     "website": "https://openai.com/dall-e",
@@ -1761,6 +1761,1462 @@
       "related paper discovery",
       "literature graph",
       "research navigation"
+    ]
+  },
+  {
+    "name": "Ahrefs",
+    "slug": "ahrefs",
+    "description": "Ahrefs is a powerful seo optimization tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "SEO Optimization",
+    "pricing": "Freemium",
+    "website": "https://ahrefs.com",
+    "features": [
+      "SERP analysis",
+      "Search intent analysis",
+      "Backlink monitoring",
+      "Internal linking suggestions"
+    ]
+  },
+  {
+    "name": "Semrush",
+    "slug": "semrush",
+    "description": "Semrush is a powerful seo optimization tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "SEO Optimization",
+    "pricing": "Freemium",
+    "website": "https://semrush.com",
+    "features": [
+      "Mobile optimization",
+      "Content generation",
+      "Local citation finder",
+      "Internal linking suggestions"
+    ]
+  },
+  {
+    "name": "Moz Pro",
+    "slug": "moz-pro",
+    "description": "Moz Pro is a powerful seo optimization tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "SEO Optimization",
+    "pricing": "Paid",
+    "website": "https://moz.com",
+    "features": [
+      "Internal linking suggestions",
+      "Topic cluster mapping",
+      "Page speed insights",
+      "Competitor analysis"
+    ]
+  },
+  {
+    "name": "Majestic",
+    "slug": "majestic",
+    "description": "Majestic is a powerful backlink analysis tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Backlink Analysis",
+    "pricing": "Paid",
+    "website": "https://majestic.com",
+    "features": [
+      "Local citation finder",
+      "Keyword tracking",
+      "Mobile optimization",
+      "Search intent analysis"
+    ]
+  },
+  {
+    "name": "Screaming Frog",
+    "slug": "screaming-frog",
+    "description": "Screaming Frog is a powerful technical seo tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Technical SEO",
+    "pricing": "Paid",
+    "website": "https://screamingfrog.co.uk",
+    "features": [
+      "Content generation",
+      "Mobile optimization",
+      "On-page optimization",
+      "Internal linking suggestions"
+    ]
+  },
+  {
+    "name": "Ubersuggest",
+    "slug": "ubersuggest",
+    "description": "Ubersuggest is a powerful keyword research tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Keyword Research",
+    "pricing": "Freemium",
+    "website": "https://neilpatel.com/ubersuggest",
+    "features": [
+      "Keyword tracking",
+      "Page speed insights",
+      "AI meta tag generator",
+      "AI content rewriting"
+    ]
+  },
+  {
+    "name": "AnswerThePublic",
+    "slug": "answerthepublic",
+    "description": "AnswerThePublic is a powerful keyword research tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Keyword Research",
+    "pricing": "Paid",
+    "website": "https://answerthepublic.com",
+    "features": [
+      "On-page optimization",
+      "Internal linking suggestions",
+      "Content generation",
+      "Search intent analysis"
+    ]
+  },
+  {
+    "name": "SpyFu",
+    "slug": "spyfu",
+    "description": "SpyFu is a powerful competitor analysis tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Competitor analysis",
+    "pricing": "Freemium",
+    "website": "https://spyfu.com",
+    "features": [
+      "Page speed insights",
+      "Keyword tracking",
+      "Search intent analysis",
+      "AI content rewriting"
+    ]
+  },
+  {
+    "name": "CognitiveSEO",
+    "slug": "cognitiveseo",
+    "description": "CognitiveSEO is a powerful seo optimization tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "SEO Optimization",
+    "pricing": "Paid",
+    "website": "https://cognitiveseo.com",
+    "features": [
+      "Keyword tracking",
+      "Content generation",
+      "Internal linking suggestions",
+      "AI content rewriting"
+    ]
+  },
+  {
+    "name": "BrightLocal",
+    "slug": "brightlocal",
+    "description": "BrightLocal is a powerful local seo tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Local SEO",
+    "pricing": "Freemium",
+    "website": "https://brightlocal.com",
+    "features": [
+      "Local citation finder",
+      "Schema markup generator",
+      "Voice search optimization",
+      "On-page optimization"
+    ]
+  },
+  {
+    "name": "Whitespark",
+    "slug": "whitespark",
+    "description": "Whitespark is a powerful local seo tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Local SEO",
+    "pricing": "Freemium",
+    "website": "https://whitespark.ca",
+    "features": [
+      "Schema markup generator",
+      "Internal linking suggestions",
+      "Backlink monitoring",
+      "Local citation finder"
+    ]
+  },
+  {
+    "name": "Clearscope",
+    "slug": "clearscope",
+    "description": "Clearscope is a powerful content marketing tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Content Marketing",
+    "pricing": "Paid",
+    "website": "https://clearscope.io",
+    "features": [
+      "SERP analysis",
+      "Voice search optimization",
+      "AI content rewriting",
+      "Site audit"
+    ]
+  },
+  {
+    "name": "Scalenut",
+    "slug": "scalenut",
+    "description": "Scalenut is a powerful ai writing tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "AI Writing",
+    "pricing": "Paid",
+    "website": "https://scalenut.com",
+    "features": [
+      "Broken link checker",
+      "Voice search optimization",
+      "Schema markup generator",
+      "Topic cluster mapping"
+    ]
+  },
+  {
+    "name": "Neuraltext",
+    "slug": "neuraltext",
+    "description": "Neuraltext is a powerful ai writing tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "AI Writing",
+    "pricing": "Paid",
+    "website": "https://neuraltext.com",
+    "features": [
+      "SERP analysis",
+      "Internal linking suggestions",
+      "AI content rewriting",
+      "AI meta tag generator"
+    ]
+  },
+  {
+    "name": "GrowthBar",
+    "slug": "growthbar",
+    "description": "GrowthBar is a powerful seo optimization tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "SEO Optimization",
+    "pricing": "Freemium",
+    "website": "https://growthbarseo.com",
+    "features": [
+      "AI content rewriting",
+      "AI meta tag generator",
+      "Page speed insights",
+      "Keyword tracking"
+    ]
+  },
+  {
+    "name": "Dashword",
+    "slug": "dashword",
+    "description": "Dashword is a powerful content marketing tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Content Marketing",
+    "pricing": "Freemium",
+    "website": "https://dashword.com",
+    "features": [
+      "Content generation",
+      "Internal linking suggestions",
+      "Topic cluster mapping",
+      "Backlink monitoring"
+    ]
+  },
+  {
+    "name": "Outranking",
+    "slug": "outranking",
+    "description": "Outranking is a powerful ai writing tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "AI Writing",
+    "pricing": "Freemium",
+    "website": "https://outranking.io",
+    "features": [
+      "Local citation finder",
+      "Competitor analysis",
+      "On-page optimization",
+      "AI meta tag generator"
+    ]
+  },
+  {
+    "name": "KeywordTool.io",
+    "slug": "keywordtool-io",
+    "description": "KeywordTool.io is a powerful keyword research tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Keyword Research",
+    "pricing": "Paid",
+    "website": "https://keywordtool.io",
+    "features": [
+      "Broken link checker",
+      "Voice search optimization",
+      "AI content rewriting",
+      "AI meta tag generator"
+    ]
+  },
+  {
+    "name": "KWFinder",
+    "slug": "kwfinder",
+    "description": "KWFinder is a powerful keyword research tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Keyword Research",
+    "pricing": "Paid",
+    "website": "https://mangools.com/kwfinder",
+    "features": [
+      "Keyword tracking",
+      "On-page optimization",
+      "AI content rewriting",
+      "Mobile optimization"
+    ]
+  },
+  {
+    "name": "Serpstat",
+    "slug": "serpstat",
+    "description": "Serpstat is a powerful seo optimization tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "SEO Optimization",
+    "pricing": "Paid",
+    "website": "https://serpstat.com",
+    "features": [
+      "Internal linking suggestions",
+      "Competitor analysis",
+      "Page speed insights",
+      "Keyword tracking"
+    ]
+  },
+  {
+    "name": "SE Ranking",
+    "slug": "se-ranking",
+    "description": "SE Ranking is a powerful seo optimization tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "SEO Optimization",
+    "pricing": "Freemium",
+    "website": "https://seranking.com",
+    "features": [
+      "Topic cluster mapping",
+      "Local citation finder",
+      "Content generation",
+      "Internal linking suggestions"
+    ]
+  },
+  {
+    "name": "RankMath",
+    "slug": "rankmath",
+    "description": "RankMath is a powerful seo optimization tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "SEO Optimization",
+    "pricing": "Freemium",
+    "website": "https://rankmath.com",
+    "features": [
+      "On-page optimization",
+      "Mobile optimization",
+      "Competitor analysis",
+      "Internal linking suggestions"
+    ]
+  },
+  {
+    "name": "Yoast SEO",
+    "slug": "yoast-seo",
+    "description": "Yoast SEO is a powerful seo optimization tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "SEO Optimization",
+    "pricing": "Freemium",
+    "website": "https://yoast.com",
+    "features": [
+      "Broken link checker",
+      "Backlink monitoring",
+      "Site audit",
+      "On-page optimization"
+    ]
+  },
+  {
+    "name": "All in One SEO",
+    "slug": "all-in-one-seo",
+    "description": "All in One SEO is a powerful seo optimization tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "SEO Optimization",
+    "pricing": "Paid",
+    "website": "https://aioseo.com",
+    "features": [
+      "Internal linking suggestions",
+      "Competitor analysis",
+      "Keyword tracking",
+      "Search intent analysis"
+    ]
+  },
+  {
+    "name": "Sitechecker",
+    "slug": "sitechecker",
+    "description": "Sitechecker is a powerful technical seo tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Technical SEO",
+    "pricing": "Paid",
+    "website": "https://sitechecker.pro",
+    "features": [
+      "SERP analysis",
+      "AI meta tag generator",
+      "Search intent analysis",
+      "On-page optimization"
+    ]
+  },
+  {
+    "name": "DeepCrawl",
+    "slug": "deepcrawl",
+    "description": "DeepCrawl is a powerful technical seo tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Technical SEO",
+    "pricing": "Paid",
+    "website": "https://lumar.io",
+    "features": [
+      "Site audit",
+      "Local citation finder",
+      "Content generation",
+      "Competitor analysis"
+    ]
+  },
+  {
+    "name": "Botify",
+    "slug": "botify",
+    "description": "Botify is a powerful technical seo tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Technical SEO",
+    "pricing": "Freemium",
+    "website": "https://botify.com",
+    "features": [
+      "Page speed insights",
+      "Mobile optimization",
+      "Schema markup generator",
+      "Site audit"
+    ]
+  },
+  {
+    "name": "Oncrawl",
+    "slug": "oncrawl",
+    "description": "Oncrawl is a powerful technical seo tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Technical SEO",
+    "pricing": "Paid",
+    "website": "https://oncrawl.com",
+    "features": [
+      "Schema markup generator",
+      "SERP analysis",
+      "Competitor analysis",
+      "On-page optimization"
+    ]
+  },
+  {
+    "name": "WooRank",
+    "slug": "woorank",
+    "description": "WooRank is a powerful seo optimization tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "SEO Optimization",
+    "pricing": "Paid",
+    "website": "https://woorank.com",
+    "features": [
+      "Schema markup generator",
+      "SERP analysis",
+      "AI content rewriting",
+      "Page speed insights"
+    ]
+  },
+  {
+    "name": "Raven Tools",
+    "slug": "raven-tools",
+    "description": "Raven Tools is a powerful analytics & reporting tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Analytics & Reporting",
+    "pricing": "Freemium",
+    "website": "https://raventools.com",
+    "features": [
+      "Voice search optimization",
+      "On-page optimization",
+      "Backlink monitoring",
+      "Mobile optimization"
+    ]
+  },
+  {
+    "name": "AgencyAnalytics",
+    "slug": "agencyanalytics",
+    "description": "AgencyAnalytics is a powerful analytics & reporting tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Analytics & Reporting",
+    "pricing": "Freemium",
+    "website": "https://agencyanalytics.com",
+    "features": [
+      "Site audit",
+      "Topic cluster mapping",
+      "Search intent analysis",
+      "Competitor analysis"
+    ]
+  },
+  {
+    "name": "Supermetrics",
+    "slug": "supermetrics",
+    "description": "Supermetrics is a powerful analytics & reporting tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Analytics & Reporting",
+    "pricing": "Paid",
+    "website": "https://supermetrics.com",
+    "features": [
+      "Backlink monitoring",
+      "SERP analysis",
+      "Site audit",
+      "AI content rewriting"
+    ]
+  },
+  {
+    "name": "Keywords Everywhere",
+    "slug": "keywords-everywhere",
+    "description": "Keywords Everywhere is a powerful keyword research tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Keyword Research",
+    "pricing": "Freemium",
+    "website": "https://keywordseverywhere.com",
+    "features": [
+      "Schema markup generator",
+      "On-page optimization",
+      "Site audit",
+      "Search intent analysis"
+    ]
+  },
+  {
+    "name": "LongTailPro",
+    "slug": "longtailpro",
+    "description": "LongTailPro is a powerful keyword research tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Keyword Research",
+    "pricing": "Paid",
+    "website": "https://longtailpro.com",
+    "features": [
+      "Competitor analysis",
+      "Search intent analysis",
+      "Internal linking suggestions",
+      "Local citation finder"
+    ]
+  },
+  {
+    "name": "AccuRanker",
+    "slug": "accuranker",
+    "description": "AccuRanker is a powerful seo optimization tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "SEO Optimization",
+    "pricing": "Paid",
+    "website": "https://accuranker.com",
+    "features": [
+      "Topic cluster mapping",
+      "Voice search optimization",
+      "Local citation finder",
+      "Internal linking suggestions"
+    ]
+  },
+  {
+    "name": "Authority Labs",
+    "slug": "authority-labs",
+    "description": "Authority Labs is a powerful seo optimization tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "SEO Optimization",
+    "pricing": "Freemium",
+    "website": "https://authoritylabs.com",
+    "features": [
+      "Topic cluster mapping",
+      "Internal linking suggestions",
+      "AI meta tag generator",
+      "Competitor analysis"
+    ]
+  },
+  {
+    "name": "Nightwatch",
+    "slug": "nightwatch",
+    "description": "Nightwatch is a powerful seo optimization tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "SEO Optimization",
+    "pricing": "Freemium",
+    "website": "https://nightwatch.io",
+    "features": [
+      "On-page optimization",
+      "Mobile optimization",
+      "Voice search optimization",
+      "Broken link checker"
+    ]
+  },
+  {
+    "name": "Linkody",
+    "slug": "linkody",
+    "description": "Linkody is a powerful backlink analysis tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Backlink Analysis",
+    "pricing": "Paid",
+    "website": "https://linkody.com",
+    "features": [
+      "On-page optimization",
+      "Backlink monitoring",
+      "Broken link checker",
+      "AI content rewriting"
+    ]
+  },
+  {
+    "name": "LinkMiner",
+    "slug": "linkminer",
+    "description": "LinkMiner is a powerful backlink analysis tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Backlink Analysis",
+    "pricing": "Freemium",
+    "website": "https://mangools.com/linkminer",
+    "features": [
+      "Backlink monitoring",
+      "Voice search optimization",
+      "SERP analysis",
+      "Search intent analysis"
+    ]
+  },
+  {
+    "name": "Monitor Backlinks",
+    "slug": "monitor-backlinks",
+    "description": "Monitor Backlinks is a powerful backlink analysis tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Backlink Analysis",
+    "pricing": "Paid",
+    "website": "https://monitorbacklinks.com",
+    "features": [
+      "Content generation",
+      "Local citation finder",
+      "SERP analysis",
+      "Site audit"
+    ]
+  },
+  {
+    "name": "BuzzStream",
+    "slug": "buzzstream",
+    "description": "BuzzStream is a powerful content marketing tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Content Marketing",
+    "pricing": "Paid",
+    "website": "https://buzzstream.com",
+    "features": [
+      "Local citation finder",
+      "Broken link checker",
+      "Schema markup generator",
+      "Internal linking suggestions"
+    ]
+  },
+  {
+    "name": "Pitchbox",
+    "slug": "pitchbox",
+    "description": "Pitchbox is a powerful content marketing tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Content Marketing",
+    "pricing": "Paid",
+    "website": "https://pitchbox.com",
+    "features": [
+      "Broken link checker",
+      "AI content rewriting",
+      "Competitor analysis",
+      "Content generation"
+    ]
+  },
+  {
+    "name": "Hunter.io",
+    "slug": "hunter-io",
+    "description": "Hunter.io is a powerful email marketing tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Email Marketing",
+    "pricing": "Paid",
+    "website": "https://hunter.io",
+    "features": [
+      "Local citation finder",
+      "Site audit",
+      "Schema markup generator",
+      "AI content rewriting"
+    ]
+  },
+  {
+    "name": "Snov.io",
+    "slug": "snov-io",
+    "description": "Snov.io is a powerful email marketing tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Email Marketing",
+    "pricing": "Freemium",
+    "website": "https://snov.io",
+    "features": [
+      "Page speed insights",
+      "Backlink monitoring",
+      "Voice search optimization",
+      "Topic cluster mapping"
+    ]
+  },
+  {
+    "name": "Voila Norbert",
+    "slug": "voila-norbert",
+    "description": "Voila Norbert is a powerful email marketing tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Email Marketing",
+    "pricing": "Freemium",
+    "website": "https://voilanorbert.com",
+    "features": [
+      "Voice search optimization",
+      "Content generation",
+      "Local citation finder",
+      "Internal linking suggestions"
+    ]
+  },
+  {
+    "name": "Peppertype.ai",
+    "slug": "peppertype-ai",
+    "description": "Peppertype.ai is a powerful ai writing tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "AI Writing",
+    "pricing": "Paid",
+    "website": "https://peppercontent.io",
+    "features": [
+      "Schema markup generator",
+      "AI content rewriting",
+      "Topic cluster mapping",
+      "Keyword tracking"
+    ]
+  },
+  {
+    "name": "WordHero",
+    "slug": "wordhero",
+    "description": "WordHero is a powerful ai writing tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "AI Writing",
+    "pricing": "Paid",
+    "website": "https://wordhero.co",
+    "features": [
+      "AI content rewriting",
+      "Schema markup generator",
+      "Broken link checker",
+      "Mobile optimization"
+    ]
+  },
+  {
+    "name": "ClosersCopy",
+    "slug": "closerscopy",
+    "description": "ClosersCopy is a powerful ai writing tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "AI Writing",
+    "pricing": "Freemium",
+    "website": "https://closerscopy.com",
+    "features": [
+      "Competitor analysis",
+      "Schema markup generator",
+      "Mobile optimization",
+      "Keyword tracking"
+    ]
+  },
+  {
+    "name": "Frase.io",
+    "slug": "frase-io",
+    "description": "Frase.io is a powerful content marketing tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Content Marketing",
+    "pricing": "Freemium",
+    "website": "https://frase.io",
+    "features": [
+      "On-page optimization",
+      "Topic cluster mapping",
+      "AI content rewriting",
+      "Mobile optimization"
+    ]
+  },
+  {
+    "name": "Writer.com",
+    "slug": "writer-com",
+    "description": "Writer.com is a powerful ai writing tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "AI Writing",
+    "pricing": "Freemium",
+    "website": "https://writer.com",
+    "features": [
+      "SERP analysis",
+      "Site audit",
+      "Content generation",
+      "AI content rewriting"
+    ]
+  },
+  {
+    "name": "Lex.page",
+    "slug": "lex-page",
+    "description": "Lex.page is a powerful ai writing tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "AI Writing",
+    "pricing": "Freemium",
+    "website": "https://lex.page",
+    "features": [
+      "Schema markup generator",
+      "Page speed insights",
+      "Backlink monitoring",
+      "Site audit"
+    ]
+  },
+  {
+    "name": "Hugging Face",
+    "slug": "hugging-face",
+    "description": "Hugging Face is a powerful ai writing tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "AI Writing",
+    "pricing": "Freemium",
+    "website": "https://huggingface.co",
+    "features": [
+      "Local citation finder",
+      "Mobile optimization",
+      "Competitor analysis",
+      "Schema markup generator"
+    ]
+  },
+  {
+    "name": "Perplexity AI",
+    "slug": "perplexity-ai",
+    "description": "Perplexity AI is a powerful seo optimization tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "SEO Optimization",
+    "pricing": "Freemium",
+    "website": "https://perplexity.ai",
+    "features": [
+      "Topic cluster mapping",
+      "AI content rewriting",
+      "Backlink monitoring",
+      "Search intent analysis"
+    ]
+  },
+  {
+    "name": "You.com",
+    "slug": "you-com",
+    "description": "You.com is a powerful seo optimization tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "SEO Optimization",
+    "pricing": "Freemium",
+    "website": "https://you.com",
+    "features": [
+      "SERP analysis",
+      "Page speed insights",
+      "AI meta tag generator",
+      "Mobile optimization"
+    ]
+  },
+  {
+    "name": "Andi Search",
+    "slug": "andi-search",
+    "description": "Andi Search is a powerful seo optimization tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "SEO Optimization",
+    "pricing": "Paid",
+    "website": "https://andisearch.com",
+    "features": [
+      "Content generation",
+      "SERP analysis",
+      "Mobile optimization",
+      "Broken link checker"
+    ]
+  },
+  {
+    "name": "Exa.ai",
+    "slug": "exa-ai",
+    "description": "Exa.ai is a powerful seo optimization tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "SEO Optimization",
+    "pricing": "Paid",
+    "website": "https://exa.ai",
+    "features": [
+      "Backlink monitoring",
+      "Broken link checker",
+      "SERP analysis",
+      "Site audit"
+    ]
+  },
+  {
+    "name": "Tavus",
+    "slug": "tavus",
+    "description": "Tavus is a powerful video seo tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Video SEO",
+    "pricing": "Paid",
+    "website": "https://tavus.io",
+    "features": [
+      "AI content rewriting",
+      "Voice search optimization",
+      "Local citation finder",
+      "Broken link checker"
+    ]
+  },
+  {
+    "name": "InVideo",
+    "slug": "invideo",
+    "description": "InVideo is a powerful video seo tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Video SEO",
+    "pricing": "Freemium",
+    "website": "https://invideo.io",
+    "features": [
+      "Local citation finder",
+      "Search intent analysis",
+      "Voice search optimization",
+      "Internal linking suggestions"
+    ]
+  },
+  {
+    "name": "Munch",
+    "slug": "munch",
+    "description": "Munch is a powerful video seo tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Video SEO",
+    "pricing": "Paid",
+    "website": "https://getmunch.com",
+    "features": [
+      "Broken link checker",
+      "Local citation finder",
+      "Search intent analysis",
+      "Backlink monitoring"
+    ]
+  },
+  {
+    "name": "OpusClip",
+    "slug": "opusclip",
+    "description": "OpusClip is a powerful video seo tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Video SEO",
+    "pricing": "Paid",
+    "website": "https://opus.pro",
+    "features": [
+      "AI content rewriting",
+      "Internal linking suggestions",
+      "On-page optimization",
+      "Page speed insights"
+    ]
+  },
+  {
+    "name": "VidIQ",
+    "slug": "vidiq",
+    "description": "VidIQ is a powerful video seo tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Video SEO",
+    "pricing": "Paid",
+    "website": "https://vidiq.com",
+    "features": [
+      "Internal linking suggestions",
+      "Keyword tracking",
+      "AI meta tag generator",
+      "Broken link checker"
+    ]
+  },
+  {
+    "name": "TubeBuddy",
+    "slug": "tubebuddy",
+    "description": "TubeBuddy is a powerful video seo tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Video SEO",
+    "pricing": "Freemium",
+    "website": "https://tubebuddy.com",
+    "features": [
+      "Mobile optimization",
+      "Voice search optimization",
+      "Backlink monitoring",
+      "Schema markup generator"
+    ]
+  },
+  {
+    "name": "Canva Magic Design",
+    "slug": "canva-magic-design",
+    "description": "Canva Magic Design is a powerful social media marketing tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Social Media Marketing",
+    "pricing": "Freemium",
+    "website": "https://canva.com",
+    "features": [
+      "Mobile optimization",
+      "Site audit",
+      "AI meta tag generator",
+      "Keyword tracking"
+    ]
+  },
+  {
+    "name": "Adobe Express",
+    "slug": "adobe-express",
+    "description": "Adobe Express is a powerful social media marketing tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Social Media Marketing",
+    "pricing": "Paid",
+    "website": "https://adobe.com/express",
+    "features": [
+      "Topic cluster mapping",
+      "Search intent analysis",
+      "Voice search optimization",
+      "Content generation"
+    ]
+  },
+  {
+    "name": "Buffer AI",
+    "slug": "buffer-ai",
+    "description": "Buffer AI is a powerful social media marketing tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Social Media Marketing",
+    "pricing": "Freemium",
+    "website": "https://buffer.com",
+    "features": [
+      "SERP analysis",
+      "Local citation finder",
+      "Backlink monitoring",
+      "Schema markup generator"
+    ]
+  },
+  {
+    "name": "Hootsuite OwlyWriter",
+    "slug": "hootsuite-owlywriter",
+    "description": "Hootsuite OwlyWriter is a powerful social media marketing tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Social Media Marketing",
+    "pricing": "Freemium",
+    "website": "https://hootsuite.com",
+    "features": [
+      "Local citation finder",
+      "SERP analysis",
+      "Broken link checker",
+      "Page speed insights"
+    ]
+  },
+  {
+    "name": "Sprout Social AI",
+    "slug": "sprout-social-ai",
+    "description": "Sprout Social AI is a powerful social media marketing tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Social Media Marketing",
+    "pricing": "Paid",
+    "website": "https://sproutsocial.com",
+    "features": [
+      "Voice search optimization",
+      "Search intent analysis",
+      "SERP analysis",
+      "Internal linking suggestions"
+    ]
+  },
+  {
+    "name": "Loomly",
+    "slug": "loomly",
+    "description": "Loomly is a powerful social media marketing tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Social Media Marketing",
+    "pricing": "Freemium",
+    "website": "https://loomly.com",
+    "features": [
+      "Backlink monitoring",
+      "AI meta tag generator",
+      "AI content rewriting",
+      "Internal linking suggestions"
+    ]
+  },
+  {
+    "name": "Later AI",
+    "slug": "later-ai",
+    "description": "Later AI is a powerful social media marketing tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Social Media Marketing",
+    "pricing": "Freemium",
+    "website": "https://later.com",
+    "features": [
+      "Search intent analysis",
+      "AI meta tag generator",
+      "Keyword tracking",
+      "Voice search optimization"
+    ]
+  },
+  {
+    "name": "SocialBee",
+    "slug": "socialbee",
+    "description": "SocialBee is a powerful social media marketing tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Social Media Marketing",
+    "pricing": "Paid",
+    "website": "https://socialbee.io",
+    "features": [
+      "Backlink monitoring",
+      "Content generation",
+      "Page speed insights",
+      "On-page optimization"
+    ]
+  },
+  {
+    "name": "Tailwind Ghostwriter",
+    "slug": "tailwind-ghostwriter",
+    "description": "Tailwind Ghostwriter is a powerful social media marketing tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Social Media Marketing",
+    "pricing": "Paid",
+    "website": "https://tailwindapp.com",
+    "features": [
+      "Competitor analysis",
+      "Site audit",
+      "Search intent analysis",
+      "AI content rewriting"
+    ]
+  },
+  {
+    "name": "ContentStudio",
+    "slug": "contentstudio",
+    "description": "ContentStudio is a powerful social media marketing tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Social Media Marketing",
+    "pricing": "Paid",
+    "website": "https://contentstudio.io",
+    "features": [
+      "Local citation finder",
+      "Voice search optimization",
+      "Mobile optimization",
+      "Site audit"
+    ]
+  },
+  {
+    "name": "FeedHive",
+    "slug": "feedhive",
+    "description": "FeedHive is a powerful social media marketing tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Social Media Marketing",
+    "pricing": "Freemium",
+    "website": "https://feedhive.com",
+    "features": [
+      "Competitor analysis",
+      "Voice search optimization",
+      "Topic cluster mapping",
+      "Internal linking suggestions"
+    ]
+  },
+  {
+    "name": "Missinglettr",
+    "slug": "missinglettr",
+    "description": "Missinglettr is a powerful social media marketing tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Social Media Marketing",
+    "pricing": "Paid",
+    "website": "https://missinglettr.com",
+    "features": [
+      "Keyword tracking",
+      "Search intent analysis",
+      "Site audit",
+      "Competitor analysis"
+    ]
+  },
+  {
+    "name": "Hemingway Editor",
+    "slug": "hemingway-editor",
+    "description": "Hemingway Editor is a powerful ai writing tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "AI Writing",
+    "pricing": "Freemium",
+    "website": "https://hemingwayapp.com",
+    "features": [
+      "AI meta tag generator",
+      "Internal linking suggestions",
+      "Backlink monitoring",
+      "SERP analysis"
+    ]
+  },
+  {
+    "name": "Ginger Software",
+    "slug": "ginger-software",
+    "description": "Ginger Software is a powerful ai writing tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "AI Writing",
+    "pricing": "Freemium",
+    "website": "https://gingersoftware.com",
+    "features": [
+      "Schema markup generator",
+      "AI content rewriting",
+      "Mobile optimization",
+      "AI meta tag generator"
+    ]
+  },
+  {
+    "name": "LanguageTool",
+    "slug": "languagetool",
+    "description": "LanguageTool is a powerful ai writing tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "AI Writing",
+    "pricing": "Freemium",
+    "website": "https://languagetool.org",
+    "features": [
+      "AI meta tag generator",
+      "Mobile optimization",
+      "On-page optimization",
+      "Site audit"
+    ]
+  },
+  {
+    "name": "WhiteSmoke",
+    "slug": "whitesmoke",
+    "description": "WhiteSmoke is a powerful ai writing tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "AI Writing",
+    "pricing": "Paid",
+    "website": "https://whitesmoke.com",
+    "features": [
+      "Search intent analysis",
+      "Page speed insights",
+      "Competitor analysis",
+      "AI meta tag generator"
+    ]
+  },
+  {
+    "name": "Copyscape",
+    "slug": "copyscape",
+    "description": "Copyscape is a powerful seo optimization tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "SEO Optimization",
+    "pricing": "Paid",
+    "website": "https://copyscape.com",
+    "features": [
+      "Search intent analysis",
+      "Content generation",
+      "AI content rewriting",
+      "Topic cluster mapping"
+    ]
+  },
+  {
+    "name": "Siteliner",
+    "slug": "siteliner",
+    "description": "Siteliner is a powerful technical seo tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Technical SEO",
+    "pricing": "Paid",
+    "website": "https://siteliner.com",
+    "features": [
+      "Topic cluster mapping",
+      "SERP analysis",
+      "Broken link checker",
+      "Local citation finder"
+    ]
+  },
+  {
+    "name": "GTmetrix",
+    "slug": "gtmetrix",
+    "description": "GTmetrix is a powerful technical seo tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Technical SEO",
+    "pricing": "Freemium",
+    "website": "https://gtmetrix.com",
+    "features": [
+      "SERP analysis",
+      "Page speed insights",
+      "On-page optimization",
+      "Content generation"
+    ]
+  },
+  {
+    "name": "Pingdom",
+    "slug": "pingdom",
+    "description": "Pingdom is a powerful technical seo tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Technical SEO",
+    "pricing": "Paid",
+    "website": "https://tools.pingdom.com",
+    "features": [
+      "Site audit",
+      "Search intent analysis",
+      "Content generation",
+      "SERP analysis"
+    ]
+  },
+  {
+    "name": "PageSpeed Insights",
+    "slug": "pagespeed-insights",
+    "description": "PageSpeed Insights is a powerful technical seo tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Technical SEO",
+    "pricing": "Paid",
+    "website": "https://pagespeed.web.dev",
+    "features": [
+      "Page speed insights",
+      "SERP analysis",
+      "Search intent analysis",
+      "AI content rewriting"
+    ]
+  },
+  {
+    "name": "WebPageTest",
+    "slug": "webpagetest",
+    "description": "WebPageTest is a powerful technical seo tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Technical SEO",
+    "pricing": "Freemium",
+    "website": "https://webpagetest.org",
+    "features": [
+      "Page speed insights",
+      "Mobile optimization",
+      "SERP analysis",
+      "Backlink monitoring"
+    ]
+  },
+  {
+    "name": "Hotjar",
+    "slug": "hotjar",
+    "description": "Hotjar is a powerful analytics & reporting tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Analytics & Reporting",
+    "pricing": "Freemium",
+    "website": "https://hotjar.com",
+    "features": [
+      "Backlink monitoring",
+      "Competitor analysis",
+      "On-page optimization",
+      "Broken link checker"
+    ]
+  },
+  {
+    "name": "Crazy Egg",
+    "slug": "crazy-egg",
+    "description": "Crazy Egg is a powerful analytics & reporting tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Analytics & Reporting",
+    "pricing": "Freemium",
+    "website": "https://crazyegg.com",
+    "features": [
+      "Mobile optimization",
+      "Content generation",
+      "On-page optimization",
+      "Site audit"
+    ]
+  },
+  {
+    "name": "Lucky Orange",
+    "slug": "lucky-orange",
+    "description": "Lucky Orange is a powerful analytics & reporting tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Analytics & Reporting",
+    "pricing": "Freemium",
+    "website": "https://luckyorange.com",
+    "features": [
+      "Broken link checker",
+      "On-page optimization",
+      "Topic cluster mapping",
+      "AI content rewriting"
+    ]
+  },
+  {
+    "name": "VWO",
+    "slug": "vwo",
+    "description": "VWO is a powerful analytics & reporting tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Analytics & Reporting",
+    "pricing": "Freemium",
+    "website": "https://vwo.com",
+    "features": [
+      "Schema markup generator",
+      "AI meta tag generator",
+      "Voice search optimization",
+      "Content generation"
+    ]
+  },
+  {
+    "name": "Optimizely",
+    "slug": "optimizely",
+    "description": "Optimizely is a powerful analytics & reporting tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Analytics & Reporting",
+    "pricing": "Freemium",
+    "website": "https://optimizely.com",
+    "features": [
+      "Site audit",
+      "Mobile optimization",
+      "Local citation finder",
+      "Broken link checker"
+    ]
+  },
+  {
+    "name": "Google Search Console",
+    "slug": "google-search-console",
+    "description": "Google Search Console is a powerful seo optimization tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "SEO Optimization",
+    "pricing": "Paid",
+    "website": "https://search.google.com/search-console",
+    "features": [
+      "AI content rewriting",
+      "Local citation finder",
+      "AI meta tag generator",
+      "Internal linking suggestions"
+    ]
+  },
+  {
+    "name": "Google Analytics 4",
+    "slug": "google-analytics-4",
+    "description": "Google Analytics 4 is a powerful analytics & reporting tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Analytics & Reporting",
+    "pricing": "Paid",
+    "website": "https://analytics.google.com",
+    "features": [
+      "Page speed insights",
+      "Broken link checker",
+      "Keyword tracking",
+      "Internal linking suggestions"
+    ]
+  },
+  {
+    "name": "Bing Webmaster Tools",
+    "slug": "bing-webmaster-tools",
+    "description": "Bing Webmaster Tools is a powerful seo optimization tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "SEO Optimization",
+    "pricing": "Paid",
+    "website": "https://bing.com/webmasters",
+    "features": [
+      "Local citation finder",
+      "Search intent analysis",
+      "Competitor analysis",
+      "AI content rewriting"
+    ]
+  },
+  {
+    "name": "Yandex Metrica",
+    "slug": "yandex-metrica",
+    "description": "Yandex Metrica is a powerful analytics & reporting tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Analytics & Reporting",
+    "pricing": "Paid",
+    "website": "https://metrica.yandex.com",
+    "features": [
+      "Topic cluster mapping",
+      "Schema markup generator",
+      "SERP analysis",
+      "AI content rewriting"
+    ]
+  },
+  {
+    "name": "Ahrefs Webmaster Tools",
+    "slug": "ahrefs-webmaster-tools",
+    "description": "Ahrefs Webmaster Tools is a powerful seo optimization tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "SEO Optimization",
+    "pricing": "Paid",
+    "website": "https://ahrefs.com/awt",
+    "features": [
+      "Competitor analysis",
+      "Site audit",
+      "Local citation finder",
+      "Internal linking suggestions"
+    ]
+  },
+  {
+    "name": "Keyword Surfer",
+    "slug": "keyword-surfer",
+    "description": "Keyword Surfer is a powerful keyword research tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Keyword Research",
+    "pricing": "Freemium",
+    "website": "https://surferseo.com/keyword-surfer",
+    "features": [
+      "AI meta tag generator",
+      "Site audit",
+      "Competitor analysis",
+      "Content generation"
+    ]
+  },
+  {
+    "name": "WMS Everywhere",
+    "slug": "wms-everywhere",
+    "description": "WMS Everywhere is a powerful keyword research tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Keyword Research",
+    "pricing": "Paid",
+    "website": "https://wmseverywhere.com",
+    "features": [
+      "Competitor analysis",
+      "On-page optimization",
+      "Content generation",
+      "AI content rewriting"
+    ]
+  },
+  {
+    "name": "SEOQuake",
+    "slug": "seoquake",
+    "description": "SEOQuake is a powerful seo optimization tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "SEO Optimization",
+    "pricing": "Freemium",
+    "website": "https://seoquake.com",
+    "features": [
+      "On-page optimization",
+      "Mobile optimization",
+      "Search intent analysis",
+      "AI meta tag generator"
+    ]
+  },
+  {
+    "name": "MozBar",
+    "slug": "mozbar",
+    "description": "MozBar is a powerful seo optimization tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "SEO Optimization",
+    "pricing": "Freemium",
+    "website": "https://moz.com/products/pro/mozbar",
+    "features": [
+      "Voice search optimization",
+      "Broken link checker",
+      "Schema markup generator",
+      "Backlink monitoring"
+    ]
+  },
+  {
+    "name": "Detailed SEO Extension",
+    "slug": "detailed-seo-extension",
+    "description": "Detailed SEO Extension is a powerful seo optimization tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "SEO Optimization",
+    "pricing": "Paid",
+    "website": "https://detailed.com/extension",
+    "features": [
+      "Backlink monitoring",
+      "Search intent analysis",
+      "Page speed insights",
+      "On-page optimization"
+    ]
+  },
+  {
+    "name": "LinkResearchTools",
+    "slug": "linkresearchtools",
+    "description": "LinkResearchTools is a powerful backlink analysis tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "Backlink Analysis",
+    "pricing": "Paid",
+    "website": "https://linkresearchtools.com",
+    "features": [
+      "Schema markup generator",
+      "Page speed insights",
+      "Competitor analysis",
+      "Keyword tracking"
+    ]
+  },
+  {
+    "name": "SEOPress",
+    "slug": "seopress",
+    "description": "SEOPress is a powerful seo optimization tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "SEO Optimization",
+    "pricing": "Freemium",
+    "website": "https://seopress.org",
+    "features": [
+      "AI content rewriting",
+      "Page speed insights",
+      "Backlink monitoring",
+      "Content generation"
+    ]
+  },
+  {
+    "name": "Squirrly SEO",
+    "slug": "squirrly-seo",
+    "description": "Squirrly SEO is a powerful seo optimization tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "SEO Optimization",
+    "pricing": "Paid",
+    "website": "https://squirrly.co",
+    "features": [
+      "Backlink monitoring",
+      "Topic cluster mapping",
+      "Schema markup generator",
+      "Page speed insights"
+    ]
+  },
+  {
+    "name": "Slim SEO",
+    "slug": "slim-seo",
+    "description": "Slim SEO is a powerful seo optimization tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "SEO Optimization",
+    "pricing": "Paid",
+    "website": "https://wpslimseo.com",
+    "features": [
+      "Mobile optimization",
+      "Voice search optimization",
+      "SERP analysis",
+      "AI content rewriting"
+    ]
+  },
+  {
+    "name": "The SEO Framework",
+    "slug": "the-seo-framework",
+    "description": "The SEO Framework is a powerful seo optimization tool designed to help you dominate search results and drive massive organic traffic.",
+    "category": "SEO Optimization",
+    "pricing": "Freemium",
+    "website": "https://theseoframework.com",
+    "features": [
+      "Mobile optimization",
+      "Competitor analysis",
+      "Schema markup generator",
+      "On-page optimization"
     ]
   }
 ]
