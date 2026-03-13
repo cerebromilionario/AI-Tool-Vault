@@ -40,22 +40,65 @@ const pageTemplate = ({ title, description, canonicalPath, body }) => `<!doctype
   <title>${esc(title)}</title>
   <meta name="description" content="${esc(description)}" />
   <link rel="canonical" href="${SITE_URL}${canonicalPath}" />
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta property="og:title" content="${esc(title)}" />
+  <meta property="og:description" content="${esc(description)}" />
+  <meta property="og:type" content="website" />
+  <meta name="google-adsense-account" content="ca-pub-4613426749830025" />
   <link rel="stylesheet" href="/public/css/styles.css">
 </head>
 <body>
   <header>
     <div class="container nav">
-      <a class="brand" href="/index.html">AI Tool Vault</a>
-      <nav class="menu" aria-label="Main navigation">
+      <a class="brand" href="/index.html">
+        <span class="brand-icon">&#9889;</span>
+        AI Tool Vault
+      </a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+      <nav class="menu" id="main-menu" aria-label="Main navigation">
         <a href="/index.html">Home</a>
-        <a href="/category/index.html">Category</a>
+        <a href="/categories/index.html">Categories</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html" class="btn-nav">Contact</a>
       </nav>
     </div>
   </header>
-  <main class="container py-8">
+  <main class="container">
     ${body}
   </main>
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="/index.html"><span class="brand-icon">&#9889;</span> AI Tool Vault</a>
+          <p>Your ultimate directory for discovering the best AI tools.</p>
+        </div>
+        <div>
+          <h3 class="footer-title">Company</h3>
+          <div class="footer-links">
+            <a href="/about.html">About Us</a>
+            <a href="/contact.html">Contact</a>
+            <a href="/privacy-policy.html">Privacy Policy</a>
+            <a href="/terms-of-use.html">Terms of Use</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">&copy; 2026 AI Tool Vault. All rights reserved.</span>
+        <div class="footer-legal">
+          <a href="/privacy-policy.html">Privacy Policy</a>
+          <a href="/terms-of-use.html">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div id="cookie-banner" role="dialog" aria-label="Cookie consent">
+    <p>We use cookies to improve your experience. <a href="/privacy-policy.html">Privacy Policy</a>.</p>
+    <div class="cookie-actions">
+      <button id="cookie-decline" class="btn btn-secondary btn-sm">Decline</button>
+      <button id="cookie-accept" class="btn btn-sm">Accept All</button>
+    </div>
+  </div>
+  <script src="/public/js/main.js" defer></script>
 </body>
 </html>`;
 

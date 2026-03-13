@@ -45,14 +45,50 @@ const byCategory = toolsWithCategory.reduce((acc, tool) => {
 }, {});
 
 const footer = () => `<footer>
-  <div class="container">
+  <div class="container footer-inner">
     <div class="footer-grid">
-      <div><h3 class="footer-title">AI Tool Categories</h3><div class="footer-links"><a href="/categories/ai-writing.html">Writing</a><a href="/categories/image-generation.html">Image</a><a href="/categories/video-creation.html">Video</a></div></div>
-      <div><h3 class="footer-title">Top Tools</h3><div class="footer-links"><a href="/tools/chatgpt.html">ChatGPT</a><a href="/tools/claude.html">Claude</a><a href="/tools/midjourney.html">Midjourney</a></div></div>
-      <div><h3 class="footer-title">Resources</h3><div class="footer-links"><a href="/categories/index.html">Categories</a><a href="/best/best-ai-tools-for-productivity.html">Best Of</a><a href="/contact.html">Contact</a></div></div>
-      <div><h3 class="footer-title">About</h3><div class="footer-links"><a href="/about.html">Our Mission</a><a href="/index.html">Directory Home</a></div></div>
+      <div class="footer-brand">
+        <a class="brand" href="/index.html"><span class="brand-icon">&#9889;</span> ${siteName}</a>
+        <p>Your ultimate directory for discovering the best AI tools. Curated, organized, and always up to date.</p>
+      </div>
+      <div>
+        <h3 class="footer-title">Categories</h3>
+        <div class="footer-links">
+          <a href="/categories/ai-writing.html">Writing</a>
+          <a href="/categories/image-generation.html">Image Generation</a>
+          <a href="/categories/video-creation.html">Video</a>
+          <a href="/categories/coding.html">Coding</a>
+          <a href="/categories/index.html">All Categories</a>
+        </div>
+      </div>
+      <div>
+        <h3 class="footer-title">Top Tools</h3>
+        <div class="footer-links">
+          <a href="/tools/chatgpt.html">ChatGPT</a>
+          <a href="/tools/claude.html">Claude</a>
+          <a href="/tools/midjourney.html">Midjourney</a>
+          <a href="/tools/github-copilot.html">GitHub Copilot</a>
+          <a href="/best/best-ai-tools-for-productivity.html">Best Of</a>
+        </div>
+      </div>
+      <div>
+        <h3 class="footer-title">Company</h3>
+        <div class="footer-links">
+          <a href="/about.html">About Us</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/privacy-policy.html">Privacy Policy</a>
+          <a href="/terms-of-use.html">Terms of Use</a>
+        </div>
+      </div>
     </div>
-    <div class="footer-copy">© ${new Date().getFullYear()} ${siteName}. All rights reserved.</div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; ${new Date().getFullYear()} ${siteName}. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="/privacy-policy.html">Privacy Policy</a>
+        <a href="/terms-of-use.html">Terms of Use</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+    </div>
   </div>
 </footer>`;
 
@@ -63,24 +99,40 @@ const pageShell = ({ title, description, canonicalPath, body }) => `<!doctype ht
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${escapeHtml(title)}</title>
   <meta name="description" content="${escapeHtml(description)}">
-  <link rel="canonical" href="https://aitoolvault.example.com${escapeHtml(canonicalPath)}">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="canonical" href="https://aitoolvault.netlify.app${escapeHtml(canonicalPath)}">
+  <meta property="og:title" content="${escapeHtml(title)}">
+  <meta property="og:description" content="${escapeHtml(description)}">
+  <meta property="og:type" content="website">
+  <meta name="google-adsense-account" content="ca-pub-4613426749830025">
   <link rel="stylesheet" href="/public/css/styles.css">
 </head>
 <body>
   <header>
     <div class="container nav">
-      <a class="brand" href="/index.html">${siteName}</a>
-      <nav class="menu" aria-label="Main navigation">
-        <a href="/contact.html">Submit Tool</a>
+      <a class="brand" href="/index.html">
+        <span class="brand-icon">&#9889;</span>
+        ${siteName}
+      </a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+      <nav class="menu" id="main-menu" aria-label="Main navigation">
+        <a href="/index.html">Home</a>
         <a href="/categories/index.html">Categories</a>
         <a href="/about.html">About</a>
+        <a href="/contact.html" class="btn-nav">Contact</a>
       </nav>
     </div>
   </header>
 
   <main class="container">${body}</main>
   ${footer()}
+  <div id="cookie-banner" role="dialog" aria-label="Cookie consent">
+    <p>We use cookies to improve your experience and serve personalized ads. <a href="/privacy-policy.html">Privacy Policy</a>.</p>
+    <div class="cookie-actions">
+      <button id="cookie-decline" class="btn btn-secondary btn-sm">Decline</button>
+      <button id="cookie-accept" class="btn btn-sm">Accept All</button>
+    </div>
+  </div>
+  <script src="/public/js/main.js" defer></script>
 </body>
 </html>`;
 
