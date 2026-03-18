@@ -210,9 +210,9 @@
     ]
   },
   {
-    "name": "DALL\u00b7E",
+    "name": "DALL·E",
     "slug": "dall-e",
-    "description": "DALL\u00b7E is an AI tool for image generation workflows, helping teams work faster with practical automation.",
+    "description": "DALL·E is an AI tool for image generation workflows, helping teams work faster with practical automation.",
     "category": "Image Generation",
     "pricing": "Paid",
     "website": "https://openai.com/dall-e",
@@ -3217,6 +3217,916 @@
       "Competitor analysis",
       "Schema markup generator",
       "On-page optimization"
+    ]
+  },
+  {
+    "name": "ContentShake AI",
+    "slug": "contentshake-ai",
+    "description": "ContentShake AI helps marketing teams turn keyword opportunities into blog outlines, briefs, and publish-ready drafts faster.",
+    "category": "Marketing",
+    "pricing": "Paid",
+    "features": [
+      "content briefs",
+      "seo-focused drafts",
+      "topic ideation",
+      "workflow templates"
+    ]
+  },
+  {
+    "name": "Letterdrop",
+    "slug": "letterdrop",
+    "description": "Letterdrop helps B2B teams repurpose internal knowledge into SEO pages, newsletters, and social distribution workflows.",
+    "category": "Marketing",
+    "pricing": "Paid",
+    "features": [
+      "content repurposing",
+      "seo workflow",
+      "distribution planning",
+      "analytics"
+    ]
+  },
+  {
+    "name": "Albert.ai",
+    "slug": "albert-ai",
+    "description": "Albert.ai helps performance marketers automate campaign optimization across paid media channels with AI-driven recommendations.",
+    "category": "Marketing",
+    "pricing": "Enterprise",
+    "features": [
+      "campaign automation",
+      "budget optimization",
+      "creative insights",
+      "cross-channel reporting"
+    ]
+  },
+  {
+    "name": "AdCopy",
+    "slug": "adcopy",
+    "description": "AdCopy helps advertisers generate and test conversion-focused ad copy variations for search and social campaigns.",
+    "category": "Marketing",
+    "pricing": "Paid",
+    "features": [
+      "ad copy generation",
+      "creative testing",
+      "brand voice support",
+      "campaign variants"
+    ]
+  },
+  {
+    "name": "Metadata.io",
+    "slug": "metadata-io",
+    "description": "Metadata.io helps demand generation teams automate paid campaign experiments and pipeline-focused optimization.",
+    "category": "Marketing",
+    "pricing": "Paid",
+    "features": [
+      "campaign experiments",
+      "audience testing",
+      "pipeline analytics",
+      "paid acquisition workflows"
+    ]
+  },
+  {
+    "name": "Omneky",
+    "slug": "omneky",
+    "description": "Omneky helps teams create and scale ad creatives using performance signals from past campaigns.",
+    "category": "Marketing",
+    "pricing": "Paid",
+    "features": [
+      "creative generation",
+      "performance insights",
+      "ad testing",
+      "brand asset reuse"
+    ]
+  },
+  {
+    "name": "Typeface",
+    "slug": "typeface",
+    "description": "Typeface helps brand and marketing teams produce on-brand campaign assets with approvals and collaboration built in.",
+    "category": "Marketing",
+    "pricing": "Enterprise",
+    "features": [
+      "brand-safe generation",
+      "team collaboration",
+      "campaign assets",
+      "approval workflows"
+    ]
+  },
+  {
+    "name": "Tugan.ai",
+    "slug": "tugan-ai",
+    "description": "Tugan.ai helps creators and marketers transform source content into emails, posts, and sales copy in less time.",
+    "category": "Marketing",
+    "pricing": "Paid",
+    "features": [
+      "source-to-copy workflow",
+      "email generation",
+      "social post creation",
+      "sales messaging"
+    ]
+  },
+  {
+    "name": "GrowthLoop",
+    "slug": "growthloop",
+    "description": "GrowthLoop helps data and lifecycle teams launch audience-driven campaigns from warehouse data faster.",
+    "category": "Marketing",
+    "pricing": "Enterprise",
+    "features": [
+      "audience building",
+      "campaign orchestration",
+      "warehouse activation",
+      "journey automation"
+    ]
+  },
+  {
+    "name": "Usermaven AI",
+    "slug": "usermaven-ai",
+    "description": "Usermaven AI helps SaaS teams uncover acquisition and product insights with AI-assisted analytics and attribution summaries.",
+    "category": "Marketing",
+    "pricing": "Freemium",
+    "features": [
+      "marketing analytics",
+      "attribution insights",
+      "funnel analysis",
+      "ai summaries"
+    ]
+  },
+  {
+    "name": "NeuronWriter",
+    "slug": "neuronwriter",
+    "description": "NeuronWriter helps SEO writers plan content structure and optimize articles around search intent and topic coverage.",
+    "category": "SEO Optimization",
+    "pricing": "Paid",
+    "features": [
+      "content scoring",
+      "topic planning",
+      "seo optimization",
+      "competitor analysis"
+    ]
+  },
+  {
+    "name": "WriterZen",
+    "slug": "writerzen",
+    "description": "WriterZen helps publishers organize keyword clusters and build content plans around search intent.",
+    "category": "SEO Optimization",
+    "pricing": "Paid",
+    "features": [
+      "keyword clustering",
+      "topic discovery",
+      "content planning",
+      "serp research"
+    ]
+  },
+  {
+    "name": "Originality.ai",
+    "slug": "originality-ai",
+    "description": "Originality.ai helps editors review AI-written content, plagiarism risk, and readability before publishing.",
+    "category": "SEO Optimization",
+    "pricing": "Paid",
+    "features": [
+      "ai detection",
+      "plagiarism checks",
+      "readability reviews",
+      "team scans"
+    ]
+  },
+  {
+    "name": "Rank Math",
+    "slug": "rank-math",
+    "description": "Rank Math helps WordPress publishers manage technical SEO settings, schema, and on-page optimization from one dashboard.",
+    "category": "SEO Optimization",
+    "pricing": "Freemium",
+    "features": [
+      "on-page seo",
+      "schema setup",
+      "wordpress optimization",
+      "rank tracking"
+    ]
+  },
+  {
+    "name": "Alli AI",
+    "slug": "alli-ai",
+    "description": "Alli AI helps teams roll out SEO changes across many pages without waiting on full development cycles.",
+    "category": "SEO Optimization",
+    "pricing": "Paid",
+    "features": [
+      "sitewide optimizations",
+      "automation rules",
+      "a-b testing",
+      "technical recommendations"
+    ]
+  },
+  {
+    "name": "SEOwind",
+    "slug": "seowind",
+    "description": "SEOwind helps marketers create research-backed content briefs and first drafts aligned with target keywords.",
+    "category": "SEO Optimization",
+    "pricing": "Paid",
+    "features": [
+      "content briefs",
+      "keyword research",
+      "draft generation",
+      "search intent analysis"
+    ]
+  },
+  {
+    "name": "Rankability",
+    "slug": "rankability",
+    "description": "Rankability helps SEO writers benchmark drafts against search competitors and improve content coverage.",
+    "category": "SEO Optimization",
+    "pricing": "Paid",
+    "features": [
+      "content scoring",
+      "competitor benchmarks",
+      "optimization workflows",
+      "brief creation"
+    ]
+  },
+  {
+    "name": "Diib",
+    "slug": "diib",
+    "description": "Diib helps small businesses monitor SEO progress, website health, and growth opportunities with guided recommendations.",
+    "category": "SEO Optimization",
+    "pricing": "Freemium",
+    "features": [
+      "site health monitoring",
+      "growth alerts",
+      "keyword tracking",
+      "seo recommendations"
+    ]
+  },
+  {
+    "name": "SEO.ai",
+    "slug": "seo-ai",
+    "description": "SEO.ai helps teams scale SEO copy production with keyword-driven workflows and optimization guidance.",
+    "category": "SEO Optimization",
+    "pricing": "Paid",
+    "features": [
+      "seo copy generation",
+      "keyword workflow",
+      "content optimization",
+      "performance recommendations"
+    ]
+  },
+  {
+    "name": "SEOTesting",
+    "slug": "seotesting",
+    "description": "SEOTesting helps teams evaluate SEO changes with tests, annotations, and search performance reporting.",
+    "category": "SEO Optimization",
+    "pricing": "Paid",
+    "features": [
+      "seo testing",
+      "search reporting",
+      "change annotations",
+      "traffic analysis"
+    ]
+  },
+  {
+    "name": "Windsurf",
+    "slug": "windsurf",
+    "description": "Windsurf helps developers generate, edit, and refactor code faster with an AI-native coding workspace.",
+    "category": "Coding",
+    "pricing": "Freemium",
+    "features": [
+      "code generation",
+      "multi-file editing",
+      "refactoring support",
+      "chat-based assistance"
+    ]
+  },
+  {
+    "name": "Qodo",
+    "slug": "qodo",
+    "description": "Qodo helps engineering teams write, test, and review production code with AI assistance embedded in the workflow.",
+    "category": "Coding",
+    "pricing": "Freemium",
+    "features": [
+      "test generation",
+      "code review",
+      "ide assistant",
+      "pull request help"
+    ]
+  },
+  {
+    "name": "Continue",
+    "slug": "continue",
+    "description": "Continue helps developers add an open-source AI coding assistant directly into their editor and existing stack.",
+    "category": "Coding",
+    "pricing": "Freemium",
+    "features": [
+      "editor integration",
+      "custom models",
+      "code chat",
+      "context-aware generation"
+    ]
+  },
+  {
+    "name": "Sweep",
+    "slug": "sweep",
+    "description": "Sweep helps teams turn GitHub issues into code changes, pull requests, and faster maintenance workflows.",
+    "category": "Coding",
+    "pricing": "Paid",
+    "features": [
+      "issue-to-pr workflow",
+      "repository context",
+      "bug fix suggestions",
+      "developer automation"
+    ]
+  },
+  {
+    "name": "Devin",
+    "slug": "devin",
+    "description": "Devin helps software teams delegate scoped engineering tasks to an autonomous coding agent.",
+    "category": "Coding",
+    "pricing": "Enterprise",
+    "features": [
+      "autonomous task execution",
+      "codebase navigation",
+      "bug fixing",
+      "development planning"
+    ]
+  },
+  {
+    "name": "Codiga",
+    "slug": "codiga",
+    "description": "Codiga helps developers enforce code quality and secure patterns with AI-assisted review and automation.",
+    "category": "Coding",
+    "pricing": "Freemium",
+    "features": [
+      "static analysis",
+      "secure coding rules",
+      "code review",
+      "team standards"
+    ]
+  },
+  {
+    "name": "AskCodi",
+    "slug": "askcodi",
+    "description": "AskCodi helps developers generate snippets, SQL, tests, and boilerplate across common programming workflows.",
+    "category": "Coding",
+    "pricing": "Freemium",
+    "features": [
+      "snippet generation",
+      "sql assistance",
+      "test creation",
+      "boilerplate automation"
+    ]
+  },
+  {
+    "name": "CodeGeeX",
+    "slug": "codegeex",
+    "description": "CodeGeeX helps developers autocomplete code and work across multiple languages inside popular IDEs.",
+    "category": "Coding",
+    "pricing": "Freemium",
+    "features": [
+      "code completion",
+      "multi-language support",
+      "ide plugins",
+      "prompt-based coding"
+    ]
+  },
+  {
+    "name": "Blackbox AI",
+    "slug": "blackbox-ai",
+    "description": "Blackbox AI helps developers search code, generate snippets, and move from idea to prototype faster.",
+    "category": "Coding",
+    "pricing": "Freemium",
+    "features": [
+      "code search",
+      "snippet generation",
+      "coding chat",
+      "developer productivity"
+    ]
+  },
+  {
+    "name": "Augment Code",
+    "slug": "augment-code",
+    "description": "Augment Code helps engineering teams work with large codebases using AI grounded in repository context.",
+    "category": "Coding",
+    "pricing": "Enterprise",
+    "features": [
+      "large codebase context",
+      "developer chat",
+      "refactoring help",
+      "team rollouts"
+    ]
+  },
+  {
+    "name": "Glean",
+    "slug": "glean",
+    "description": "Glean helps teams search company knowledge faster with AI answers grounded in internal documents and apps.",
+    "category": "Productivity",
+    "pricing": "Enterprise",
+    "features": [
+      "enterprise search",
+      "knowledge answers",
+      "app connections",
+      "workspace insights"
+    ]
+  },
+  {
+    "name": "Granola",
+    "slug": "granola",
+    "description": "Granola helps professionals turn meeting conversations into structured notes, action items, and follow-ups.",
+    "category": "Productivity",
+    "pricing": "Paid",
+    "features": [
+      "meeting notes",
+      "action items",
+      "summary generation",
+      "note organization"
+    ]
+  },
+  {
+    "name": "Supernormal",
+    "slug": "supernormal",
+    "description": "Supernormal helps teams capture meeting summaries and share decisions automatically after calls.",
+    "category": "Productivity",
+    "pricing": "Freemium",
+    "features": [
+      "meeting summaries",
+      "action extraction",
+      "team sharing",
+      "call notes"
+    ]
+  },
+  {
+    "name": "Tactiq",
+    "slug": "tactiq",
+    "description": "Tactiq helps teams turn transcripts from online meetings into highlights, tasks, and searchable notes.",
+    "category": "Productivity",
+    "pricing": "Freemium",
+    "features": [
+      "transcripts",
+      "meeting highlights",
+      "task extraction",
+      "knowledge capture"
+    ]
+  },
+  {
+    "name": "Reflect",
+    "slug": "reflect",
+    "description": "Reflect helps knowledge workers connect notes, ideas, and references inside a faster personal knowledge workflow.",
+    "category": "Productivity",
+    "pricing": "Paid",
+    "features": [
+      "connected notes",
+      "idea capture",
+      "daily planning",
+      "knowledge graph"
+    ]
+  },
+  {
+    "name": "Capacities",
+    "slug": "capacities",
+    "description": "Capacities helps users organize notes, media, and research in an object-based workspace with AI support.",
+    "category": "Productivity",
+    "pricing": "Freemium",
+    "features": [
+      "knowledge organization",
+      "media notes",
+      "workspace ai",
+      "object-based notes"
+    ]
+  },
+  {
+    "name": "Lindy",
+    "slug": "lindy",
+    "description": "Lindy helps operators delegate inbox, scheduling, and repetitive admin tasks to AI assistants.",
+    "category": "Productivity",
+    "pricing": "Paid",
+    "features": [
+      "email assistance",
+      "scheduling automation",
+      "task delegation",
+      "workflow agents"
+    ]
+  },
+  {
+    "name": "Fellow",
+    "slug": "fellow",
+    "description": "Fellow helps managers and teams run better meetings with agendas, notes, and AI-powered recaps.",
+    "category": "Productivity",
+    "pricing": "Freemium",
+    "features": [
+      "meeting agendas",
+      "recaps",
+      "collaborative notes",
+      "manager workflows"
+    ]
+  },
+  {
+    "name": "Sana AI",
+    "slug": "sana-ai",
+    "description": "Sana AI helps teams search internal knowledge, draft answers, and learn faster from company information.",
+    "category": "Productivity",
+    "pricing": "Enterprise",
+    "features": [
+      "knowledge search",
+      "answer drafting",
+      "team learning",
+      "enterprise workspace"
+    ]
+  },
+  {
+    "name": "Nyota",
+    "slug": "nyota",
+    "description": "Nyota helps teams automate meeting notes, task follow-up, and calendar-driven collaboration.",
+    "category": "Productivity",
+    "pricing": "Freemium",
+    "features": [
+      "meeting automation",
+      "task follow-up",
+      "calendar workflows",
+      "team notes"
+    ]
+  },
+  {
+    "name": "Gumloop",
+    "slug": "gumloop",
+    "description": "Gumloop helps operators automate multi-step AI workflows without managing complex infrastructure.",
+    "category": "Automation",
+    "pricing": "Freemium",
+    "features": [
+      "visual workflows",
+      "ai agents",
+      "data enrichment",
+      "automation templates"
+    ]
+  },
+  {
+    "name": "BuildShip",
+    "slug": "buildship",
+    "description": "BuildShip helps teams ship backend automations and AI workflows with low-code building blocks.",
+    "category": "Automation",
+    "pricing": "Freemium",
+    "features": [
+      "backend workflows",
+      "api orchestration",
+      "automation builder",
+      "ai steps"
+    ]
+  },
+  {
+    "name": "Relevance AI",
+    "slug": "relevance-ai",
+    "description": "Relevance AI helps teams deploy AI agents and operational workflows around business data.",
+    "category": "Automation",
+    "pricing": "Paid",
+    "features": [
+      "ai agents",
+      "knowledge workflows",
+      "data actions",
+      "team automations"
+    ]
+  },
+  {
+    "name": "Albato",
+    "slug": "albato",
+    "description": "Albato helps businesses connect apps and automate recurring operations across sales, support, and marketing.",
+    "category": "Automation",
+    "pricing": "Paid",
+    "features": [
+      "app connectors",
+      "workflow automation",
+      "business rules",
+      "multi-step flows"
+    ]
+  },
+  {
+    "name": "Integrately",
+    "slug": "integrately",
+    "description": "Integrately helps teams launch one-click automations and simplify repetitive cross-app workflows.",
+    "category": "Automation",
+    "pricing": "Paid",
+    "features": [
+      "one-click workflows",
+      "app automation",
+      "template library",
+      "multi-app sync"
+    ]
+  },
+  {
+    "name": "MindStudio",
+    "slug": "mindstudio",
+    "description": "MindStudio helps teams create AI workers and task automations without building everything from scratch.",
+    "category": "Automation",
+    "pricing": "Freemium",
+    "features": [
+      "ai workers",
+      "automation builder",
+      "workflow templates",
+      "business operations"
+    ]
+  },
+  {
+    "name": "Stack AI",
+    "slug": "stack-ai",
+    "description": "Stack AI helps teams build AI assistants and workflow automations on top of documents, APIs, and databases.",
+    "category": "Automation",
+    "pricing": "Paid",
+    "features": [
+      "ai assistants",
+      "document workflows",
+      "api connections",
+      "automation builder"
+    ]
+  },
+  {
+    "name": "Flowise",
+    "slug": "flowise",
+    "description": "Flowise helps builders create LLM workflows and AI agents with a visual, open-source interface.",
+    "category": "Automation",
+    "pricing": "Freemium",
+    "features": [
+      "visual agent builder",
+      "llm chains",
+      "open-source stack",
+      "workflow control"
+    ]
+  },
+  {
+    "name": "Voiceflow",
+    "slug": "voiceflow",
+    "description": "Voiceflow helps product teams design chat and voice assistants with collaborative conversation workflows.",
+    "category": "Automation",
+    "pricing": "Freemium",
+    "features": [
+      "assistant design",
+      "conversation flows",
+      "team collaboration",
+      "prototype testing"
+    ]
+  },
+  {
+    "name": "TaskMagic",
+    "slug": "taskmagic",
+    "description": "TaskMagic helps operators automate browser-based tasks and repetitive actions without complex scripts.",
+    "category": "Automation",
+    "pricing": "Paid",
+    "features": [
+      "browser automation",
+      "task recording",
+      "workflow reuse",
+      "ops automation"
+    ]
+  },
+  {
+    "name": "Mixpanel",
+    "slug": "mixpanel",
+    "description": "Mixpanel helps growth and product teams analyze user behavior, funnels, and retention with faster reporting.",
+    "category": "Analytics & Reporting",
+    "pricing": "Freemium",
+    "features": [
+      "product analytics",
+      "funnel reports",
+      "retention analysis",
+      "ai insights"
+    ]
+  },
+  {
+    "name": "Amplitude",
+    "slug": "amplitude",
+    "description": "Amplitude helps teams understand product engagement and prioritize growth experiments with behavioral analytics.",
+    "category": "Analytics & Reporting",
+    "pricing": "Freemium",
+    "features": [
+      "behavior analytics",
+      "journey analysis",
+      "experiment insights",
+      "reporting dashboards"
+    ]
+  },
+  {
+    "name": "Looker Studio",
+    "slug": "looker-studio",
+    "description": "Looker Studio helps teams build dashboards and share performance reporting across stakeholders.",
+    "category": "Analytics & Reporting",
+    "pricing": "Freemium",
+    "features": [
+      "dashboard builder",
+      "data visualization",
+      "stakeholder reporting",
+      "connector ecosystem"
+    ]
+  },
+  {
+    "name": "Triple Whale",
+    "slug": "triple-whale",
+    "description": "Triple Whale helps ecommerce brands unify ad, revenue, and attribution reporting in one analytics workspace.",
+    "category": "Analytics & Reporting",
+    "pricing": "Paid",
+    "features": [
+      "ecommerce analytics",
+      "attribution dashboards",
+      "ad performance",
+      "profit tracking"
+    ]
+  },
+  {
+    "name": "Whatagraph",
+    "slug": "whatagraph",
+    "description": "Whatagraph helps agencies automate client reporting with dashboards, scheduled exports, and performance summaries.",
+    "category": "Analytics & Reporting",
+    "pricing": "Paid",
+    "features": [
+      "client reporting",
+      "dashboard automation",
+      "scheduled reports",
+      "multi-channel metrics"
+    ]
+  },
+  {
+    "name": "Databox",
+    "slug": "databox",
+    "description": "Databox helps businesses monitor KPIs and build live dashboards across marketing, sales, and operations.",
+    "category": "Analytics & Reporting",
+    "pricing": "Freemium",
+    "features": [
+      "kpi dashboards",
+      "cross-channel reporting",
+      "scorecards",
+      "mobile monitoring"
+    ]
+  },
+  {
+    "name": "Fathom Analytics",
+    "slug": "fathom-analytics",
+    "description": "Fathom Analytics helps site owners track performance with privacy-friendly web analytics and clean reports.",
+    "category": "Analytics & Reporting",
+    "pricing": "Paid",
+    "features": [
+      "web analytics",
+      "privacy-friendly tracking",
+      "traffic reports",
+      "goal monitoring"
+    ]
+  },
+  {
+    "name": "Fullstory",
+    "slug": "fullstory",
+    "description": "Fullstory helps product and CX teams understand friction with session insights and behavioral reporting.",
+    "category": "Analytics & Reporting",
+    "pricing": "Enterprise",
+    "features": [
+      "session insights",
+      "user journeys",
+      "friction signals",
+      "experience analytics"
+    ]
+  },
+  {
+    "name": "Heap",
+    "slug": "heap",
+    "description": "Heap helps teams capture product usage data automatically and answer funnel questions faster.",
+    "category": "Analytics & Reporting",
+    "pricing": "Freemium",
+    "features": [
+      "auto-capture analytics",
+      "funnel analysis",
+      "journey mapping",
+      "data exploration"
+    ]
+  },
+  {
+    "name": "PaveAI",
+    "slug": "paveai",
+    "description": "PaveAI helps marketers translate analytics data into narrative insights and actionable reports.",
+    "category": "Analytics & Reporting",
+    "pricing": "Paid",
+    "features": [
+      "report narratives",
+      "analytics insights",
+      "marketing summaries",
+      "stakeholder exports"
+    ]
+  },
+  {
+    "name": "Taplio",
+    "slug": "taplio",
+    "description": "Taplio helps professionals plan, write, and analyze LinkedIn content with an AI-assisted publishing workflow.",
+    "category": "Social Media Marketing",
+    "pricing": "Paid",
+    "features": [
+      "linkedin writing",
+      "post scheduling",
+      "content inspiration",
+      "analytics"
+    ]
+  },
+  {
+    "name": "Typefully",
+    "slug": "typefully",
+    "description": "Typefully helps creators draft, schedule, and repurpose social posts with less friction.",
+    "category": "Social Media Marketing",
+    "pricing": "Freemium",
+    "features": [
+      "social drafting",
+      "post scheduling",
+      "repurposing workflows",
+      "analytics"
+    ]
+  },
+  {
+    "name": "Metricool",
+    "slug": "metricool",
+    "description": "Metricool helps teams plan, publish, and monitor performance across social channels from one dashboard.",
+    "category": "Social Media Marketing",
+    "pricing": "Freemium",
+    "features": [
+      "content calendar",
+      "cross-channel publishing",
+      "analytics dashboards",
+      "competitor monitoring"
+    ]
+  },
+  {
+    "name": "Publer",
+    "slug": "publer",
+    "description": "Publer helps social teams schedule content, recycle evergreen posts, and manage approvals.",
+    "category": "Social Media Marketing",
+    "pricing": "Paid",
+    "features": [
+      "post scheduling",
+      "evergreen recycling",
+      "team approvals",
+      "social analytics"
+    ]
+  },
+  {
+    "name": "Vista Social",
+    "slug": "vista-social",
+    "description": "Vista Social helps brands manage publishing, inbox activity, and reporting across social platforms.",
+    "category": "Social Media Marketing",
+    "pricing": "Paid",
+    "features": [
+      "social publishing",
+      "inbox management",
+      "reporting",
+      "team collaboration"
+    ]
+  },
+  {
+    "name": "Flick",
+    "slug": "flick",
+    "description": "Flick helps creators plan captions, hashtags, and posting schedules with AI support.",
+    "category": "Social Media Marketing",
+    "pricing": "Paid",
+    "features": [
+      "caption generation",
+      "hashtag research",
+      "planning workflows",
+      "social insights"
+    ]
+  },
+  {
+    "name": "Hypefury",
+    "slug": "hypefury",
+    "description": "Hypefury helps creators schedule threads, repurpose top posts, and maintain a consistent social cadence.",
+    "category": "Social Media Marketing",
+    "pricing": "Paid",
+    "features": [
+      "thread scheduling",
+      "content repurposing",
+      "post automation",
+      "creator workflow"
+    ]
+  },
+  {
+    "name": "SocialPilot",
+    "slug": "socialpilot",
+    "description": "SocialPilot helps agencies and brands schedule social content and manage client reporting at scale.",
+    "category": "Social Media Marketing",
+    "pricing": "Paid",
+    "features": [
+      "bulk scheduling",
+      "client management",
+      "social analytics",
+      "approval workflows"
+    ]
+  },
+  {
+    "name": "VistaCreate",
+    "slug": "vistacreate",
+    "description": "VistaCreate helps teams produce simple social visuals and campaign creatives faster.",
+    "category": "Social Media Marketing",
+    "pricing": "Freemium",
+    "features": [
+      "creative templates",
+      "social visuals",
+      "brand kits",
+      "content resizing"
+    ]
+  },
+  {
+    "name": "Planable",
+    "slug": "planable",
+    "description": "Planable helps marketing teams review, approve, and schedule social content with cleaner collaboration.",
+    "category": "Social Media Marketing",
+    "pricing": "Paid",
+    "features": [
+      "content approvals",
+      "social scheduling",
+      "team collaboration",
+      "campaign calendars"
     ]
   }
 ]

@@ -47,12 +47,41 @@
     <section class="hero">
       <p class="eyebrow">EDITORIAL AI DIRECTORY</p>
       <h1>Find AI tools with more context, clearer criteria and less hype.</h1>
-      <p>AI Tool Vault is built to help readers discover tools, compare categories and understand where each product fits before they sign up, subscribe or switch workflows.</p>
+      <p>AI Tool Vault helps readers compare <strong data-tool-count>300</strong> tools across <strong data-category-count>20</strong>+ high-intent categories, so each visit can move from discovery to comparison to decision without dead ends.</p>
       <div class="hero-actions">
         <a href="/categories/index.html" class="btn btn-lg">Browse Categories</a>
         <a href="/editorial-policy.html" class="btn btn-secondary btn-lg">Our Editorial Policy</a>
       </div>
       <div class="search-wrap"><input type="text" id="searchInput" placeholder="Search AI tools, categories or use cases..." aria-label="Search AI tools"></div>
+    </section>
+
+    <section class="content-section">
+      <div class="section-heading"><h2>Built for high-intent discovery</h2></div>
+      <div class="info-grid two-col">
+        <article class="info-card">
+          <h3><span data-tool-count>300</span> tool profiles</h3>
+          <p>More tool pages means broader long-tail coverage for commercial searches, comparison research and category browsing.</p>
+        </article>
+        <article class="info-card">
+          <h3><span data-category-count>20</span> categories indexed</h3>
+          <p>Category depth makes it easier to rank for commercial clusters such as marketing, SEO, coding, productivity and analytics.</p>
+        </article>
+        <article class="info-card">
+          <h3>Higher page depth per visit</h3>
+          <p>Visitors can move from the homepage to category pages, tool pages, alternatives and best-of guides with cleaner internal linking.</p>
+        </article>
+        <article class="info-card">
+          <h3>Better fit for AdSense monetization</h3>
+          <p>Useful navigation and broader informational intent improve page engagement while keeping the site valuable beyond ads alone.</p>
+        </article>
+      </div>
+      <p class="section-note">Start with one of the strongest commercial clusters below or jump directly into the full category index.</p>
+      <div id="highIntentLinks" class="tool-grid">
+        <a href="/categories/index.html">Browse all categories</a>
+        <a href="/best/best-ai-tools-for-marketing.html">Marketing guides</a>
+        <a href="/best/best-ai-tools-for-programming.html">Coding guides</a>
+        <a href="/best/best-ai-productivity-tools.html">Productivity guides</a>
+      </div>
     </section>
 
     <section class="content-section">
@@ -106,8 +135,9 @@
 
     <section class="content-section">
       <div class="section-heading"><h2>Popular categories</h2></div>
-      <div class="category-filter" id="categoryFilter"><button class="filter-btn active" data-category="All">All</button><button class="filter-btn" data-category="Writing">Writing</button><button class="filter-btn" data-category="Image">Image</button><button class="filter-btn" data-category="Video">Video</button><button class="filter-btn" data-category="Chatbot">Chatbot</button><button class="filter-btn" data-category="Productivity">Productivity</button><button class="filter-btn" data-category="Code">Code</button><button class="filter-btn" data-category="Marketing">Marketing</button></div>
-      <p id="searchStatus" class="text-gray-600 mb-4">Showing all tools</p>
+      <div class="category-filter" id="categoryFilter"></div>
+      <p class="section-note">Os filtros abaixo são gerados com base nas categorias mais populosas do diretório para priorizar páginas com maior potencial de tráfego.</p>
+      <p id="searchStatus" class="text-gray-600 mb-4">Loading tool catalog...</p>
       <div id="tools-grid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"><a href="/tools/chatgpt.html" class="tool-card" data-category="AI Writing">
   <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=ChatGPT&background=111827&color=e5e7eb&size=96&rounded=true" alt="ChatGPT logo" loading="lazy">
   <h3>ChatGPT</h3>

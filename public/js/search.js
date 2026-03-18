@@ -1,12 +1,14 @@
 (async () => {
   const searchInput = document.getElementById('searchInput');
   const toolsGrid = document.getElementById('tools-grid');
+  const categoryFilter = document.getElementById('categoryFilter');
 
   if (!searchInput || !toolsGrid) return;
 
   const searchStatus = document.getElementById('searchStatus');
   const noResultsMessage = document.getElementById('noResultsMessage');
-  const filterButtons = Array.from(document.querySelectorAll('.filter-btn'));
+  const highIntentLinks = document.getElementById('highIntentLinks');
+  let filterButtons = [];
   let activeCategory = 'All';
 
   const escapeHtml = (value = '') => String(value)
@@ -16,16 +18,16 @@
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;');
 
+  const slugify = (value = '') => String(value)
+    .toLowerCase()
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/&/g, ' and ')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+
   const logoUrl = (name = '') => `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=111827&color=e5e7eb&size=96&rounded=true`;
-  const categoryMap = {
-    Writing: ['ai writing'],
-    Image: ['image generation'],
-    Video: ['video creation'],
-    Chatbot: ['ai writing', 'chatbot'],
-    Productivity: ['productivity'],
-    Code: ['coding'],
-    Marketing: ['marketing']
-  };
+  const formatNumber = (value = 0) => new Intl.NumberFormat('en-US').format(value);
 
   const createToolCard = (tool) => `
     <a href="/tools/${escapeHtml(tool.slug)}.html" class="tool-card" data-category="${escapeHtml(tool.category || '')}">
@@ -48,19 +50,72 @@
     return;
   }
 
+  const categoryCounts = tools.reduce((counts, tool) => {
+    const category = (tool.category || 'Uncategorized').trim();
+    counts.set(category, (counts.get(category) || 0) + 1);
+    return counts;
+  }, new Map());
+
+  const sortedCategories = Array.from(categoryCounts.entries())
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+
+  document.querySelectorAll('[data-tool-count]').forEach((element) => {
+    element.textContent = formatNumber(tools.length);
+  });
+
+  document.querySelectorAll('[data-category-count]').forEach((element) => {
+    element.textContent = formatNumber(sortedCategories.length);
+  });
+
+  const renderFilterButtons = () => {
+    if (!categoryFilter) return;
+
+    const topCategories = sortedCategories.slice(0, 10);
+    categoryFilter.innerHTML = [
+      '<button class="filter-btn active" data-category="All">All</button>',
+      ...topCategories.map(([category, count]) => (
+        `<button class="filter-btn" data-category="${escapeHtml(category)}">${escapeHtml(category)} (${count})</button>`
+      ))
+    ].join('');
+
+    filterButtons = Array.from(categoryFilter.querySelectorAll('.filter-btn'));
+    filterButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach((item) => item.classList.remove('active'));
+        button.classList.add('active');
+        activeCategory = button.dataset.category || 'All';
+        filterTools();
+      });
+    });
+  };
+
+  const renderHighIntentLinks = () => {
+    if (!highIntentLinks) return;
+
+    highIntentLinks.innerHTML = sortedCategories.slice(0, 6).map(([category, count]) => `
+      <a href="/categories/${slugify(category)}.html">
+        <strong>${escapeHtml(category)}</strong>
+        <span>${formatNumber(count)} tools</span>
+      </a>
+    `).join('');
+  };
+
   const inActiveCategory = (tool) => {
     if (activeCategory === 'All') return true;
-    const category = (tool.category || '').toLowerCase();
-    return (categoryMap[activeCategory] || [activeCategory.toLowerCase()]).some((entry) => category.includes(entry));
+    return (tool.category || '').trim().toLowerCase() === activeCategory.toLowerCase();
   };
 
   const renderTools = (visibleTools, query = '') => {
     toolsGrid.innerHTML = visibleTools.map((tool) => createToolCard(tool)).join('');
     if (searchStatus) {
-      const categoryText = activeCategory === 'All' ? '' : ` in ${activeCategory}`;
-      searchStatus.textContent = query
-        ? `Showing ${visibleTools.length} result${visibleTools.length === 1 ? '' : 's'} for “${query}”${categoryText}`
-        : `Showing ${visibleTools.length} tool${visibleTools.length === 1 ? '' : 's'}${categoryText}`;
+      if (query) {
+        const categoryText = activeCategory === 'All' ? '' : ` in ${activeCategory}`;
+        searchStatus.textContent = `Showing ${visibleTools.length} result${visibleTools.length === 1 ? '' : 's'} for “${query}”${categoryText}`;
+      } else if (activeCategory === 'All') {
+        searchStatus.textContent = `Showing ${visibleTools.length} tools across ${sortedCategories.length} categories.`;
+      } else {
+        searchStatus.textContent = `Showing ${visibleTools.length} tool${visibleTools.length === 1 ? '' : 's'} in ${activeCategory}.`;
+      }
     }
     if (noResultsMessage) noResultsMessage.hidden = visibleTools.length > 0;
   };
@@ -79,15 +134,8 @@
     renderTools(filtered, searchInput.value.trim());
   };
 
-  filterButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      filterButtons.forEach((item) => item.classList.remove('active'));
-      button.classList.add('active');
-      activeCategory = button.dataset.category || 'All';
-      filterTools();
-    });
-  });
-
+  renderFilterButtons();
+  renderHighIntentLinks();
   renderTools(tools);
   searchInput.addEventListener('input', filterTools);
 })();
