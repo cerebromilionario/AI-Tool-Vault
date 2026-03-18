@@ -433,6 +433,9 @@ section.content-section {
   color: var(--text);
 }
 .tool-grid a::after { content: '→'; color: var(--muted); flex-shrink: 0; }
+#highIntentLinks a { align-items: flex-start; }
+#highIntentLinks a strong { display: block; }
+#highIntentLinks a span { display: block; color: var(--muted); font-size: .88rem; }
 
 /* Article cards */
 .card {
