@@ -836,3 +836,102 @@ img[loading="lazy"] { content-visibility: auto; }
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+/* ============================================================
+   EDITORIAL PAGE BLOCKS
+   ============================================================ */
+.page-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.hero-left {
+  text-align: left;
+}
+.hero-left p {
+  margin-left: 0;
+  max-width: 840px;
+}
+.meta-pills,
+.bullet-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  margin-top: 1rem;
+}
+.meta-pill,
+.bullet-inline span {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--border-soft);
+  background: rgba(255, 255, 255, 0.03);
+  color: #dbe4ff;
+  border-radius: 999px;
+  padding: .45rem .8rem;
+  font-size: .8rem;
+}
+.editorial-note {
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.12), rgba(15, 23, 42, 0.75));
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+  box-shadow: var(--shadow-sm);
+}
+.editorial-note p:last-child {
+  margin-bottom: 0;
+}
+.editorial-kicker {
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: #c7d2fe;
+  font-size: .72rem;
+  font-weight: 800;
+}
+.editorial-grid {
+  display: grid;
+  gap: 1rem;
+}
+.editorial-grid-2 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.editorial-grid-3 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.editorial-card {
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+.editorial-card h3 {
+  margin-top: 0;
+}
+.editorial-list {
+  margin: .25rem 0 0;
+  padding-left: 1.15rem;
+}
+.editorial-list li {
+  color: #cbd5e1;
+}
+.pros-card {
+  border-color: rgba(16, 185, 129, 0.35);
+}
+.cons-card {
+  border-color: rgba(245, 158, 11, 0.35);
+}
+.ranking-card {
+  gap: .8rem;
+}
+.muted-note {
+  color: #cbd5e1;
+  font-size: .92rem;
+}
+
+@media (min-width: 768px) {
+  .editorial-grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .editorial-grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

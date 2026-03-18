@@ -17,9 +17,10 @@ From `data/tools.json`, the generator creates static HTML pages in:
 
 ```bash
 node scripts/generate-pages.js
+node scripts/upgrade-editorial-pages.js
 ```
 
-This command is Netlify-safe (pure static output, no server runtime required).
+These commands are Netlify-safe (pure static output, no server runtime required). The editorial upgrade pass rewrites the programmatic tools, best-of, and compare pages with richer sections such as who the tool is for, pros, cons, alternatives, verdicts, and transparent editorial notes.
 
 ## Data format
 
@@ -47,7 +48,7 @@ All rendered pages include Tailwind + existing site CSS (`/public/css/styles.css
 Use this build command:
 
 ```bash
-node scripts/generate-pages.js
+node scripts/generate-pages.js && node scripts/generate-sitemap.js && node scripts/upgrade-editorial-pages.js
 ```
 
 Publish directory remains:
