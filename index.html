@@ -3,14 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Tool Vault | Discover the Best AI Tools</title>
-  <meta name="description" content="AI Tool Vault is the ultimate directory to discover, compare and explore the best artificial intelligence tools for writing, design, coding, productivity and more.">
+  <title>AI Tool Vault | Discover, Compare and Evaluate AI Tools</title>
+  <meta name="description" content="AI Tool Vault is an editorial directory for discovering, comparing and evaluating AI tools with practical buying criteria, use cases and transparent methodology.">
   <link rel="canonical" href="https://aitoolvault.netlify.app/">
-  <meta property="og:title" content="AI Tool Vault | Discover the Best AI Tools">
-  <meta property="og:description" content="Discover, compare and explore hundreds of AI tools for writing, design, coding, productivity and more.">
+  <meta property="og:title" content="AI Tool Vault | Discover, Compare and Evaluate AI Tools">
+  <meta property="og:description" content="Discover and compare AI tools with editorial methodology, practical recommendations and transparent evaluation criteria.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://aitoolvault.netlify.app/">
   <meta name="google-adsense-account" content="ca-pub-4613426749830025">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "AI Tool Vault",
+      "url": "https://aitoolvault.netlify.app/",
+      "description": "Editorial directory for discovering and comparing AI tools.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "AI Tool Vault"
+      }
+    }
+  </script>
   <link rel="stylesheet" href="/public/css/styles.css">
 </head>
 <body>
@@ -31,15 +44,68 @@
   </header>
 
   <main class="container">
-    <section class="hero" style="text-align:center;">
-      <p class="eyebrow">AI DIRECTORY</p>
-      <h1>Discover the Best AI Tools</h1>
-      <p style="margin-inline:auto;">Explore hundreds of AI tools for writing, design, coding, productivity and more.</p>
-      <div class="search-wrap"><input type="text" id="searchInput" placeholder="Search AI tools..." aria-label="Search AI tools"></div>
+    <section class="hero">
+      <p class="eyebrow">EDITORIAL AI DIRECTORY</p>
+      <h1>Find AI tools with more context, clearer criteria and less hype.</h1>
+      <p>AI Tool Vault is built to help readers discover tools, compare categories and understand where each product fits before they sign up, subscribe or switch workflows.</p>
+      <div class="hero-actions">
+        <a href="/categories/index.html" class="btn btn-lg">Browse Categories</a>
+        <a href="/editorial-policy.html" class="btn btn-secondary btn-lg">Our Editorial Policy</a>
+      </div>
+      <div class="search-wrap"><input type="text" id="searchInput" placeholder="Search AI tools, categories or use cases..." aria-label="Search AI tools"></div>
     </section>
 
     <section class="content-section">
-      <div class="section-heading"><h2>Categories</h2></div>
+      <div class="section-heading"><h2>What makes this directory useful</h2></div>
+      <div class="info-grid two-col">
+        <article class="info-card">
+          <h3>Original editorial framing</h3>
+          <p>Instead of listing tools without context, we organize products around jobs to be done, budget constraints, workflow fit, learning curve and team size.</p>
+        </article>
+        <article class="info-card">
+          <h3>Practical comparison criteria</h3>
+          <p>We focus on questions readers actually ask before adopting a tool: who it is for, what it does well, likely tradeoffs and when an alternative may be better.</p>
+        </article>
+        <article class="info-card">
+          <h3>Transparent monetization</h3>
+          <p>We may use ads or affiliate relationships, but our goal is to publish pages that remain useful even if no one clicks an ad. Editorial standards come first.</p>
+        </article>
+        <article class="info-card">
+          <h3>Fast navigation</h3>
+          <p>Readers can jump from discovery to comparison to policy pages without dead ends, which improves trust and makes the site easier to review.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="section-heading"><h2>How we evaluate AI tools</h2></div>
+      <div class="checklist-grid">
+        <div class="checklist-card">
+          <span class="checklist-step">01</span>
+          <h3>Use case clarity</h3>
+          <p>We check whether a tool solves a clear problem for creators, marketers, developers, students or operations teams.</p>
+        </div>
+        <div class="checklist-card">
+          <span class="checklist-step">02</span>
+          <h3>Feature depth</h3>
+          <p>We look at workflow capabilities, integrations, collaboration options and how much manual effort the product actually removes.</p>
+        </div>
+        <div class="checklist-card">
+          <span class="checklist-step">03</span>
+          <h3>Pricing fit</h3>
+          <p>We review whether the free plan, freemium model or paid tiers make sense for individuals, small teams and growing businesses.</p>
+        </div>
+        <div class="checklist-card">
+          <span class="checklist-step">04</span>
+          <h3>Adoption friction</h3>
+          <p>We consider onboarding difficulty, prompt skill requirements, setup time and whether a beginner can get value quickly.</p>
+        </div>
+      </div>
+      <p class="section-note">For a deeper explanation of our review process, disclosures and content standards, visit the <a href="/editorial-policy.html">Editorial Policy</a> page.</p>
+    </section>
+
+    <section class="content-section">
+      <div class="section-heading"><h2>Popular categories</h2></div>
       <div class="category-filter" id="categoryFilter"><button class="filter-btn active" data-category="All">All</button><button class="filter-btn" data-category="Writing">Writing</button><button class="filter-btn" data-category="Image">Image</button><button class="filter-btn" data-category="Video">Video</button><button class="filter-btn" data-category="Chatbot">Chatbot</button><button class="filter-btn" data-category="Productivity">Productivity</button><button class="filter-btn" data-category="Code">Code</button><button class="filter-btn" data-category="Marketing">Marketing</button></div>
       <p id="searchStatus" class="text-gray-600 mb-4">Showing all tools</p>
       <div id="tools-grid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"><a href="/tools/chatgpt.html" class="tool-card" data-category="AI Writing">
@@ -114,695 +180,36 @@
   <p>ProWritingAid is an AI tool for ai writing workflows, helping teams work faster with practical automation.</p>
   <p><small>AI Writing</small></p>
   <span class="view-link">View Tool →</span>
-</a><a href="/tools/ink.html" class="tool-card" data-category="AI Writing">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=INK&background=111827&color=e5e7eb&size=96&rounded=true" alt="INK logo" loading="lazy">
-  <h3>INK</h3>
-  <p>INK is an AI tool for ai writing workflows, helping teams work faster with practical automation.</p>
-  <p><small>AI Writing</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/notion-ai.html" class="tool-card" data-category="AI Writing">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Notion%20AI&background=111827&color=e5e7eb&size=96&rounded=true" alt="Notion AI logo" loading="lazy">
-  <h3>Notion AI</h3>
-  <p>Notion AI is an AI tool for ai writing workflows, helping teams work faster with practical automation.</p>
-  <p><small>AI Writing</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/midjourney.html" class="tool-card" data-category="Image Generation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Midjourney&background=111827&color=e5e7eb&size=96&rounded=true" alt="Midjourney logo" loading="lazy">
-  <h3>Midjourney</h3>
-  <p>Midjourney is an AI tool for image generation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Image Generation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/dall-e.html" class="tool-card" data-category="Image Generation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=DALL%C2%B7E&background=111827&color=e5e7eb&size=96&rounded=true" alt="DALL·E logo" loading="lazy">
-  <h3>DALL·E</h3>
-  <p>DALL·E is an AI tool for image generation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Image Generation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/adobe-firefly.html" class="tool-card" data-category="Image Generation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Adobe%20Firefly&background=111827&color=e5e7eb&size=96&rounded=true" alt="Adobe Firefly logo" loading="lazy">
-  <h3>Adobe Firefly</h3>
-  <p>Adobe Firefly is an AI tool for image generation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Image Generation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/leonardo-ai.html" class="tool-card" data-category="Image Generation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Leonardo%20AI&background=111827&color=e5e7eb&size=96&rounded=true" alt="Leonardo AI logo" loading="lazy">
-  <h3>Leonardo AI</h3>
-  <p>Leonardo AI is an AI tool for image generation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Image Generation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/stable-diffusion.html" class="tool-card" data-category="Image Generation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Stable%20Diffusion&background=111827&color=e5e7eb&size=96&rounded=true" alt="Stable Diffusion logo" loading="lazy">
-  <h3>Stable Diffusion</h3>
-  <p>Stable Diffusion is an AI tool for image generation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Image Generation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/canva-magic-media.html" class="tool-card" data-category="Image Generation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Canva%20Magic%20Media&background=111827&color=e5e7eb&size=96&rounded=true" alt="Canva Magic Media logo" loading="lazy">
-  <h3>Canva Magic Media</h3>
-  <p>Canva Magic Media is an AI tool for image generation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Image Generation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/ideogram.html" class="tool-card" data-category="Image Generation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Ideogram&background=111827&color=e5e7eb&size=96&rounded=true" alt="Ideogram logo" loading="lazy">
-  <h3>Ideogram</h3>
-  <p>Ideogram is an AI tool for image generation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Image Generation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/playground-ai.html" class="tool-card" data-category="Image Generation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Playground%20AI&background=111827&color=e5e7eb&size=96&rounded=true" alt="Playground AI logo" loading="lazy">
-  <h3>Playground AI</h3>
-  <p>Playground AI is an AI tool for image generation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Image Generation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/dreamstudio.html" class="tool-card" data-category="Image Generation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=DreamStudio&background=111827&color=e5e7eb&size=96&rounded=true" alt="DreamStudio logo" loading="lazy">
-  <h3>DreamStudio</h3>
-  <p>DreamStudio is an AI tool for image generation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Image Generation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/nightcafe.html" class="tool-card" data-category="Image Generation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=NightCafe&background=111827&color=e5e7eb&size=96&rounded=true" alt="NightCafe logo" loading="lazy">
-  <h3>NightCafe</h3>
-  <p>NightCafe is an AI tool for image generation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Image Generation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/lexica.html" class="tool-card" data-category="Image Generation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Lexica&background=111827&color=e5e7eb&size=96&rounded=true" alt="Lexica logo" loading="lazy">
-  <h3>Lexica</h3>
-  <p>Lexica is an AI tool for image generation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Image Generation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/craiyon.html" class="tool-card" data-category="Image Generation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Craiyon&background=111827&color=e5e7eb&size=96&rounded=true" alt="Craiyon logo" loading="lazy">
-  <h3>Craiyon</h3>
-  <p>Craiyon is an AI tool for image generation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Image Generation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/bluewillow.html" class="tool-card" data-category="Image Generation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=BlueWillow&background=111827&color=e5e7eb&size=96&rounded=true" alt="BlueWillow logo" loading="lazy">
-  <h3>BlueWillow</h3>
-  <p>BlueWillow is an AI tool for image generation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Image Generation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/clipdrop.html" class="tool-card" data-category="Image Generation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Clipdrop&background=111827&color=e5e7eb&size=96&rounded=true" alt="Clipdrop logo" loading="lazy">
-  <h3>Clipdrop</h3>
-  <p>Clipdrop is an AI tool for image generation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Image Generation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/runway.html" class="tool-card" data-category="Video Creation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Runway&background=111827&color=e5e7eb&size=96&rounded=true" alt="Runway logo" loading="lazy">
-  <h3>Runway</h3>
-  <p>Runway is an AI tool for video creation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Video Creation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/synthesia.html" class="tool-card" data-category="Video Creation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Synthesia&background=111827&color=e5e7eb&size=96&rounded=true" alt="Synthesia logo" loading="lazy">
-  <h3>Synthesia</h3>
-  <p>Synthesia is an AI tool for video creation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Video Creation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/pictory.html" class="tool-card" data-category="Video Creation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Pictory&background=111827&color=e5e7eb&size=96&rounded=true" alt="Pictory logo" loading="lazy">
-  <h3>Pictory</h3>
-  <p>Pictory is an AI tool for video creation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Video Creation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/invideo-ai.html" class="tool-card" data-category="Video Creation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=InVideo%20AI&background=111827&color=e5e7eb&size=96&rounded=true" alt="InVideo AI logo" loading="lazy">
-  <h3>InVideo AI</h3>
-  <p>InVideo AI is an AI tool for video creation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Video Creation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/heygen.html" class="tool-card" data-category="Video Creation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=HeyGen&background=111827&color=e5e7eb&size=96&rounded=true" alt="HeyGen logo" loading="lazy">
-  <h3>HeyGen</h3>
-  <p>HeyGen is an AI tool for video creation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Video Creation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/veed.html" class="tool-card" data-category="Video Creation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Veed&background=111827&color=e5e7eb&size=96&rounded=true" alt="Veed logo" loading="lazy">
-  <h3>Veed</h3>
-  <p>Veed is an AI tool for video creation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Video Creation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/descript.html" class="tool-card" data-category="Video Creation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Descript&background=111827&color=e5e7eb&size=96&rounded=true" alt="Descript logo" loading="lazy">
-  <h3>Descript</h3>
-  <p>Descript is an AI tool for video creation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Video Creation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/luma-dream-machine.html" class="tool-card" data-category="Video Creation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Luma%20Dream%20Machine&background=111827&color=e5e7eb&size=96&rounded=true" alt="Luma Dream Machine logo" loading="lazy">
-  <h3>Luma Dream Machine</h3>
-  <p>Luma Dream Machine is an AI tool for video creation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Video Creation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/kaiber.html" class="tool-card" data-category="Video Creation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Kaiber&background=111827&color=e5e7eb&size=96&rounded=true" alt="Kaiber logo" loading="lazy">
-  <h3>Kaiber</h3>
-  <p>Kaiber is an AI tool for video creation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Video Creation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/d-id.html" class="tool-card" data-category="Video Creation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=D-ID&background=111827&color=e5e7eb&size=96&rounded=true" alt="D-ID logo" loading="lazy">
-  <h3>D-ID</h3>
-  <p>D-ID is an AI tool for video creation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Video Creation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/colossyan.html" class="tool-card" data-category="Video Creation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Colossyan&background=111827&color=e5e7eb&size=96&rounded=true" alt="Colossyan logo" loading="lazy">
-  <h3>Colossyan</h3>
-  <p>Colossyan is an AI tool for video creation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Video Creation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/elai-io.html" class="tool-card" data-category="Video Creation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Elai.io&background=111827&color=e5e7eb&size=96&rounded=true" alt="Elai.io logo" loading="lazy">
-  <h3>Elai.io</h3>
-  <p>Elai.io is an AI tool for video creation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Video Creation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/animoto-ai.html" class="tool-card" data-category="Video Creation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Animoto%20AI&background=111827&color=e5e7eb&size=96&rounded=true" alt="Animoto AI logo" loading="lazy">
-  <h3>Animoto AI</h3>
-  <p>Animoto AI is an AI tool for video creation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Video Creation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/opus-clip.html" class="tool-card" data-category="Video Creation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Opus%20Clip&background=111827&color=e5e7eb&size=96&rounded=true" alt="Opus Clip logo" loading="lazy">
-  <h3>Opus Clip</h3>
-  <p>Opus Clip is an AI tool for video creation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Video Creation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/hubspot-ai.html" class="tool-card" data-category="Marketing">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=HubSpot%20AI&background=111827&color=e5e7eb&size=96&rounded=true" alt="HubSpot AI logo" loading="lazy">
-  <h3>HubSpot AI</h3>
-  <p>HubSpot AI is an AI tool for marketing workflows, helping teams work faster with practical automation.</p>
-  <p><small>Marketing</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/surfer-seo.html" class="tool-card" data-category="Marketing">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Surfer%20SEO&background=111827&color=e5e7eb&size=96&rounded=true" alt="Surfer SEO logo" loading="lazy">
-  <h3>Surfer SEO</h3>
-  <p>Surfer SEO is an AI tool for marketing workflows, helping teams work faster with practical automation.</p>
-  <p><small>Marketing</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/frase.html" class="tool-card" data-category="Marketing">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Frase&background=111827&color=e5e7eb&size=96&rounded=true" alt="Frase logo" loading="lazy">
-  <h3>Frase</h3>
-  <p>Frase is an AI tool for marketing workflows, helping teams work faster with practical automation.</p>
-  <p><small>Marketing</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/marketmuse.html" class="tool-card" data-category="Marketing">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=MarketMuse&background=111827&color=e5e7eb&size=96&rounded=true" alt="MarketMuse logo" loading="lazy">
-  <h3>MarketMuse</h3>
-  <p>MarketMuse is an AI tool for marketing workflows, helping teams work faster with practical automation.</p>
-  <p><small>Marketing</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/semrush-ai-toolkit.html" class="tool-card" data-category="Marketing">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Semrush%20AI%20Toolkit&background=111827&color=e5e7eb&size=96&rounded=true" alt="Semrush AI Toolkit logo" loading="lazy">
-  <h3>Semrush AI Toolkit</h3>
-  <p>Semrush AI Toolkit is an AI tool for marketing workflows, helping teams work faster with practical automation.</p>
-  <p><small>Marketing</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/adcreative-ai.html" class="tool-card" data-category="Marketing">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=AdCreative.ai&background=111827&color=e5e7eb&size=96&rounded=true" alt="AdCreative.ai logo" loading="lazy">
-  <h3>AdCreative.ai</h3>
-  <p>AdCreative.ai is an AI tool for marketing workflows, helping teams work faster with practical automation.</p>
-  <p><small>Marketing</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/ocoya.html" class="tool-card" data-category="Marketing">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Ocoya&background=111827&color=e5e7eb&size=96&rounded=true" alt="Ocoya logo" loading="lazy">
-  <h3>Ocoya</h3>
-  <p>Ocoya is an AI tool for marketing workflows, helping teams work faster with practical automation.</p>
-  <p><small>Marketing</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/predis-ai.html" class="tool-card" data-category="Marketing">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Predis.ai&background=111827&color=e5e7eb&size=96&rounded=true" alt="Predis.ai logo" loading="lazy">
-  <h3>Predis.ai</h3>
-  <p>Predis.ai is an AI tool for marketing workflows, helping teams work faster with practical automation.</p>
-  <p><small>Marketing</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/unbounce-smart-copy.html" class="tool-card" data-category="Marketing">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Unbounce%20Smart%20Copy&background=111827&color=e5e7eb&size=96&rounded=true" alt="Unbounce Smart Copy logo" loading="lazy">
-  <h3>Unbounce Smart Copy</h3>
-  <p>Unbounce Smart Copy is an AI tool for marketing workflows, helping teams work faster with practical automation.</p>
-  <p><small>Marketing</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/getresponse-ai-email-generator.html" class="tool-card" data-category="Marketing">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=GetResponse%20AI%20Email%20Generator&background=111827&color=e5e7eb&size=96&rounded=true" alt="GetResponse AI Email Generator logo" loading="lazy">
-  <h3>GetResponse AI Email Generator</h3>
-  <p>GetResponse AI Email Generator is an AI tool for marketing workflows, helping teams work faster with practical automation.</p>
-  <p><small>Marketing</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/persado.html" class="tool-card" data-category="Marketing">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Persado&background=111827&color=e5e7eb&size=96&rounded=true" alt="Persado logo" loading="lazy">
-  <h3>Persado</h3>
-  <p>Persado is an AI tool for marketing workflows, helping teams work faster with practical automation.</p>
-  <p><small>Marketing</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/phrasee.html" class="tool-card" data-category="Marketing">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Phrasee&background=111827&color=e5e7eb&size=96&rounded=true" alt="Phrasee logo" loading="lazy">
-  <h3>Phrasee</h3>
-  <p>Phrasee is an AI tool for marketing workflows, helping teams work faster with practical automation.</p>
-  <p><small>Marketing</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/mutiny.html" class="tool-card" data-category="Marketing">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Mutiny&background=111827&color=e5e7eb&size=96&rounded=true" alt="Mutiny logo" loading="lazy">
-  <h3>Mutiny</h3>
-  <p>Mutiny is an AI tool for marketing workflows, helping teams work faster with practical automation.</p>
-  <p><small>Marketing</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/seventh-sense.html" class="tool-card" data-category="Marketing">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Seventh%20Sense&background=111827&color=e5e7eb&size=96&rounded=true" alt="Seventh Sense logo" loading="lazy">
-  <h3>Seventh Sense</h3>
-  <p>Seventh Sense is an AI tool for marketing workflows, helping teams work faster with practical automation.</p>
-  <p><small>Marketing</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/clickup-ai.html" class="tool-card" data-category="Productivity">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=ClickUp%20AI&background=111827&color=e5e7eb&size=96&rounded=true" alt="ClickUp AI logo" loading="lazy">
-  <h3>ClickUp AI</h3>
-  <p>ClickUp AI is an AI tool for productivity workflows, helping teams work faster with practical automation.</p>
-  <p><small>Productivity</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/asana-intelligence.html" class="tool-card" data-category="Productivity">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Asana%20Intelligence&background=111827&color=e5e7eb&size=96&rounded=true" alt="Asana Intelligence logo" loading="lazy">
-  <h3>Asana Intelligence</h3>
-  <p>Asana Intelligence is an AI tool for productivity workflows, helping teams work faster with practical automation.</p>
-  <p><small>Productivity</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/motion.html" class="tool-card" data-category="Productivity">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Motion&background=111827&color=e5e7eb&size=96&rounded=true" alt="Motion logo" loading="lazy">
-  <h3>Motion</h3>
-  <p>Motion is an AI tool for productivity workflows, helping teams work faster with practical automation.</p>
-  <p><small>Productivity</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/mem.html" class="tool-card" data-category="Productivity">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Mem&background=111827&color=e5e7eb&size=96&rounded=true" alt="Mem logo" loading="lazy">
-  <h3>Mem</h3>
-  <p>Mem is an AI tool for productivity workflows, helping teams work faster with practical automation.</p>
-  <p><small>Productivity</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/reclaim-ai.html" class="tool-card" data-category="Productivity">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Reclaim%20AI&background=111827&color=e5e7eb&size=96&rounded=true" alt="Reclaim AI logo" loading="lazy">
-  <h3>Reclaim AI</h3>
-  <p>Reclaim AI is an AI tool for productivity workflows, helping teams work faster with practical automation.</p>
-  <p><small>Productivity</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/todoist-ai-assistant.html" class="tool-card" data-category="Productivity">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Todoist%20AI%20Assistant&background=111827&color=e5e7eb&size=96&rounded=true" alt="Todoist AI Assistant logo" loading="lazy">
-  <h3>Todoist AI Assistant</h3>
-  <p>Todoist AI Assistant is an AI tool for productivity workflows, helping teams work faster with practical automation.</p>
-  <p><small>Productivity</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/superhuman-ai.html" class="tool-card" data-category="Productivity">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Superhuman%20AI&background=111827&color=e5e7eb&size=96&rounded=true" alt="Superhuman AI logo" loading="lazy">
-  <h3>Superhuman AI</h3>
-  <p>Superhuman AI is an AI tool for productivity workflows, helping teams work faster with practical automation.</p>
-  <p><small>Productivity</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/otter-ai.html" class="tool-card" data-category="Productivity">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Otter.ai&background=111827&color=e5e7eb&size=96&rounded=true" alt="Otter.ai logo" loading="lazy">
-  <h3>Otter.ai</h3>
-  <p>Otter.ai is an AI tool for productivity workflows, helping teams work faster with practical automation.</p>
-  <p><small>Productivity</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/fireflies-ai.html" class="tool-card" data-category="Productivity">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Fireflies.ai&background=111827&color=e5e7eb&size=96&rounded=true" alt="Fireflies.ai logo" loading="lazy">
-  <h3>Fireflies.ai</h3>
-  <p>Fireflies.ai is an AI tool for productivity workflows, helping teams work faster with practical automation.</p>
-  <p><small>Productivity</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/fathom.html" class="tool-card" data-category="Productivity">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Fathom&background=111827&color=e5e7eb&size=96&rounded=true" alt="Fathom logo" loading="lazy">
-  <h3>Fathom</h3>
-  <p>Fathom is an AI tool for productivity workflows, helping teams work faster with practical automation.</p>
-  <p><small>Productivity</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/sanebox.html" class="tool-card" data-category="Productivity">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=SaneBox&background=111827&color=e5e7eb&size=96&rounded=true" alt="SaneBox logo" loading="lazy">
-  <h3>SaneBox</h3>
-  <p>SaneBox is an AI tool for productivity workflows, helping teams work faster with practical automation.</p>
-  <p><small>Productivity</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/taskade.html" class="tool-card" data-category="Productivity">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Taskade&background=111827&color=e5e7eb&size=96&rounded=true" alt="Taskade logo" loading="lazy">
-  <h3>Taskade</h3>
-  <p>Taskade is an AI tool for productivity workflows, helping teams work faster with practical automation.</p>
-  <p><small>Productivity</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/coda-ai.html" class="tool-card" data-category="Productivity">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Coda%20AI&background=111827&color=e5e7eb&size=96&rounded=true" alt="Coda AI logo" loading="lazy">
-  <h3>Coda AI</h3>
-  <p>Coda AI is an AI tool for productivity workflows, helping teams work faster with practical automation.</p>
-  <p><small>Productivity</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/evernote-ai-edit.html" class="tool-card" data-category="Productivity">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Evernote%20AI%20Edit&background=111827&color=e5e7eb&size=96&rounded=true" alt="Evernote AI Edit logo" loading="lazy">
-  <h3>Evernote AI Edit</h3>
-  <p>Evernote AI Edit is an AI tool for productivity workflows, helping teams work faster with practical automation.</p>
-  <p><small>Productivity</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/zapier-ai.html" class="tool-card" data-category="Automation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Zapier%20AI&background=111827&color=e5e7eb&size=96&rounded=true" alt="Zapier AI logo" loading="lazy">
-  <h3>Zapier AI</h3>
-  <p>Zapier AI is an AI tool for automation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Automation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/make.html" class="tool-card" data-category="Automation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Make&background=111827&color=e5e7eb&size=96&rounded=true" alt="Make logo" loading="lazy">
-  <h3>Make</h3>
-  <p>Make is an AI tool for automation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Automation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/n8n.html" class="tool-card" data-category="Automation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=n8n&background=111827&color=e5e7eb&size=96&rounded=true" alt="n8n logo" loading="lazy">
-  <h3>n8n</h3>
-  <p>n8n is an AI tool for automation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Automation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/ifttt.html" class="tool-card" data-category="Automation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=IFTTT&background=111827&color=e5e7eb&size=96&rounded=true" alt="IFTTT logo" loading="lazy">
-  <h3>IFTTT</h3>
-  <p>IFTTT is an AI tool for automation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Automation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/bardeen.html" class="tool-card" data-category="Automation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Bardeen&background=111827&color=e5e7eb&size=96&rounded=true" alt="Bardeen logo" loading="lazy">
-  <h3>Bardeen</h3>
-  <p>Bardeen is an AI tool for automation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Automation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/pipedream.html" class="tool-card" data-category="Automation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Pipedream&background=111827&color=e5e7eb&size=96&rounded=true" alt="Pipedream logo" loading="lazy">
-  <h3>Pipedream</h3>
-  <p>Pipedream is an AI tool for automation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Automation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/activepieces.html" class="tool-card" data-category="Automation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Activepieces&background=111827&color=e5e7eb&size=96&rounded=true" alt="Activepieces logo" loading="lazy">
-  <h3>Activepieces</h3>
-  <p>Activepieces is an AI tool for automation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Automation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/workato.html" class="tool-card" data-category="Automation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Workato&background=111827&color=e5e7eb&size=96&rounded=true" alt="Workato logo" loading="lazy">
-  <h3>Workato</h3>
-  <p>Workato is an AI tool for automation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Automation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/uipath-autopilot.html" class="tool-card" data-category="Automation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=UiPath%20Autopilot&background=111827&color=e5e7eb&size=96&rounded=true" alt="UiPath Autopilot logo" loading="lazy">
-  <h3>UiPath Autopilot</h3>
-  <p>UiPath Autopilot is an AI tool for automation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Automation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/automation-anywhere.html" class="tool-card" data-category="Automation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Automation%20Anywhere&background=111827&color=e5e7eb&size=96&rounded=true" alt="Automation Anywhere logo" loading="lazy">
-  <h3>Automation Anywhere</h3>
-  <p>Automation Anywhere is an AI tool for automation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Automation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/tray-ai.html" class="tool-card" data-category="Automation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Tray.ai&background=111827&color=e5e7eb&size=96&rounded=true" alt="Tray.ai logo" loading="lazy">
-  <h3>Tray.ai</h3>
-  <p>Tray.ai is an AI tool for automation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Automation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/tines.html" class="tool-card" data-category="Automation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Tines&background=111827&color=e5e7eb&size=96&rounded=true" alt="Tines logo" loading="lazy">
-  <h3>Tines</h3>
-  <p>Tines is an AI tool for automation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Automation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/levity.html" class="tool-card" data-category="Automation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Levity&background=111827&color=e5e7eb&size=96&rounded=true" alt="Levity logo" loading="lazy">
-  <h3>Levity</h3>
-  <p>Levity is an AI tool for automation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Automation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/relay-app.html" class="tool-card" data-category="Automation">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Relay.app&background=111827&color=e5e7eb&size=96&rounded=true" alt="Relay.app logo" loading="lazy">
-  <h3>Relay.app</h3>
-  <p>Relay.app is an AI tool for automation workflows, helping teams work faster with practical automation.</p>
-  <p><small>Automation</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/github-copilot.html" class="tool-card" data-category="Coding">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=GitHub%20Copilot&background=111827&color=e5e7eb&size=96&rounded=true" alt="GitHub Copilot logo" loading="lazy">
-  <h3>GitHub Copilot</h3>
-  <p>GitHub Copilot is an AI tool for coding workflows, helping teams work faster with practical automation.</p>
-  <p><small>Coding</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/cursor.html" class="tool-card" data-category="Coding">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Cursor&background=111827&color=e5e7eb&size=96&rounded=true" alt="Cursor logo" loading="lazy">
-  <h3>Cursor</h3>
-  <p>Cursor is an AI tool for coding workflows, helping teams work faster with practical automation.</p>
-  <p><small>Coding</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/codeium.html" class="tool-card" data-category="Coding">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Codeium&background=111827&color=e5e7eb&size=96&rounded=true" alt="Codeium logo" loading="lazy">
-  <h3>Codeium</h3>
-  <p>Codeium is an AI tool for coding workflows, helping teams work faster with practical automation.</p>
-  <p><small>Coding</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/tabnine.html" class="tool-card" data-category="Coding">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Tabnine&background=111827&color=e5e7eb&size=96&rounded=true" alt="Tabnine logo" loading="lazy">
-  <h3>Tabnine</h3>
-  <p>Tabnine is an AI tool for coding workflows, helping teams work faster with practical automation.</p>
-  <p><small>Coding</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/amazon-codewhisperer.html" class="tool-card" data-category="Coding">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Amazon%20CodeWhisperer&background=111827&color=e5e7eb&size=96&rounded=true" alt="Amazon CodeWhisperer logo" loading="lazy">
-  <h3>Amazon CodeWhisperer</h3>
-  <p>Amazon CodeWhisperer is an AI tool for coding workflows, helping teams work faster with practical automation.</p>
-  <p><small>Coding</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/replit-ghostwriter.html" class="tool-card" data-category="Coding">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Replit%20Ghostwriter&background=111827&color=e5e7eb&size=96&rounded=true" alt="Replit Ghostwriter logo" loading="lazy">
-  <h3>Replit Ghostwriter</h3>
-  <p>Replit Ghostwriter is an AI tool for coding workflows, helping teams work faster with practical automation.</p>
-  <p><small>Coding</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/sourcegraph-cody.html" class="tool-card" data-category="Coding">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Sourcegraph%20Cody&background=111827&color=e5e7eb&size=96&rounded=true" alt="Sourcegraph Cody logo" loading="lazy">
-  <h3>Sourcegraph Cody</h3>
-  <p>Sourcegraph Cody is an AI tool for coding workflows, helping teams work faster with practical automation.</p>
-  <p><small>Coding</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/jetbrains-ai-assistant.html" class="tool-card" data-category="Coding">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=JetBrains%20AI%20Assistant&background=111827&color=e5e7eb&size=96&rounded=true" alt="JetBrains AI Assistant logo" loading="lazy">
-  <h3>JetBrains AI Assistant</h3>
-  <p>JetBrains AI Assistant is an AI tool for coding workflows, helping teams work faster with practical automation.</p>
-  <p><small>Coding</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/coderabbit.html" class="tool-card" data-category="Coding">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=CodeRabbit&background=111827&color=e5e7eb&size=96&rounded=true" alt="CodeRabbit logo" loading="lazy">
-  <h3>CodeRabbit</h3>
-  <p>CodeRabbit is an AI tool for coding workflows, helping teams work faster with practical automation.</p>
-  <p><small>Coding</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/mutableai.html" class="tool-card" data-category="Coding">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=MutableAI&background=111827&color=e5e7eb&size=96&rounded=true" alt="MutableAI logo" loading="lazy">
-  <h3>MutableAI</h3>
-  <p>MutableAI is an AI tool for coding workflows, helping teams work faster with practical automation.</p>
-  <p><small>Coding</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/codiumai.html" class="tool-card" data-category="Coding">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=CodiumAI&background=111827&color=e5e7eb&size=96&rounded=true" alt="CodiumAI logo" loading="lazy">
-  <h3>CodiumAI</h3>
-  <p>CodiumAI is an AI tool for coding workflows, helping teams work faster with practical automation.</p>
-  <p><small>Coding</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/sweep-ai.html" class="tool-card" data-category="Coding">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Sweep%20AI&background=111827&color=e5e7eb&size=96&rounded=true" alt="Sweep AI logo" loading="lazy">
-  <h3>Sweep AI</h3>
-  <p>Sweep AI is an AI tool for coding workflows, helping teams work faster with practical automation.</p>
-  <p><small>Coding</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/phind.html" class="tool-card" data-category="Coding">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Phind&background=111827&color=e5e7eb&size=96&rounded=true" alt="Phind logo" loading="lazy">
-  <h3>Phind</h3>
-  <p>Phind is an AI tool for coding workflows, helping teams work faster with practical automation.</p>
-  <p><small>Coding</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/aider.html" class="tool-card" data-category="Coding">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Aider&background=111827&color=e5e7eb&size=96&rounded=true" alt="Aider logo" loading="lazy">
-  <h3>Aider</h3>
-  <p>Aider is an AI tool for coding workflows, helping teams work faster with practical automation.</p>
-  <p><small>Coding</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/elevenlabs.html" class="tool-card" data-category="Voice AI">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=ElevenLabs&background=111827&color=e5e7eb&size=96&rounded=true" alt="ElevenLabs logo" loading="lazy">
-  <h3>ElevenLabs</h3>
-  <p>ElevenLabs is an AI tool for voice ai workflows, helping teams work faster with practical automation.</p>
-  <p><small>Voice AI</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/murf.html" class="tool-card" data-category="Voice AI">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Murf&background=111827&color=e5e7eb&size=96&rounded=true" alt="Murf logo" loading="lazy">
-  <h3>Murf</h3>
-  <p>Murf is an AI tool for voice ai workflows, helping teams work faster with practical automation.</p>
-  <p><small>Voice AI</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/playht.html" class="tool-card" data-category="Voice AI">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=PlayHT&background=111827&color=e5e7eb&size=96&rounded=true" alt="PlayHT logo" loading="lazy">
-  <h3>PlayHT</h3>
-  <p>PlayHT is an AI tool for voice ai workflows, helping teams work faster with practical automation.</p>
-  <p><small>Voice AI</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/wellsaid-labs.html" class="tool-card" data-category="Voice AI">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=WellSaid%20Labs&background=111827&color=e5e7eb&size=96&rounded=true" alt="WellSaid Labs logo" loading="lazy">
-  <h3>WellSaid Labs</h3>
-  <p>WellSaid Labs is an AI tool for voice ai workflows, helping teams work faster with practical automation.</p>
-  <p><small>Voice AI</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/lovo.html" class="tool-card" data-category="Voice AI">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=LOVO&background=111827&color=e5e7eb&size=96&rounded=true" alt="LOVO logo" loading="lazy">
-  <h3>LOVO</h3>
-  <p>LOVO is an AI tool for voice ai workflows, helping teams work faster with practical automation.</p>
-  <p><small>Voice AI</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/resemble-ai.html" class="tool-card" data-category="Voice AI">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Resemble%20AI&background=111827&color=e5e7eb&size=96&rounded=true" alt="Resemble AI logo" loading="lazy">
-  <h3>Resemble AI</h3>
-  <p>Resemble AI is an AI tool for voice ai workflows, helping teams work faster with practical automation.</p>
-  <p><small>Voice AI</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/speechify.html" class="tool-card" data-category="Voice AI">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Speechify&background=111827&color=e5e7eb&size=96&rounded=true" alt="Speechify logo" loading="lazy">
-  <h3>Speechify</h3>
-  <p>Speechify is an AI tool for voice ai workflows, helping teams work faster with practical automation.</p>
-  <p><small>Voice AI</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/descript-overdub.html" class="tool-card" data-category="Voice AI">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Descript%20Overdub&background=111827&color=e5e7eb&size=96&rounded=true" alt="Descript Overdub logo" loading="lazy">
-  <h3>Descript Overdub</h3>
-  <p>Descript Overdub is an AI tool for voice ai workflows, helping teams work faster with practical automation.</p>
-  <p><small>Voice AI</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/krisp.html" class="tool-card" data-category="Voice AI">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Krisp&background=111827&color=e5e7eb&size=96&rounded=true" alt="Krisp logo" loading="lazy">
-  <h3>Krisp</h3>
-  <p>Krisp is an AI tool for voice ai workflows, helping teams work faster with practical automation.</p>
-  <p><small>Voice AI</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/voicemod.html" class="tool-card" data-category="Voice AI">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Voicemod&background=111827&color=e5e7eb&size=96&rounded=true" alt="Voicemod logo" loading="lazy">
-  <h3>Voicemod</h3>
-  <p>Voicemod is an AI tool for voice ai workflows, helping teams work faster with practical automation.</p>
-  <p><small>Voice AI</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/assemblyai.html" class="tool-card" data-category="Voice AI">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=AssemblyAI&background=111827&color=e5e7eb&size=96&rounded=true" alt="AssemblyAI logo" loading="lazy">
-  <h3>AssemblyAI</h3>
-  <p>AssemblyAI is an AI tool for voice ai workflows, helping teams work faster with practical automation.</p>
-  <p><small>Voice AI</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/deepgram.html" class="tool-card" data-category="Voice AI">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Deepgram&background=111827&color=e5e7eb&size=96&rounded=true" alt="Deepgram logo" loading="lazy">
-  <h3>Deepgram</h3>
-  <p>Deepgram is an AI tool for voice ai workflows, helping teams work faster with practical automation.</p>
-  <p><small>Voice AI</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/rev-ai.html" class="tool-card" data-category="Voice AI">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Rev%20AI&background=111827&color=e5e7eb&size=96&rounded=true" alt="Rev AI logo" loading="lazy">
-  <h3>Rev AI</h3>
-  <p>Rev AI is an AI tool for voice ai workflows, helping teams work faster with practical automation.</p>
-  <p><small>Voice AI</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/speechmatics.html" class="tool-card" data-category="Voice AI">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Speechmatics&background=111827&color=e5e7eb&size=96&rounded=true" alt="Speechmatics logo" loading="lazy">
-  <h3>Speechmatics</h3>
-  <p>Speechmatics is an AI tool for voice ai workflows, helping teams work faster with practical automation.</p>
-  <p><small>Voice AI</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/perplexity.html" class="tool-card" data-category="Research">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Perplexity&background=111827&color=e5e7eb&size=96&rounded=true" alt="Perplexity logo" loading="lazy">
-  <h3>Perplexity</h3>
-  <p>Perplexity is an AI tool for research workflows, helping teams work faster with practical automation.</p>
-  <p><small>Research</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/elicit.html" class="tool-card" data-category="Research">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Elicit&background=111827&color=e5e7eb&size=96&rounded=true" alt="Elicit logo" loading="lazy">
-  <h3>Elicit</h3>
-  <p>Elicit is an AI tool for research workflows, helping teams work faster with practical automation.</p>
-  <p><small>Research</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/consensus.html" class="tool-card" data-category="Research">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Consensus&background=111827&color=e5e7eb&size=96&rounded=true" alt="Consensus logo" loading="lazy">
-  <h3>Consensus</h3>
-  <p>Consensus is an AI tool for research workflows, helping teams work faster with practical automation.</p>
-  <p><small>Research</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/scite.html" class="tool-card" data-category="Research">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Scite&background=111827&color=e5e7eb&size=96&rounded=true" alt="Scite logo" loading="lazy">
-  <h3>Scite</h3>
-  <p>Scite is an AI tool for research workflows, helping teams work faster with practical automation.</p>
-  <p><small>Research</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/connected-papers.html" class="tool-card" data-category="Research">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Connected%20Papers&background=111827&color=e5e7eb&size=96&rounded=true" alt="Connected Papers logo" loading="lazy">
-  <h3>Connected Papers</h3>
-  <p>Connected Papers is an AI tool for research workflows, helping teams work faster with practical automation.</p>
-  <p><small>Research</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/research-rabbit.html" class="tool-card" data-category="Research">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Research%20Rabbit&background=111827&color=e5e7eb&size=96&rounded=true" alt="Research Rabbit logo" loading="lazy">
-  <h3>Research Rabbit</h3>
-  <p>Research Rabbit is an AI tool for research workflows, helping teams work faster with practical automation.</p>
-  <p><small>Research</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/semantic-scholar.html" class="tool-card" data-category="Research">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Semantic%20Scholar&background=111827&color=e5e7eb&size=96&rounded=true" alt="Semantic Scholar logo" loading="lazy">
-  <h3>Semantic Scholar</h3>
-  <p>Semantic Scholar is an AI tool for research workflows, helping teams work faster with practical automation.</p>
-  <p><small>Research</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/wolfram-alpha.html" class="tool-card" data-category="Research">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Wolfram%7CAlpha&background=111827&color=e5e7eb&size=96&rounded=true" alt="Wolfram|Alpha logo" loading="lazy">
-  <h3>Wolfram|Alpha</h3>
-  <p>Wolfram|Alpha is an AI tool for research workflows, helping teams work faster with practical automation.</p>
-  <p><small>Research</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/scholarcy.html" class="tool-card" data-category="Research">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Scholarcy&background=111827&color=e5e7eb&size=96&rounded=true" alt="Scholarcy logo" loading="lazy">
-  <h3>Scholarcy</h3>
-  <p>Scholarcy is an AI tool for research workflows, helping teams work faster with practical automation.</p>
-  <p><small>Research</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/iris-ai.html" class="tool-card" data-category="Research">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Iris.ai&background=111827&color=e5e7eb&size=96&rounded=true" alt="Iris.ai logo" loading="lazy">
-  <h3>Iris.ai</h3>
-  <p>Iris.ai is an AI tool for research workflows, helping teams work faster with practical automation.</p>
-  <p><small>Research</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/notebooklm.html" class="tool-card" data-category="Research">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=NotebookLM&background=111827&color=e5e7eb&size=96&rounded=true" alt="NotebookLM logo" loading="lazy">
-  <h3>NotebookLM</h3>
-  <p>NotebookLM is an AI tool for research workflows, helping teams work faster with practical automation.</p>
-  <p><small>Research</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/scispace.html" class="tool-card" data-category="Research">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=SciSpace&background=111827&color=e5e7eb&size=96&rounded=true" alt="SciSpace logo" loading="lazy">
-  <h3>SciSpace</h3>
-  <p>SciSpace is an AI tool for research workflows, helping teams work faster with practical automation.</p>
-  <p><small>Research</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/dimensions.html" class="tool-card" data-category="Research">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Dimensions&background=111827&color=e5e7eb&size=96&rounded=true" alt="Dimensions logo" loading="lazy">
-  <h3>Dimensions</h3>
-  <p>Dimensions is an AI tool for research workflows, helping teams work faster with practical automation.</p>
-  <p><small>Research</small></p>
-  <span class="view-link">View Tool →</span>
-</a><a href="/tools/inciteful.html" class="tool-card" data-category="Research">
-  <img class="tool-card-logo" src="https://ui-avatars.com/api/?name=Inciteful&background=111827&color=e5e7eb&size=96&rounded=true" alt="Inciteful logo" loading="lazy">
-  <h3>Inciteful</h3>
-  <p>Inciteful is an AI tool for research workflows, helping teams work faster with practical automation.</p>
-  <p><small>Research</small></p>
-  <span class="view-link">View Tool →</span>
 </a></div>
-      <p id="noResultsMessage" class="text-gray-600 mt-4" hidden>No tools found for your filters.</p>
     </section>
 
-    <script src="/public/js/search.js" defer></script>
+    <section class="content-section">
+      <div class="section-heading"><h2>Why readers and advertisers should trust the site</h2></div>
+      <div class="trust-list">
+        <div class="trust-item"><strong>Clear ownership pages.</strong> The site prominently links to About, Contact, Privacy, Terms and Editorial Policy pages.</div>
+        <div class="trust-item"><strong>Real user intent.</strong> Pages are organized to help visitors research tools before making decisions, not just to show ads.</div>
+        <div class="trust-item"><strong>Transparent disclosures.</strong> We clearly state how advertising, affiliate links and editorial independence work.</div>
+        <div class="trust-item"><strong>Ongoing quality improvements.</strong> We are expanding original category guides, comparison pages and product evaluation notes over time.</div>
+      </div>
+    </section>
+
+    <section class="content-section faq-section">
+      <div class="section-heading"><h2>Frequently asked questions</h2></div>
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary>How is AI Tool Vault different from a generic list of tools?</summary>
+          <p>We aim to add editorial context around who a tool is for, which workflow it improves and what tradeoffs a buyer should consider before choosing it.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do you accept tool submissions?</summary>
+          <p>Yes. Founders and teams can use our contact page to submit a product for review. Submission does not guarantee inclusion, ranking or positive coverage.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How do you make money?</summary>
+          <p>The site may generate revenue through advertising and affiliate relationships. Those monetization methods do not change our goal of publishing useful, easy-to-navigate resources.</p>
+        </details>
+      </div>
+    </section>
   </main>
 
   <footer>
@@ -813,26 +220,24 @@
             <span class="brand-icon">⚡</span>
             AI Tool Vault
           </a>
-          <p>Your ultimate directory for discovering the best AI tools. Curated, organized, and always up to date.</p>
+          <p>Your editorial directory for discovering AI tools with clearer methodology, transparent disclosures and practical research paths.</p>
         </div>
         <div>
-          <h3 class="footer-title">Categories</h3>
+          <h3 class="footer-title">Research</h3>
           <div class="footer-links">
-            <a href="/categories/ai-writing.html">Writing</a>
-            <a href="/categories/image-generation.html">Image Generation</a>
-            <a href="/categories/video-creation.html">Video</a>
-            <a href="/categories/coding.html">Coding</a>
             <a href="/categories/index.html">All Categories</a>
+            <a href="/best/best-ai-writing-tools.html">Best Of Guides</a>
+            <a href="/compare/chatgpt-vs-claude.html">Compare Tools</a>
+            <a href="/editorial-policy.html">Editorial Policy</a>
           </div>
         </div>
         <div>
-          <h3 class="footer-title">Top Tools</h3>
+          <h3 class="footer-title">Top Pages</h3>
           <div class="footer-links">
             <a href="/tools/chatgpt.html">ChatGPT</a>
             <a href="/tools/claude.html">Claude</a>
             <a href="/tools/midjourney.html">Midjourney</a>
-            <a href="/tools/github-copilot.html">GitHub Copilot</a>
-            <a href="/best/best-ai-tools-for-productivity.html">Best Of</a>
+            <a href="/best/best-ai-writing-tools.html">Best Free AI Tools</a>
           </div>
         </div>
         <div>
@@ -848,6 +253,7 @@
       <div class="footer-bottom">
         <span class="footer-copy">© 2026 AI Tool Vault. All rights reserved.</span>
         <div class="footer-legal">
+          <a href="/editorial-policy.html">Editorial Policy</a>
           <a href="/privacy-policy.html">Privacy Policy</a>
           <a href="/terms-of-use.html">Terms of Use</a>
           <a href="/contact.html">Contact</a>
@@ -856,7 +262,6 @@
     </div>
   </footer>
 
-  <!-- Cookie Consent Banner -->
   <div id="cookie-banner" role="dialog" aria-label="Cookie consent">
     <p>
       We use cookies and similar technologies to improve your experience, analyze traffic, and serve personalized ads.
@@ -870,5 +275,6 @@
   </div>
 
   <script src="/public/js/main.js" defer></script>
+  <script src="/public/js/search.js" defer></script>
 </body>
 </html>

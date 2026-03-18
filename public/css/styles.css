@@ -747,3 +747,92 @@ footer {
 
 /* Lazy load optimization */
 img[loading="lazy"] { content-visibility: auto; }
+
+/* ============================================================
+   TRUST / EDITORIAL CONTENT SECTIONS
+   ============================================================ */
+.info-grid {
+  display: grid;
+  gap: 1rem;
+}
+.info-grid.two-col,
+.two-col-layout {
+  grid-template-columns: 1fr;
+}
+.info-card,
+.checklist-card {
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+.section-copy,
+.section-note {
+  color: #cbd5e1;
+  line-height: 1.8;
+}
+.section-note {
+  margin-top: 1rem;
+}
+.checklist-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+.checklist-step {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: #c7d2fe;
+  font-size: .8rem;
+  font-weight: 800;
+}
+.trust-list {
+  display: grid;
+  gap: .85rem;
+}
+.trust-item {
+  padding: .95rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.02);
+  color: #cbd5e1;
+}
+.feature-list {
+  color: #cbd5e1;
+  line-height: 1.85;
+}
+.faq-list {
+  display: grid;
+  gap: .9rem;
+}
+.faq-item {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface-soft);
+  padding: 1rem;
+}
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: #f3f4f6;
+}
+.faq-item p {
+  margin-top: .8rem;
+  color: #cbd5e1;
+}
+.honeypot-field {
+  position: absolute;
+  left: -9999px;
+}
+@media (min-width: 760px) {
+  .info-grid.two-col,
+  .two-col-layout,
+  .checklist-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
