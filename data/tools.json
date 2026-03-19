@@ -4128,5 +4128,705 @@
       "team collaboration",
       "campaign calendars"
     ]
+  },
+  {
+    "name": "Gemini",
+    "slug": "gemini",
+    "category": "AI Writing",
+    "pricing": "Freemium",
+    "website": "https://gemini.google.com",
+    "description": "Gemini is a mainstream AI assistant used for writing, brainstorming, research, and everyday productivity across Google workflows.",
+    "features": [
+      "multimodal chat",
+      "google workspace support",
+      "document drafting",
+      "web-assisted answers"
+    ]
+  },
+  {
+    "name": "Microsoft Copilot",
+    "slug": "microsoft-copilot",
+    "category": "Productivity",
+    "pricing": "Freemium",
+    "website": "https://copilot.microsoft.com",
+    "description": "Microsoft Copilot helps users draft content, summarize information, and automate everyday work across Microsoft apps and the web.",
+    "features": [
+      "microsoft 365 assistance",
+      "summaries",
+      "presentation drafting",
+      "workplace productivity"
+    ]
+  },
+  {
+    "name": "DeepSeek",
+    "slug": "deepseek",
+    "category": "AI Writing",
+    "pricing": "Freemium",
+    "website": "https://www.deepseek.com",
+    "description": "DeepSeek is a fast-growing AI assistant for coding, reasoning, writing, and cost-efficient chat workflows.",
+    "features": [
+      "reasoning support",
+      "coding help",
+      "long-form answers",
+      "chat automation"
+    ]
+  },
+  {
+    "name": "Grok",
+    "slug": "grok",
+    "category": "AI Writing",
+    "pricing": "Paid",
+    "website": "https://grok.com",
+    "description": "Grok is an AI chatbot focused on real-time answers, research, ideation, and conversational assistance for trending topics.",
+    "features": [
+      "real-time information",
+      "conversational search",
+      "idea generation",
+      "research support"
+    ]
+  },
+  {
+    "name": "Gamma",
+    "slug": "gamma",
+    "category": "Productivity",
+    "pricing": "Freemium",
+    "website": "https://gamma.app",
+    "description": "Gamma creates AI-powered presentations, documents, and webpages quickly for founders, marketers, and teams that need polished output fast.",
+    "features": [
+      "presentation generation",
+      "doc creation",
+      "web page export",
+      "design polish"
+    ]
+  },
+  {
+    "name": "Beautiful.ai",
+    "slug": "beautiful-ai",
+    "category": "Productivity",
+    "pricing": "Paid",
+    "website": "https://www.beautiful.ai",
+    "description": "Beautiful.ai helps teams build polished slide decks faster with AI-assisted layouts, storytelling, and presentation design.",
+    "features": [
+      "smart slides",
+      "presentation templates",
+      "team collaboration",
+      "brand consistency"
+    ]
+  },
+  {
+    "name": "Tome",
+    "slug": "tome",
+    "category": "Productivity",
+    "pricing": "Freemium",
+    "website": "https://tome.app",
+    "description": "Tome is an AI storytelling tool for decks, one-pagers, and visual narratives used in sales, education, and startup pitches.",
+    "features": [
+      "storytelling decks",
+      "visual narratives",
+      "sales presentations",
+      "ai page generation"
+    ]
+  },
+  {
+    "name": "Julius AI",
+    "slug": "julius-ai",
+    "category": "Research",
+    "pricing": "Freemium",
+    "website": "https://julius.ai",
+    "description": "Julius AI turns spreadsheets and datasets into charts, answers, and analysis for business users who want data help without coding.",
+    "features": [
+      "data analysis",
+      "chart generation",
+      "csv workflows",
+      "natural language analytics"
+    ]
+  },
+  {
+    "name": "Rows AI",
+    "slug": "rows-ai",
+    "category": "Productivity",
+    "pricing": "Freemium",
+    "website": "https://rows.com/ai",
+    "description": "Rows AI brings spreadsheet automation, enrichment, and AI formulas together for operators, marketers, and analysts.",
+    "features": [
+      "ai spreadsheets",
+      "data enrichment",
+      "formulas",
+      "workflow automation"
+    ]
+  },
+  {
+    "name": "Gigasheet",
+    "slug": "gigasheet",
+    "category": "Research",
+    "pricing": "Freemium",
+    "website": "https://www.gigasheet.com",
+    "description": "Gigasheet helps teams explore huge spreadsheets and data files with AI-assisted analysis, filtering, and reporting.",
+    "features": [
+      "large dataset handling",
+      "ai analysis",
+      "data cleanup",
+      "reporting"
+    ]
+  },
+  {
+    "name": "Shortwave",
+    "slug": "shortwave",
+    "category": "Productivity",
+    "pricing": "Freemium",
+    "website": "https://www.shortwave.com",
+    "description": "Shortwave is an AI email client built to speed up inbox triage, summaries, writing, and follow-up workflows.",
+    "features": [
+      "email summarization",
+      "inbox triage",
+      "reply drafting",
+      "workflow shortcuts"
+    ]
+  },
+  {
+    "name": "MailMaestro",
+    "slug": "mailmaestro",
+    "category": "Productivity",
+    "pricing": "Freemium",
+    "website": "https://www.mailmaestro.com",
+    "description": "MailMaestro helps professionals write faster emails, summarize long threads, and manage inbox communication more efficiently.",
+    "features": [
+      "email drafting",
+      "thread summaries",
+      "tone adjustment",
+      "outlook and gmail support"
+    ]
+  },
+  {
+    "name": "Clockwise",
+    "slug": "clockwise",
+    "category": "Productivity",
+    "pricing": "Freemium",
+    "website": "https://www.getclockwise.com",
+    "description": "Clockwise uses AI to optimize calendars, protect focus time, and reduce meeting overload for busy teams.",
+    "features": [
+      "calendar optimization",
+      "focus time protection",
+      "meeting coordination",
+      "team scheduling"
+    ]
+  },
+  {
+    "name": "Read AI",
+    "slug": "read-ai",
+    "category": "Productivity",
+    "pricing": "Freemium",
+    "website": "https://www.read.ai",
+    "description": "Read AI summarizes meetings, tracks action items, and turns calls into searchable notes for remote teams.",
+    "features": [
+      "meeting summaries",
+      "action items",
+      "call analytics",
+      "shareable recaps"
+    ]
+  },
+  {
+    "name": "Limitless AI",
+    "slug": "limitless-ai",
+    "category": "Productivity",
+    "pricing": "Paid",
+    "website": "https://www.limitless.ai",
+    "description": "Limitless AI focuses on memory, meeting capture, and personal knowledge retrieval for professionals who want a searchable second brain.",
+    "features": [
+      "personal memory",
+      "meeting capture",
+      "searchable transcripts",
+      "knowledge retrieval"
+    ]
+  },
+  {
+    "name": "Canva",
+    "slug": "canva",
+    "category": "Image Generation",
+    "pricing": "Freemium",
+    "website": "https://www.canva.com",
+    "description": "Canva combines AI design, image generation, presentations, and social content creation in one mainstream creative platform.",
+    "features": [
+      "graphic design",
+      "ai image tools",
+      "presentation builder",
+      "social content creation"
+    ]
+  },
+  {
+    "name": "FLUX",
+    "slug": "flux",
+    "category": "Image Generation",
+    "pricing": "Freemium",
+    "website": "https://blackforestlabs.ai",
+    "description": "FLUX is a popular AI image model family used for high-quality prompt-based image generation and creative experimentation.",
+    "features": [
+      "text-to-image",
+      "high-quality generations",
+      "prompt control",
+      "creative rendering"
+    ]
+  },
+  {
+    "name": "Recraft",
+    "slug": "recraft",
+    "category": "Image Generation",
+    "pricing": "Freemium",
+    "website": "https://www.recraft.ai",
+    "description": "Recraft helps designers create vectors, icons, illustrations, and branded visuals with AI assistance.",
+    "features": [
+      "vector generation",
+      "icon design",
+      "illustrations",
+      "brand style control"
+    ]
+  },
+  {
+    "name": "Remini",
+    "slug": "remini",
+    "category": "Image Generation",
+    "pricing": "Freemium",
+    "website": "https://remini.ai",
+    "description": "Remini is a high-traffic AI photo enhancer used for portrait cleanup, restoration, and mobile-friendly image improvement.",
+    "features": [
+      "photo enhancement",
+      "portrait retouching",
+      "image restoration",
+      "mobile editing"
+    ]
+  },
+  {
+    "name": "Photoroom",
+    "slug": "photoroom",
+    "category": "Image Generation",
+    "pricing": "Freemium",
+    "website": "https://www.photoroom.com",
+    "description": "Photoroom helps sellers and creators remove backgrounds, generate product scenes, and produce ecommerce images quickly.",
+    "features": [
+      "background removal",
+      "product photos",
+      "batch editing",
+      "ecommerce visuals"
+    ]
+  },
+  {
+    "name": "Pixlr",
+    "slug": "pixlr",
+    "category": "Image Generation",
+    "pricing": "Freemium",
+    "website": "https://pixlr.com",
+    "description": "Pixlr offers browser-based AI photo editing, image generation, cleanup, and design tools for quick creative work.",
+    "features": [
+      "browser image editor",
+      "ai photo tools",
+      "background edits",
+      "quick design tasks"
+    ]
+  },
+  {
+    "name": "Fotor",
+    "slug": "fotor",
+    "category": "Image Generation",
+    "pricing": "Freemium",
+    "website": "https://www.fotor.com",
+    "description": "Fotor is an AI photo and design platform for headshots, image enhancement, art generation, and marketing assets.",
+    "features": [
+      "ai headshots",
+      "photo enhancement",
+      "image generation",
+      "design templates"
+    ]
+  },
+  {
+    "name": "Scenario",
+    "slug": "scenario",
+    "category": "Image Generation",
+    "pricing": "Paid",
+    "website": "https://www.scenario.com",
+    "description": "Scenario helps game and creative teams generate consistent visual assets, characters, and style-controlled artwork.",
+    "features": [
+      "game assets",
+      "custom styles",
+      "consistent characters",
+      "asset pipelines"
+    ]
+  },
+  {
+    "name": "Looka",
+    "slug": "looka",
+    "category": "Image Generation",
+    "pricing": "Paid",
+    "website": "https://looka.com",
+    "description": "Looka is an AI logo and brand kit generator for startups and small businesses launching new brands fast.",
+    "features": [
+      "logo generation",
+      "brand kits",
+      "social assets",
+      "business identity design"
+    ]
+  },
+  {
+    "name": "CapCut",
+    "slug": "capcut",
+    "category": "Video Creation",
+    "pricing": "Freemium",
+    "website": "https://www.capcut.com",
+    "description": "CapCut is a massive AI video editing platform for creators making short-form videos, subtitles, effects, and social clips.",
+    "features": [
+      "video editing",
+      "auto captions",
+      "templates",
+      "short-form content tools"
+    ]
+  },
+  {
+    "name": "Pika",
+    "slug": "pika",
+    "category": "Video Creation",
+    "pricing": "Freemium",
+    "website": "https://pika.art",
+    "description": "Pika is an AI video generator for prompt-based clips, motion effects, and fast concept video creation.",
+    "features": [
+      "text-to-video",
+      "image-to-video",
+      "motion effects",
+      "creative clips"
+    ]
+  },
+  {
+    "name": "Kling AI",
+    "slug": "kling-ai",
+    "category": "Video Creation",
+    "pricing": "Freemium",
+    "website": "https://klingai.com",
+    "description": "Kling AI is a viral text-to-video platform known for cinematic AI clips, animation, and social-media-ready outputs.",
+    "features": [
+      "cinematic video generation",
+      "text-to-video",
+      "image animation",
+      "viral clip creation"
+    ]
+  },
+  {
+    "name": "Sora",
+    "slug": "sora",
+    "category": "Video Creation",
+    "pricing": "Paid",
+    "website": "https://openai.com/sora",
+    "description": "Sora is OpenAI’s text-to-video system for generating polished visual scenes, cinematic sequences, and concept videos.",
+    "features": [
+      "text-to-video",
+      "cinematic scenes",
+      "storyboarding support",
+      "visual concept generation"
+    ]
+  },
+  {
+    "name": "Viggle",
+    "slug": "viggle",
+    "category": "Video Creation",
+    "pricing": "Freemium",
+    "website": "https://www.viggle.ai",
+    "description": "Viggle helps users animate characters and create viral meme-style videos with motion transfer and easy remix workflows.",
+    "features": [
+      "character animation",
+      "motion transfer",
+      "meme video creation",
+      "social sharing"
+    ]
+  },
+  {
+    "name": "Captions",
+    "slug": "captions",
+    "category": "Video Creation",
+    "pricing": "Freemium",
+    "website": "https://www.captions.ai",
+    "description": "Captions is an AI video app for talking videos, automatic subtitles, dubbing, and creator-friendly editing.",
+    "features": [
+      "auto captions",
+      "video dubbing",
+      "creator editing",
+      "talking videos"
+    ]
+  },
+  {
+    "name": "Hedra",
+    "slug": "hedra",
+    "category": "Video Creation",
+    "pricing": "Freemium",
+    "website": "https://www.hedra-ai.com",
+    "description": "Hedra creates talking and singing character videos from images, audio, and text for social content and storytelling.",
+    "features": [
+      "talking characters",
+      "singing avatars",
+      "image-to-video",
+      "social storytelling"
+    ]
+  },
+  {
+    "name": "Haiper",
+    "slug": "haiper",
+    "category": "Video Creation",
+    "pricing": "Freemium",
+    "website": "https://haiper.ai",
+    "description": "Haiper is an AI video generator built for fast visual ideas, animated scenes, and creator experiments.",
+    "features": [
+      "video generation",
+      "animated scenes",
+      "creative concepts",
+      "prompt-based clips"
+    ]
+  },
+  {
+    "name": "Tripo AI",
+    "slug": "tripo-ai",
+    "category": "Video Creation",
+    "pricing": "Freemium",
+    "website": "https://www.tripo3d.ai",
+    "description": "Tripo AI helps creators generate 3D models from text and images for gaming, product demos, and immersive content.",
+    "features": [
+      "3d generation",
+      "text-to-3d",
+      "image-to-3d",
+      "creator workflows"
+    ]
+  },
+  {
+    "name": "Meshy",
+    "slug": "meshy",
+    "category": "Video Creation",
+    "pricing": "Freemium",
+    "website": "https://www.meshy.ai",
+    "description": "Meshy is an AI 3D content tool for generating models, textures, and assets used in games, XR, and animation pipelines.",
+    "features": [
+      "3d models",
+      "texture generation",
+      "game assets",
+      "asset creation"
+    ]
+  },
+  {
+    "name": "Bolt.new",
+    "slug": "bolt-new",
+    "category": "Coding",
+    "pricing": "Freemium",
+    "website": "https://bolt.new",
+    "description": "Bolt.new is a viral AI coding tool for building web apps from prompts directly in the browser.",
+    "features": [
+      "prompt-to-app",
+      "browser coding",
+      "rapid prototyping",
+      "full-stack generation"
+    ]
+  },
+  {
+    "name": "Lovable",
+    "slug": "lovable",
+    "category": "Coding",
+    "pricing": "Freemium",
+    "website": "https://lovable.dev",
+    "description": "Lovable helps founders and indie makers turn prompts into working apps, landing pages, and product prototypes quickly.",
+    "features": [
+      "ai app builder",
+      "prototype generation",
+      "prompt-based development",
+      "product iteration"
+    ]
+  },
+  {
+    "name": "v0",
+    "slug": "v0",
+    "category": "Coding",
+    "pricing": "Freemium",
+    "website": "https://v0.dev",
+    "description": "v0 generates UI components and frontend app scaffolds from text prompts, making it popular with modern web builders.",
+    "features": [
+      "ui generation",
+      "frontend scaffolding",
+      "component prompts",
+      "rapid prototyping"
+    ]
+  },
+  {
+    "name": "Manus",
+    "slug": "manus",
+    "category": "Automation",
+    "pricing": "Paid",
+    "website": "https://manus.org",
+    "description": "Manus is a general-purpose AI agent designed to plan tasks, browse the web, and carry out multi-step work autonomously.",
+    "features": [
+      "autonomous agents",
+      "task execution",
+      "web workflows",
+      "multi-step planning"
+    ]
+  },
+  {
+    "name": "Genspark",
+    "slug": "genspark",
+    "category": "Research",
+    "pricing": "Freemium",
+    "website": "https://www.genspark.ai",
+    "description": "Genspark is an AI workspace for research, content creation, search, and agent-style task completion in one interface.",
+    "features": [
+      "ai workspace",
+      "research assistance",
+      "content generation",
+      "agent workflows"
+    ]
+  },
+  {
+    "name": "Replicate",
+    "slug": "replicate",
+    "category": "Coding",
+    "pricing": "Paid",
+    "website": "https://replicate.com",
+    "description": "Replicate lets developers run, test, and integrate popular AI models through APIs for image, video, audio, and text tasks.",
+    "features": [
+      "model api access",
+      "ai deployment",
+      "developer integrations",
+      "multimodal models"
+    ]
+  },
+  {
+    "name": "fal.ai",
+    "slug": "fal-ai",
+    "category": "Coding",
+    "pricing": "Paid",
+    "website": "https://fal.ai",
+    "description": "fal.ai provides fast inference infrastructure and APIs for image, video, and generative AI applications.",
+    "features": [
+      "ai inference",
+      "developer apis",
+      "media generation",
+      "fast model serving"
+    ]
+  },
+  {
+    "name": "Langflow",
+    "slug": "langflow",
+    "category": "Automation",
+    "pricing": "Freemium",
+    "website": "https://www.langflow.org",
+    "description": "Langflow is a visual builder for AI agents and LLM workflows used by teams that want orchestration without starting from scratch.",
+    "features": [
+      "visual agent builder",
+      "llm workflows",
+      "drag-and-drop pipelines",
+      "automation logic"
+    ]
+  },
+  {
+    "name": "Dify",
+    "slug": "dify",
+    "category": "Automation",
+    "pricing": "Freemium",
+    "website": "https://dify.ai",
+    "description": "Dify helps teams build AI apps, assistants, and internal agents with workflow orchestration and deployment tools.",
+    "features": [
+      "ai app builder",
+      "workflow orchestration",
+      "chatbot deployment",
+      "agent development"
+    ]
+  },
+  {
+    "name": "Chatbase",
+    "slug": "chatbase",
+    "category": "Automation",
+    "pricing": "Freemium",
+    "website": "https://www.chatbase.co",
+    "description": "Chatbase makes it easy to create AI chatbots trained on your content for customer support, lead capture, and website assistance.",
+    "features": [
+      "custom chatbots",
+      "website training data",
+      "customer support",
+      "lead capture"
+    ]
+  },
+  {
+    "name": "Botpress",
+    "slug": "botpress",
+    "category": "Automation",
+    "pricing": "Freemium",
+    "website": "https://botpress.com",
+    "description": "Botpress is a platform for building AI agents and customer-facing chatbots with workflows, integrations, and analytics.",
+    "features": [
+      "ai agents",
+      "chatbot builder",
+      "workflow automation",
+      "analytics"
+    ]
+  },
+  {
+    "name": "Browser Use",
+    "slug": "browser-use",
+    "category": "Automation",
+    "pricing": "Freemium",
+    "website": "https://browser-use.com",
+    "description": "Browser Use helps developers create AI agents that can navigate websites and complete browser-based tasks automatically.",
+    "features": [
+      "web automation",
+      "browser agents",
+      "task execution",
+      "developer tooling"
+    ]
+  },
+  {
+    "name": "Tavily",
+    "slug": "tavily",
+    "category": "Research",
+    "pricing": "Freemium",
+    "website": "https://tavily.com",
+    "description": "Tavily is a search and retrieval API built for AI agents that need current web results and cited research inputs.",
+    "features": [
+      "search api",
+      "research retrieval",
+      "agent search",
+      "web results"
+    ]
+  },
+  {
+    "name": "Exa",
+    "slug": "exa",
+    "category": "Research",
+    "pricing": "Freemium",
+    "website": "https://exa.ai",
+    "description": "Exa is an AI-native search engine and API used for research workflows, retrieval, and agent-powered discovery.",
+    "features": [
+      "ai search",
+      "research api",
+      "semantic retrieval",
+      "agent-ready results"
+    ]
+  },
+  {
+    "name": "Uizard",
+    "slug": "uizard",
+    "category": "Coding",
+    "pricing": "Freemium",
+    "website": "https://uizard.io",
+    "description": "Uizard turns prompts, sketches, and wireframes into editable app and website designs for product teams.",
+    "features": [
+      "ui mockups",
+      "wireframe generation",
+      "app design",
+      "prototype creation"
+    ]
+  },
+  {
+    "name": "Framer AI",
+    "slug": "framer-ai",
+    "category": "Coding",
+    "pricing": "Freemium",
+    "website": "https://www.framer.com/ai",
+    "description": "Framer AI helps creators build and launch websites faster with AI-generated layouts, copy, and site structure.",
+    "features": [
+      "website generation",
+      "landing pages",
+      "ai copy assistance",
+      "design-to-site workflows"
+    ]
   }
 ]
