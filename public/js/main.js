@@ -20,8 +20,40 @@
   });
 })();
 
-// ---- Cookie Consent Banner ----
-(function () {
+// ---- Cookie Consent Plugin (with fallback banner) ----
+function loadCookieConsentPlugin() {
+  return new Promise((resolve, reject) => {
+    if (window.CookieConsent) {
+      resolve();
+      return;
+    }
+
+    if (!document.querySelector('link[data-cookieconsent-css]')) {
+      const css = document.createElement('link');
+      css.rel = 'stylesheet';
+      css.href = 'https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.1.0/dist/cookieconsent.css';
+      css.setAttribute('data-cookieconsent-css', 'true');
+      document.head.appendChild(css);
+    }
+
+    const existingScript = document.querySelector('script[data-cookieconsent-js]');
+    if (existingScript) {
+      existingScript.addEventListener('load', () => resolve(), { once: true });
+      existingScript.addEventListener('error', () => reject(new Error('Cookie consent plugin failed to load.')), { once: true });
+      return;
+    }
+
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.1.0/dist/cookieconsent.umd.js';
+    script.defer = true;
+    script.setAttribute('data-cookieconsent-js', 'true');
+    script.onload = () => resolve();
+    script.onerror = () => reject(new Error('Cookie consent plugin failed to load.'));
+    document.head.appendChild(script);
+  });
+}
+
+function initLegacyCookieBanner() {
   const banner = document.getElementById('cookie-banner');
   if (!banner) return;
 
@@ -31,6 +63,8 @@
     return;
   }
 
+  banner.classList.remove('hidden');
+
   const acceptBtn = document.getElementById('cookie-accept');
   const declineBtn = document.getElementById('cookie-decline');
 
@@ -38,16 +72,113 @@
     acceptBtn.addEventListener('click', () => {
       localStorage.setItem('cookie_consent', 'accepted');
       banner.classList.add('hidden');
-      // Load AdSense after consent
       loadAdsense();
     });
   }
+
   if (declineBtn) {
     declineBtn.addEventListener('click', () => {
       localStorage.setItem('cookie_consent', 'declined');
       banner.classList.add('hidden');
     });
   }
+}
+
+(function () {
+  const legacyBanner = document.getElementById('cookie-banner');
+  if (legacyBanner) legacyBanner.classList.add('hidden');
+
+  loadCookieConsentPlugin()
+    .then(() => {
+      if (!window.CookieConsent || typeof window.CookieConsent.run !== 'function') {
+        initLegacyCookieBanner();
+        return;
+      }
+
+      window.CookieConsent.run({
+        root: 'body',
+        guiOptions: {
+          consentModal: {
+            layout: 'box',
+            position: 'bottom right',
+            equalWeightButtons: true
+          },
+          preferencesModal: {
+            layout: 'box',
+            position: 'right'
+          }
+        },
+        categories: {
+          necessary: {
+            enabled: true,
+            readOnly: true
+          },
+          analytics: {},
+          advertising: {}
+        },
+        language: {
+          default: 'en',
+          translations: {
+            en: {
+              consentModal: {
+                title: 'We use cookies',
+                description: 'We use cookies to improve experience, analyze traffic, and support advertising. See our <a href="/privacy-policy.html">Privacy Policy</a>.',
+                acceptAllBtn: 'Accept all',
+                acceptNecessaryBtn: 'Reject optional',
+                showPreferencesBtn: 'Manage preferences'
+              },
+              preferencesModal: {
+                title: 'Manage cookie preferences',
+                acceptAllBtn: 'Accept all',
+                acceptNecessaryBtn: 'Reject optional',
+                savePreferencesBtn: 'Save preferences',
+                closeIconLabel: 'Close modal',
+                sections: [
+                  {
+                    title: 'Cookie usage',
+                    description: 'You can choose which optional cookie categories you want to allow.'
+                  },
+                  {
+                    title: 'Strictly necessary cookies',
+                    description: 'Required for core website functionality.',
+                    linkedCategory: 'necessary'
+                  },
+                  {
+                    title: 'Analytics cookies',
+                    description: 'Help us understand how visitors use the website.',
+                    linkedCategory: 'analytics'
+                  },
+                  {
+                    title: 'Advertising cookies',
+                    description: 'Used to serve and measure relevant ads.',
+                    linkedCategory: 'advertising'
+                  }
+                ]
+              }
+            }
+          }
+        },
+        onConsent: ({ cookie }) => {
+          if (cookie.categories.includes('advertising')) {
+            localStorage.setItem('cookie_consent', 'accepted');
+            loadAdsense();
+          } else {
+            localStorage.setItem('cookie_consent', 'declined');
+          }
+        },
+        onChange: ({ cookie }) => {
+          if (cookie.categories.includes('advertising')) {
+            localStorage.setItem('cookie_consent', 'accepted');
+            loadAdsense();
+          } else {
+            localStorage.setItem('cookie_consent', 'declined');
+          }
+        }
+      });
+    })
+    .catch(() => {
+      initLegacyCookieBanner();
+    });
 })();
 
 // ---- Load AdSense after consent ----
