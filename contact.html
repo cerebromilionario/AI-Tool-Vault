@@ -47,11 +47,13 @@
     <div class="contact-grid two-col-layout">
       <section class="content-section">
         <div class="section-heading"><h2>Send a message</h2></div>
-        <p class="section-copy">This form is configured for static-site collection and is intended to make the site easier to use for readers, companies and reviewers.</p>
-        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-          <input type="hidden" name="form-name" value="contact">
+        <p class="section-copy">This form is configured with FormSubmit.co so your message is sent directly to our inbox.</p>
+        <form name="contact" method="POST" action="https://formsubmit.co/willianzacarias77@gmail.com">
+          <input type="hidden" name="_subject" value="New message from AI Tool Vault contact form">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
           <p class="honeypot-field">
-            <label>Don’t fill this out if you're human: <input name="bot-field"></label>
+            <label>Don’t fill this out if you're human: <input name="_honey"></label>
           </p>
           <div class="form-group">
             <label for="name">Your Name</label>
